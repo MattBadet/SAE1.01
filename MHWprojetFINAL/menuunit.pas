@@ -87,7 +87,7 @@ begin
   1 : chambre(joueur, dormi);
   2 : marchand();
   3 : cantineMenu(joueur);
-  4 : forge(joueur);
+  4 : forgeMenu();
   5 : combat(joueur);
   else menuGeneral();
   end;
@@ -98,12 +98,12 @@ end;
 procedure nouvellePartie();
 
 var
-  joueur : personnage; //record du joueur
+  joueur : player; //record du joueur
   dormi : boolean; //boolean indiquant si le joueur a fait une chasse depuis sa
 
 begin
   dormi := FALSE;
-  regles();
+  //regles();
   joueur := afficheCreationPerso();
   ville(joueur, dormi);
 end;

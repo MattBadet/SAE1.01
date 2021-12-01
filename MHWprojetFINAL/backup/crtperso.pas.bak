@@ -11,12 +11,13 @@
 unit crtPerso;
 
 interface
-uses
-  windows, sysutils;
 
 function KeyPressed: Boolean;
 function ReadKey: Char;
 implementation
+
+uses
+  windows, sysutils;
 
 
 var
