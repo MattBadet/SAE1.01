@@ -129,7 +129,7 @@ implementation
         Rect.Bottom := Size.Y-11;
         SetConsoleWindowInfo(Con, True, Rect);
 
-        //Wnd := GetConsoleWindow;
+        Wnd := GetConsoleWindow;
 
         SetWindowPos(Wnd, 0, 0, 0, 0, 0, SWP_NOSIZE);
     end;

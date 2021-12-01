@@ -9,22 +9,23 @@
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="11"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="16" Y="5"/>
+        <CursorPos X="26" Y="11"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="360"/>
-        <CursorPos X="9" Y="373"/>
+        <CursorPos X="26" Y="377"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -45,6 +46,7 @@
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
         <EditorIndex Value="5"/>
+        <CursorPos X="6" Y="15"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -64,10 +66,9 @@
       <Unit8>
         <Filename Value="gestionecran.pas"/>
         <UnitName Value="GestionEcran"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="120"/>
-        <CursorPos X="43" Y="140"/>
+        <TopLine Value="121"/>
+        <CursorPos X="12" Y="132"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit8>
@@ -98,7 +99,7 @@
         <UsageCount Value="10"/>
       </Unit12>
     </Units>
-    <JumpHistory Count="3" HistoryIndex="2">
+    <JumpHistory Count="7" HistoryIndex="6">
       <Position1>
         <Filename Value="gestionecran.pas"/>
         <Caret Column="70"/>
@@ -110,6 +111,22 @@
       <Position3>
         <Filename Value="affichagemenu.pas"/>
       </Position3>
+      <Position4>
+        <Filename Value="gestionecran.pas"/>
+        <Caret Line="140" TopLine="120"/>
+      </Position4>
+      <Position5>
+        <Filename Value="gestionecran.pas"/>
+        <Caret Line="128" Column="27" TopLine="121"/>
+      </Position5>
+      <Position6>
+        <Filename Value="gestionecran.pas"/>
+        <Caret Line="132" Column="16" TopLine="121"/>
+      </Position6>
+      <Position7>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="360" Column="3" TopLine="360"/>
+      </Position7>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

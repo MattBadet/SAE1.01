@@ -26,7 +26,7 @@ begin
 
     if (choixU = 1) then //Le joueur ouvre l'inventaire
     begin
-      afficheInventairePerso();
+      inventairePerso();
     end
     else
     begin

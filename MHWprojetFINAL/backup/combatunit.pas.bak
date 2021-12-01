@@ -219,7 +219,7 @@ begin
 end;
 
 //Logique du combat. Retourne le record du joueur
-function combat(joueur: personnage): personnage;
+function combatMonstre(joueur: player): player;
 
 var
   vieMi, vieMd : integer; //vieMd = vie du monstre actuel ; vieMi = vie du monstre initial
@@ -257,6 +257,33 @@ begin
   joueur := loose(joueur);
 
   result := joueur;
+end;
+
+function combatBoss(joueu : player): player
+
+begin
+
+end;
+
+function combat(joueur : player): player;
+
+var
+  choixU : boolean;
+
+begin
+  if (calculLvl(joueur.xp) < 10) then
+  begin
+    joueur := combatMonstre(joueur);
+  end
+  else
+  begin
+    choixU := afficheChoixBoss;
+    if choixU then
+    joueur := combatBoss(joueur)
+    else
+    joueur := combatMonstre(joueur);
+  end;
+
 end;
 
 end.
