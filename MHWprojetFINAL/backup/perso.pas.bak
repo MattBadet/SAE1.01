@@ -39,7 +39,5 @@ begin
   joueur.materiaux[5]:=5;
   joueur.materiaux[6]:=6;
   joueur.xp:=0;
-
-  result := joueur;
 end;
 end.

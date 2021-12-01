@@ -4,7 +4,7 @@ unit combatUnit;
 
 interface
 
-uses utilities, inventaire, cantine, forge, perso;
+uses utilities, inventaire, cantine, forge, perso, affichagemenu;
 
 type
   race = (normal,dragon,demon);
@@ -15,31 +15,31 @@ type
   end;
 
 function combat(joueur : player): player;
-function calculLvl(joueur: personnage): integer;h
+function calculLvl(joueur: player): integer;
 
 implementation
 
 //calcul du lvl du joueur en fonction de son xp
-function calculLvl(joueur: personnage): integer;
+function calculLvl(joueur: player): integer;
 
 begin
   if (joueur.xp < 100) then
   result := 1;
-  if (joueur.xp => 100) AND (joueur.xp < 300) then
+  if (joueur.xp >= 100) AND (joueur.xp < 300) then
   result := 2;
-  if (joueur.xp => 300) AND (joueur.xp < 500) then
+  if (joueur.xp >= 300) AND (joueur.xp < 500) then
   result := 3;
-  if (joueur.xp => 500) AND (joueur.xp < 800) then
+  if (joueur.xp >= 500) AND (joueur.xp < 800) then
   result := 4;
-  if (joueur.xp => 800) AND (joueur.xp < 1200) then
+  if (joueur.xp >= 800) AND (joueur.xp < 1200) then
   result := 5;
-  if (joueur.xp => 1200) AND (joueur.xp < 1700) then
+  if (joueur.xp >= 1200) AND (joueur.xp < 1700) then
   result := 6;
-  if (joueur.xp => 1700) AND (joueur.xp < 2300) then
+  if (joueur.xp >= 1700) AND (joueur.xp < 2300) then
   result := 7;
-  if (joueur.xp => 2300) AND (joueur.xp < 3000) then
+  if (joueur.xp >= 2300) AND (joueur.xp < 3000) then
   result := 8;
-  if (joueur.xp => 3000) AND (joueur.xp < 4000) then
+  if (joueur.xp >= 3000) AND (joueur.xp < 4000) then
   result := 9;
   if (joueur.xp > 4000) then
   result := 10;
@@ -80,16 +80,19 @@ begin
 end;
 
 //mort du personnage
-function loose(joueur : personnage): personnage;
+function loose(joueur : player): player;
 
 begin
-  joueur.vieActu := (joueur.vieBase div 5);
+  joueur.vieActu := (joueur.def div 5);
   result := joueur;
   afficheDeadMenu;
 end;
 
 //génération des drop en cas de victoire
-function generDrop(joueur : personnage; monstreActu : monstre; vieMi : integer): personnage;
+function generDrop(joueur : player; monstreActu : monstre; vieMi : integer): player;
+
+var
+  roll : integer;
 
 begin
   //génération xp
@@ -106,25 +109,25 @@ begin
 
   roll := random(10) + 1;
     //génération morceau demon
-    if (roll = 1) AND (monstre.spe = demon) AND (calculLvl(joueur.xp) >= 5) then
+    if (roll = 1) AND (monstreActu.spe = demon) AND (calculLvl(joueur) >= 5) then
     joueur.materiaux[5] := joueur.materiaux[5] + 1;
 
   roll := random(20) + 1;
     //génération fer
     if roll <= 6 then
     joueur.materiaux[2] := joueur.materiaux[2] + 2;
-    if roll = 7 OR roll = 8 then
+    if (roll = 7) OR (roll = 8) then
     joueur.materiaux[2] := joueur.materiaux[2] + 1;
     if roll = 9 then
     joueur.materiaux[2] := joueur.materiaux[2] + 3;
 
   roll := random(20) + 1;
     //génération acier
-    if (calculLvl(joueur.xp) >= 3) then
+    if (calculLvl(joueur) >= 3) then
     begin
       if roll <= 4 then
       joueur.materiaux[3] := joueur.materiaux[3] + 2;
-      if roll = 5 OR roll = 6 then
+      if (roll = 5) OR (roll = 6) then
       joueur.materiaux[3] := joueur.materiaux[3] + 1;
       if roll = 7 then
       joueur.materiaux[3] := joueur.materiaux[3] + 3;
@@ -132,7 +135,7 @@ begin
 
   roll := random(20) + 1;
     //génération ecailles
-    if (monstre.spe = dragon) AND (calculLvl(joueur.xp) >= 5) then
+    if (monstreActu.spe = dragon) AND (calculLvl(joueur) >= 5) then
     begin
       if roll <= 2 then
       joueur.materiaux[4] := joueur.materiaux[4] + 2;
@@ -145,7 +148,7 @@ begin
 end;
 
 //le joueur gagne le combat
-function win(joueur : personnage; monstreActu : monstre; vieMi : integer): personnage;
+function win(joueur : player; monstreActu : monstre; vieMi : integer): player;
 
 var
   roll : integer;
@@ -168,7 +171,7 @@ begin
   while rep do
   begin
     rep := FALSE;
-    choixA := menuCombat; //le joueur attaque ou va dans son inventaire
+    choixA := TRUE;//menuCombat; //le joueur attaque ou va dans son inventaire
 
     if (choixA = TRUE) then //si le joueur décide d'attaquer
     begin
@@ -186,11 +189,11 @@ begin
     end
     else //le joueur ouvre son inventaire
     begin
-      idObjet := afficheInventaire();
-      if (idObjet = 0) do
-      rep := TRUE;
+      idObjet := 0;//afficheInventaire();
+      if (idObjet = 0) then
+      rep := TRUE
       else
-      UtiliserObjet(idObjet);
+      //UtiliserObjet(idObjet);
     end; //if (choixA = TRUE) then
     result := vieMd;
   end; //rep si joueur décide de simplement regarder son inventaire
@@ -222,32 +225,32 @@ end;
 function combatMonstre(joueur: player): player;
 
 var
-  vieMi, vieMd : integer; //vieMd = vie du monstre actuel ; vieMi = vie du monstre initial
+  vieU, vieMi, vieMd, arme : integer; //vieMd = vie du monstre actuel ; vieMi = vie du monstre initial
   monstreActu : monstre;
 
 begin
   randomize;
-  vieU := joueur.defGlobal;
+  vieU := joueur.def;
   monstreActu := choixMonstre((random(4)+1)); //choix aléatoire du monstre
-  vieMi := ((monstreActu.vieBase * joueur.lvl)div 2);
+  vieMi := ((monstreActu.vieBase * calculLvl(joueur))div 2);
   vieMd := vieMi;
-  arme := joueur.atkGlobal;
+  arme := joueur.atk;
 
 
-  afficheCombat(monstreActu);
+  //afficheCombat(monstreActu);
 
   if (vieU > vieMd) then //si le joeur a plus de vie que le monstre il commence
   vieMd := tourJ(vieMd, arme);
-  attaqueU(vieMd, vieMi, vieU, joueur.defGlobal); //affichage de l'attaque
+  //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
   begin
     vieU := tourM(vieMi, vieMd, vieU); //Tour du monstre
-    attaqueU(vieMd, vieMi, vieU, joueur.defGlobal); //affichage de l'attaque
+    //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
     vieMd := tourJ(vieMd, arme); //Tour du joueur
-    attaqueU(vieMd, vieMi, vieU, joueur.defGlobal); //affichage de l'attaque
+    //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
 
@@ -271,13 +274,13 @@ var
   choixU : boolean;
 
 begin
-  if (calculLvl(joueur.xp) < 10) then
+  if (calculLvl(joueur) < 10) then
   begin
     joueur := combatMonstre(joueur);
   end
   else
   begin
-    choixU := afficheChoixBoss;
+    choixU := TRUE;//afficheChoixBoss;
     if choixU then
     joueur := combatBoss(joueur)
     else

@@ -4,14 +4,14 @@ unit menuUnit;
 
 interface
 
-uses combatUnit, utilities, inventaire, cantine, forge, perso;
+uses combatUnit, utilities, inventaire, cantine, forge, perso, affichagemenu;
 
 procedure menuGeneral();
 
 implementation
 
 //chambre : inventaire de perso et repos
-procedure chambre(joueur : perso; dormi : boolean);
+procedure chambre(joueur : player; dormi : boolean);
 
 var
   choixU : integer; //Choix du joueur dans le menu
@@ -22,25 +22,25 @@ begin
 
   while rep do
   begin
-    choixU := afficheChambre(); //Récupération du choix de l'utilisateur
+    choixU := 2;//afficheChambre(); //Récupération du choix de l'utilisateur
 
     if (choixU = 1) then //Le joueur ouvre l'inventaire
     begin
-      afficheInventairePerso();
+      //afficheInventairePerso();
     end
     else
     begin
-      if (choixU = 2)//le joueur va dormir
+      if (choixU = 2) then//le joueur va dormir
       begin
-        litAffichage(dormi);
+        //litAffichage(dormi);
 
         if dormi = FALSE then
         begin
           dormi := TRUE;
 
-          vieActu.joueur := vieActu.joueur + (vieMax.joueur div 5); //regen du perso
-          if (vieActu.joueur > vieMax.joueur) then //si la regen fait dépasser sa vie max, on le remet à sa vie max
-          vieActu.joueur := vieMax.joueur;
+          joueur.vieActu := joueur.vieActu + (joueur.def div 5); //regen du perso
+          if (joueur.vieActu > joueur.def) then //si la regen fait dépasser sa vie max, on le remet à sa vie max
+          joueur.vieActu := joueur.def;
         end;
       end // if (choixU = 2)
       else
@@ -59,34 +59,34 @@ var
   choixU : integer;
 
 begin
-  choixU := afficheMarchand;
+  choixU := 1;//afficheMarchand;
 
   case choixU of
-  1:ajouterinvobjet(petitepotion);
-  2:ajouterinvobjet(moyennepotion);
-  3:ajouterinvobjet(grandepotion);
-  4:ajouterinvobjet(bombepetite);
-  5:ajouterinvobjet(bombemoyenne);
+  1:ajouterinvpotion(petitepotion);
+  2:ajouterinvpotion(moyennepotion);
+  3:ajouterinvpotion(grandepotion);
+  4:ajouterinvbombe(bombepetite);
+  5:ajouterinvbombe(bombemoyenne);
   end;
 
 end;
 
 //Ville : choix entre les batiments et le combat
-procedure ville(joueur : perso; dormi : boolean);
+procedure ville(joueur : player; dormi : boolean);
 
 var
   choixU : integer; //Le choix de l'utilisateur (qu'es-ce qu'il veut faire)
 
 begin
-  choixU := afficheVille();
+  choixU := 5;//afficheVille();
 
   if choixU = 5 then
   dormi := FALSE;
 
   case choixU of
   1 : chambre(joueur, dormi);
-  2 : marchand(joueur);
-  3 : cantine(joueur));
+  2 : marchand();
+  3 : cantineMenu(joueur);
   4 : forge(joueur);
   5 : combat(joueur);
   else menuGeneral();

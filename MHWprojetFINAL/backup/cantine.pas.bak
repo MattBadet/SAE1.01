@@ -42,7 +42,6 @@ procedure getpetitmenu(joueur : player);
 procedure getmoyenmenu(joueur : player);
 procedure getgrandmenu(joueur : player);
 procedure cleareffet(joueur : player);
-procedure cantineMenu(joueur : player);
 
 implementation
 procedure cantineMenu(joueur : player);
