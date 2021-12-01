@@ -67,7 +67,7 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <TopLine Value="120"/>
-        <CursorPos X="43" Y="140"/>
+        <CursorPos Y="140"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit8>
@@ -98,7 +98,7 @@
         <UsageCount Value="10"/>
       </Unit12>
     </Units>
-    <JumpHistory Count="3" HistoryIndex="2">
+    <JumpHistory Count="4" HistoryIndex="3">
       <Position1>
         <Filename Value="gestionecran.pas"/>
         <Caret Column="70"/>
@@ -110,6 +110,10 @@
       <Position3>
         <Filename Value="affichagemenu.pas"/>
       </Position3>
+      <Position4>
+        <Filename Value="gestionecran.pas"/>
+        <Caret Line="140" Column="43" TopLine="120"/>
+      </Position4>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
