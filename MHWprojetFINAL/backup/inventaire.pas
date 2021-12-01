@@ -35,7 +35,7 @@ begin
   for i:=1 to length(invarmure) do
      invarmure[i]:=nullarmure;
 end;
-procedure equiperepee(joueur:player;obj:arme);
+procedure equiperepee(obj:arme);
 begin
   joueur.epee:=obj;
 end;
