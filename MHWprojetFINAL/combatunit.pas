@@ -159,7 +159,7 @@ begin
 end;
 
 //Tour du joueur
-function tourJ(vieMd, arme : integer): integer;
+function tourJ(vieMd, arme : integer;joueur : player): integer;
 
 var
   dU, reussite, idObjet : integer; //dU = dégats du joueur ; reussite = echec ou critique
@@ -178,14 +178,28 @@ begin
       dU := (random(arme div 2) + (arme div 2)); //calcul des dégats que le joueur inflige au monstre
       reussite := random(100);
 
-      if ((reussite >= 20) AND (reussite <= 90)) then //Coup normal
+      if Joueur.demoepee then //si l'épée est démoniaque, plus de chance de critique
       begin
-        vieMd := vieMd - dU; //le monstre perd des pv
+        if ((reussite >= 20) AND (reussite <= 75)) then //Coup normal
+        begin
+          vieMd := vieMd - dU; //le monstre perd des pv
+        end
+        else if (reussite > 75) then //critique
+        begin
+          vieMd := vieMd - (dU * 2); //le monstre perd des pv
+        end
       end
-      else if (reussite > 90) then //critique
+      else
       begin
-        vieMd := vieMd - (dU * 2); //le monstre perd des pv
-      end
+        if ((reussite >= 20) AND (reussite <= 90)) then //Coup normal
+        begin
+          vieMd := vieMd - dU; //le monstre perd des pv
+        end
+        else if (reussite > 90) then //critique
+        begin
+          vieMd := vieMd - (dU * 2); //le monstre perd des pv
+        end
+      end;
     end
     else //le joueur ouvre son inventaire
     begin
@@ -206,14 +220,36 @@ var
   dM, reussite : integer; //dM = dégats du monstre ; reussite = echec ou critique
 
 begin
-  dM := random(((vieMi + vieMd) div 2) div 7); //calcul des dégats que le monstre inglige au joueur
+  dM := random((((vieMi + vieMd) div 2) div 7) + ((((vieMi + vieMd) div 2) div 7) div 2)); //calcul des dégats que le monstre inglige au joueur
   reussite := random(100);
 
-  if ((reussite >= 20) AND (reussite <= 90)) then //Le coup rate
+  if ((reussite >= 20) AND (reussite <= 90)) then //Le coup rate pas
   begin
     vieU := vieU - dM; //le monstre perd des pv
   end
-  else if (reussite > 90) then
+  else if (reussite > 90) then //le coup est critique
+  begin
+    vieU := vieU - (dM * 2); //le monstre perd des pv
+  end;
+
+  result := vieU;
+end;
+
+//Tour du boss
+function tourBoss(vieMi, vieMd, vieU : integer): integer;
+
+var
+  dM, reussite : integer; //dM = dégats du monstre ; reussite = echec ou critique
+
+begin
+  dM := random(round((((vieMi + vieMd) div 2) div 7) + ((((vieMi + vieMd) div 2) div 7) div 2) * 1.2)); //calcul des dégats que le monstre inglige au joueur
+  reussite := random(100);
+
+  if ((reussite >= 10) AND (reussite <= 80)) then //Le coup rate pas
+  begin
+    vieU := vieU - dM; //le monstre perd des pv
+  end
+  else if (reussite > 80) then //le coup est critique
   begin
     vieU := vieU - (dM * 2); //le monstre perd des pv
   end;
@@ -229,7 +265,6 @@ var
   monstreActu : monstre;
 
 begin
-  randomize;
   vieU := joueur.def;
   monstreActu := choixMonstre((random(4)+1)); //choix aléatoire du monstre
   vieMi := ((monstreActu.vieBase * calculLvl(joueur))div 2);
@@ -240,7 +275,7 @@ begin
   //afficheCombat(monstreActu);
 
   if (vieU > vieMd) then //si le joeur a plus de vie que le monstre il commence
-  vieMd := tourJ(vieMd, arme);
+  vieMd := tourJ(vieMd, arme, joueur);
   //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
@@ -249,7 +284,7 @@ begin
     //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme); //Tour du joueur
+    vieMd := tourJ(vieMd, arme, joueur); //Tour du joueur
     //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
@@ -262,10 +297,41 @@ begin
   result := joueur;
 end;
 
-function combatBoss(joueu : player): player;
+function combatBoss(joueur : player): player;
+
+var
+  vieU, vieMi, vieMd, arme : integer; //vieMd = vie du monstre actuel ; vieMi = vie du monstre initial
+  boss: monstre = (
+    id:5;
+    vieBase:2500;
+    spe:normal;
+  );
 
 begin
+  vieU := joueur.def;
+  vieMi := boss.vieBase;
+  vieMd := vieMi;
+  arme := joueur.atk;
 
+  //afficheCombat(boss);
+
+  while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
+  begin
+    vieU := tourBoss(vieMi, vieMd, vieU); //Tour du boss
+    //attaqueBoss(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+
+    if (vieU > 0) then //si le joueur n'a pas encore perdu
+    vieMd := tourJ(vieMd, arme,joueur); //Tour du joueur
+    //attaqueBoss(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+
+  end; //while (vieU > 0) AND (vieM > 0) do
+
+  if (vieU > 0) then
+  credit
+  else
+  joueur := loose(joueur);
+
+  result := joueur;
 end;
 
 function combat(joueur : player): player;

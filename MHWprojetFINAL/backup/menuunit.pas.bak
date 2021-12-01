@@ -86,7 +86,7 @@ begin
   case choixU of
   1 : chambre(joueur, dormi);
   2 : marchand();
-  3 : cantine(joueur);
+  3 : cantineMenu(joueur);
   4 : forge(joueur);
   5 : combat(joueur);
   else menuGeneral();
