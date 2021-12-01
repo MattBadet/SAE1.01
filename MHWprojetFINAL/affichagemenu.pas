@@ -8,13 +8,13 @@ uses
   Classes, SysUtils, GestionEcran, affichageObjet, crtperso;
 
 procedure afficheChambre(); // Menu de la chambre qui donne accès à l'inventaire et au repos
-procedure afficheVille(); // Affichage du menu d'une partie
-procedure afficheMenuPrincipal();
+procedure afficheMenuPartie(); // Affichage du menu d'une partie
+procedure afficheVille();
 procedure afficheDeadMenu();
 procedure afficheInventaire(); // afffichage de l'inventaire
 procedure afficheForge(); // afffichage de la forge
 procedure afficheCombat(monstre:Integer); // fenêtre de combat
-function afficheCantine():Boolean; // Affichage de la cantine
+procedure afficheCantine(); // Affichage de la cantine
 procedure afficheCreationPerso(); // menu de la création du personnage    *
 procedure afficheVictoire();
 procedure afficheMarchand(); // afffichage du marchand
@@ -28,20 +28,13 @@ begin
     effacerEcran();
     x:= 10;
     y:=8;
-    deplacerCurseurXY(x,y);
-    write('               ,____                                          /   \                                          ____,');
-    deplacerCurseurXY(x,y+1);
-    write('               |---.\                                 )      ((   ))                                        /.---|');
-    deplacerCurseurXY(x,y+2);
-    write('       ___     |    `       (@)                      /|\      ))_((     /|\                                 `    |     ___');
-    deplacerCurseurXY(x,y+3);
-    write('      / .-\  ./=)           |-|                     / | \    (/\|/\)   / | \                      (@)           (=\.  /-. \');
-    deplacerCurseurXY(x,y+4);
-    write('     |  |"|_/\/|            | | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|            |\/\_|"|  |');
-    deplacerCurseurXY(x,y+5);
-    write('     ;  |-;| /_|            |-|                         ''^`   (o o)  ''^`                          | |            |_\ |;-|  ;');
-    deplacerCurseurXY(x,y+6);
-    write('    / \_| |/ \ |            | |                               `\Y/''                               |-|            | / \| |_/ \');
+    ecrireEnPositionXY(x,y,'               ,____                                          /   \                                          ____,');
+    ecrireEnPositionXY(x,y+1,'               |---.\                                 )      ((   ))                                        /.---|');
+    ecrireEnPositionXY(x,y+2,'       ___     |    `       (@)                      /|\      ))_((     /|\                                 `    |     ___');
+    ecrireEnPositionXY(x,y+3,'      / .-\  ./=)           |-|                     / | \    (/\|/\)   / | \                      (@)           (=\.  /-. \');
+    ecrireEnPositionXY(x,y+4,'     |  |"|_/\/|            | | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|            |\/\_|"|  |');
+    ecrireEnPositionXY(x,y+5,'     ;  |-;| /_|            |-|                         ''^`   (o o)  ''^`                          | |            |_\ |;-|  ;');
+    ecrireEnPositionXY(x,y+6,'    / \_| |/ \ |            | |                               `\Y/''                               |-|            | / \| |_/ \');
     deplacerCurseurXY(x,y+7);
     write('   /      \/\( |            |-|                                                                   | |            | )/\/      \');
     deplacerCurseurXY(x,y+8);
@@ -222,7 +215,7 @@ begin
     dessinerCadreXY(44,22,144,29,simple,white,black);
 end;
 
-function afficheCantine():Boolean; // Affichage de la cantine
+procedure afficheCantine(); // Affichage de la cantine
 begin
     effacerEcran();
     dessinerCadreXY(2,5,48,30,simple,white,black);
@@ -276,7 +269,7 @@ begin
     dessinerCadreXY(44,25,144,32,simple,white,black);
 end;
 
-procedure afficheVille(); // Affichage du menu d'une partie
+procedure afficheMenuPartie(); // Affichage du menu d'une partie
 begin
     effacerEcran();
     // Module Marchand
@@ -342,7 +335,7 @@ begin
     readln(choix);
 end;
 
-procedure afficheMenuPrincipal(); // menu de la ville
+procedure afficheVille(); // menu de la ville
 var
   choix:Integer; // contient le choix du menu
 begin
@@ -370,11 +363,11 @@ begin
     deplacerCurseurXY(88,22);
     readln(choix);
     Case choix of
-      1:afficheVille();
+      1:affichemenuPartie();
       2:credit();
       3:write('');
       else
-        afficheMenuPrincipal();
+        afficheville();
       end;
 end;
 
