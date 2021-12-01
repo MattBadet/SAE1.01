@@ -45,7 +45,7 @@ begin
        19:createbottes(bottesacier);
        20:createbottes(bottesscale);
        21:createbouclier(bouclierfer);
-       22:createbouclier(bouclieracier);
+       22:createbouclier(buclieracier);
        23:createbouclier(bouclierscale);
   end;
 end;

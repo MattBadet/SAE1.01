@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\Users\matte\Desktop\LazarusPortable\App\lazarus\fpc\2.6.4\bin\i386-win32\fpc.exe" Date="1399422395"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FiC:\Users\matte\Desktop\sae\SAE1.01\MHWprojetFINAL\lib\i386-win32 -FuC:\Users\matte\Desktop\sae\SAE1.01\MHWprojetFINAL\ -FUC:\Users\matte\Desktop\sae\SAE1.01\MHWprojetFINAL\lib\i386-win32\ mh.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>
