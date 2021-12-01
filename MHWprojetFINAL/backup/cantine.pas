@@ -45,8 +45,8 @@ procedure choixmenu(choix:integer;joueur : player);//CHOIX DES MENU
 procedure getpetitmenu(joueur : player);//AFFECT LES EFFETS DU PETIT MENU
 procedure getmoyenmenu(joueur : player);//AFFECT LES EFFETS DU MENU CLASSIQUE
 procedure getgrandmenu(joueur : player);//AFFECT LES EFFETS DU GROS MENU
-procedure cleareffet(joueur : player);//EFFACER LES EFFETS DU MENU
-procedure cantineMenu(joueur : player);//ENTRE DANS LA CANTINE
+procedure cleareffet(joueur : player);
+procedure cantineMenu(joueur : player);
 
 implementation
 procedure cantineMenu(joueur : player);

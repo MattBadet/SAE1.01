@@ -8,6 +8,7 @@ uses
   Classes, SysUtils, utilities;
 
 type
+  //RECORD DU JOUEUR
   player = packed record
     nom:string;
     sexe:string;
@@ -20,7 +21,7 @@ type
     epee:arme;
   end;
 
-function createjoueur(nom,sexe:string):player;
+function createjoueur(nom,sexe:string):player;//INITIALISATION DU JOUEUR
 
 implementation
 

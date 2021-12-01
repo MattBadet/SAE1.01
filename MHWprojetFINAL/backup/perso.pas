@@ -8,6 +8,7 @@ uses
   Classes, SysUtils, utilities;
 
 type
+  //RECORD DU JOUEUR
   player = packed record
     nom:string;
     sexe:string;
@@ -40,7 +41,7 @@ begin
   joueur.materiaux[5]:=5;
   joueur.materiaux[6]:=6;
   joueur.xp:=0;
-  joueur.epee:=nullarme;
+  joueur.epee:=nullarm;
 
   result := joueur;
 end;

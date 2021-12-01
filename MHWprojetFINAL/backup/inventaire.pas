@@ -7,16 +7,17 @@ interface
 uses
   Classes, SysUtils, utilities, perso;
 
-procedure initialisationinv();
-procedure ajouterinvobjet(obj:objet);
-procedure ajouterinvarme(obj:arme);
-procedure ajouterinvbombe(obj:bombe);
-procedure ajouterinvpotion(obj:potion);
-procedure equipercasque(epe:armure);
-procedure equiperplastron(epe:armure);
-procedure equiperjambiere(epe:armure);
-procedure equiperbottes(epe:armure);
-procedure equiperbouclier(epe:armure);
+procedure initialisationinv();//INITIALISATION DE L'INVENTAIRE
+procedure ajouterinvobjet(obj:objet);//AJOUT D'UN ITEM DANS L'INVENTAIRE OBJET
+procedure ajouterinvarme(obj:arme);//AJOUT D'UN ITEM DANS L'INVENTAIRE ARME
+procedure ajouterinvbombe(obj:bombe);//AJOUT D'UN ITEM DANS L'INVENTAIRE BOMBE
+procedure ajouterinvpotion(obj:potion);//AJOUT D'UN ITEM DANS L'INVENTAIRE POTION
+procedure equipercasque(epe:armure);//EQUIPER UN CASQUE
+procedure equiperplastron(epe:armure);//EQUIPER UN PLASTRON
+procedure equiperjambiere(epe:armure);//EQUIPER UNE JAMBIERE
+procedure equiperbottes(epe:armure);//EQUIPER DES BOTTES
+procedure equiperbouclier(epe:armure);//EQUIPER UN BOUCLIER
+procedure equiperepee(joueur:player;obj:arme);//EQUIPER UNE EPEE
 procedure afficheinv();
 
 implementation
@@ -35,7 +36,7 @@ begin
   for i:=1 to length(invarmure) do
      invarmure[i]:=nullarmure;
 end;
-procedure equiperepee(obj:arme);
+procedure equiperepee(joueur:player;obj:arme);
 begin
   joueur.epee:=obj;
 end;
