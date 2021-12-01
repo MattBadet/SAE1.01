@@ -1,10 +1,12 @@
 program mh;
 
-uses menuUnit;
+uses menuUnit,perso;
 
 var joueur:player;
 
 begin
-  joueur:=createjoueur;
+  joueur:=createjoueur('pol','homme');
+  writeln(joueur.nom);
+  readln;
 end.
 

@@ -17,6 +17,7 @@ type
     atk:integer;
     materiaux:array[1..6] of integer;
     xp:integer;
+    demoepee:Boolean;
   end;
 
 function createjoueur(nom,sexe:string):player;
@@ -39,6 +40,7 @@ begin
   joueur.materiaux[5]:=5;
   joueur.materiaux[6]:=6;
   joueur.xp:=0;
+  joueur.demoepee:=False;
 
   result := joueur;
 end;
