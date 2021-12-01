@@ -5,6 +5,6 @@ uses menuUnit;
 var joueur:player;
 
 begin
-  joueur:=createjoueur('pol','homme');
+  joueur:=createjoueur;
 end.
 

@@ -23,7 +23,6 @@ function createjoueur(nom,sexe:string):player;
 implementation
 
 function createjoueur(nom,sexe:string):player;
-joueur:=player;
 begin
   joueur.nom:=name;
   joueur.sexe:sex;
