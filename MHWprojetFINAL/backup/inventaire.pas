@@ -233,10 +233,9 @@ begin
        invpotion[i]:=nullpotion;
   end;
 end;
-
-procedure deletebombe(obj:potion);
+procedure deletebombe(obj:bombe);
 begin
-  for i:=1 to length(invpotion) do
+  for i:=1 to length(invbombe) do
   begin
     if invbombe[i+1]=nullbombe then
        invbombe[i]:=nullbombe;
