@@ -160,8 +160,38 @@ end;
 
 procedure inventaireCombat();
 
+var
+  id : integer;
+
 begin
-  afficheInventaire
+  id := afficheInventaire;
+
+  case id of
+  1:;
+  2:;
+  3:;
+  4:;
+  5:;
+  6:;
+  7:;
+  8:;
+  9:;
+  10:;
+  11:;
+  12:;
+  13:;
+  14:;
+  15:;
+  16:;
+  17:;
+  18:;
+  19:;
+  20:;
+  21:;
+  22:;
+  23:;
+  24:;
+  end;
 end;
 
 //Tour du joueur
@@ -259,7 +289,7 @@ begin
   result := vieU;
 end;
 
-//Logique du combat. Retourne le record du joueur
+//Logique du combat de base. Retourne le record du joueur
 function combatMonstre(joueur: player): player;
 
 var
@@ -299,6 +329,7 @@ begin
   result := joueur;
 end;
 
+//Logique du combat de boss. Retourne le record du joueur si perdu ou active les credits et fini le jeu
 function combatBoss(joueur : player): player;
 
 var
@@ -335,6 +366,7 @@ begin
 
   result := joueur;
 end;
+
 
 function combat(joueur : player): player;
 
