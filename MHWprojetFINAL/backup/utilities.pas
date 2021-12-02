@@ -8,34 +8,30 @@ uses
   Classes, SysUtils;
 
 type
-  //RECORD BOMBE
   bombe = packed record
     nom:string;
     desc:string;
     degat:integer;
     prix:integer;
   end;
-  //RECORD POTION
+
   potion = packed record
     nom:string;
     desc:string;
     effet:integer;
     prix:integer;
   end;
-  //RECORD OBJET
   objet = packed record
     nom:string;
     desc:string;
     stack:integer;
   end;
-  //RECORD ARME
   arme = packed record
     nom:string;
     desc:string;
     degat:integer;
     material:string;
   end;
-  //RECORD ARMURE
   armure = packed record
     nom:string;
     desc:string;

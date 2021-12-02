@@ -5,9 +5,10 @@ unit perso;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, utilities;
 
 type
+  //RECORD DU JOUEUR
   player = packed record
     nom:string;
     sexe:string;
@@ -17,9 +18,10 @@ type
     atk:integer;
     materiaux:array[1..6] of integer;
     xp:integer;
+    epee:arme;
   end;
 
-function createjoueur(nom,sexe:string):player;
+function createjoueur(nom,sexe:string):player;//INITIALISATION DU JOUEUR
 
 implementation
 
@@ -39,6 +41,7 @@ begin
   joueur.materiaux[5]:=5;
   joueur.materiaux[6]:=6;
   joueur.xp:=0;
+  joueur.epee:=nullarm;
 
   result := joueur;
 end;

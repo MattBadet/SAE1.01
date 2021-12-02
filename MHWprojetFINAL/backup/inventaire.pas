@@ -18,7 +18,7 @@ procedure equiperjambiere(epe:armure);//EQUIPER UNE JAMBIERE
 procedure equiperbottes(epe:armure);//EQUIPER DES BOTTES
 procedure equiperbouclier(epe:armure);//EQUIPER UN BOUCLIER
 procedure equiperepee(joueur:player;obj:arme);//EQUIPER UNE EPEE
-procedure afficheinv();//TEMP POUR LES TEST DE L'INV
+procedure afficheinv();
 
 implementation
 

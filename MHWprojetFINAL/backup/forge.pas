@@ -6,14 +6,14 @@ interface
 uses
   Classes, SysUtils, inventaire, utilities;
 
-procedure forgeMenu();//ENTRE DANS LA FORGE
-procedure choixmenu(choix:integer);//APPELLER QUAND LE JOUEUR CHOISIE L'ITEM QU'IL VEUT FABRIQUER
-procedure createepee(epe:arme);//CREER UNE EPEE
-procedure createcasque(epe:armure);//CREER UN CASQUE
-procedure createplastron(epe:armure);//CREER UN PLASTRON
-procedure createjambiere(epe:armure);//CREER UNE JAMBIERE
-procedure createbottes(epe:armure);//CREER DES BOTTES
-procedure createbouclier(epe:armure);//CREER UN BOUCLIER
+procedure forgeMenu();
+procedure choixmenu(choix:integer);
+procedure createepee(epe:arme);
+procedure createcasque(epe:armure);
+procedure createplastron(epe:armure);
+procedure createjambiere(epe:armure);
+procedure createbottes(epe:armure);
+procedure createbouclier(epe:armure);
 
 implementation
 

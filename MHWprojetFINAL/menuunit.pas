@@ -104,7 +104,7 @@ var
 begin
   dormi := FALSE;
   //regles();
-  joueur := afficheCreationPerso();
+  //joueur := afficheCreationPerso();
   ville(joueur, dormi);
 end;
 
@@ -115,7 +115,7 @@ var
   choixU : boolean;
 
 begin
-  choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
+  //choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
 
   if choixU then
   nouvellePartie;

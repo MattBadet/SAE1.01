@@ -178,7 +178,7 @@ begin
       dU := (random(arme div 2) + (arme div 2)); //calcul des dégats que le joueur inflige au monstre
       reussite := random(100);
 
-      if joueur.epee.material = 'reste' then //si l'épée est démoniaque, plus de chance de critique
+      if joueur.demoepee then //si l'épée est démoniaque, plus de chance de critique
       begin
         if ((reussite >= 20) AND (reussite <= 75)) then //Coup normal
         begin
