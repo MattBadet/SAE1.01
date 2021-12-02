@@ -2,8 +2,6 @@ program mh;
 
 uses menuUnit,perso;
 
-var joueur:player;
-
 begin
   menuUnit
 end.

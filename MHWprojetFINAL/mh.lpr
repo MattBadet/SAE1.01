@@ -3,6 +3,6 @@ program mh;
 uses menuUnit,perso;
 
 begin
-  menuUnit
+  menuGeneral;
 end.
 
