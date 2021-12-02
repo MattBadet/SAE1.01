@@ -17,12 +17,14 @@ type
     def:integer;
     atk:integer;
     materiaux:array[1..6] of integer;
+    eqarmure:array[1..5] of armure;
     xp:integer;
     epee:arme;
-    eqarmure:array[1..5] of armure;
   end;
 
 function createjoueur(nom,sexe:string):player;//INITIALISATION DU JOUEUR
+procedure initdef(joueur:player);//INITIALISATION DE LA DEFENSE
+procedure initatk(joueur:player);//INITIALISATION DE L'ATTAQUE
 
 implementation
 
@@ -51,5 +53,14 @@ begin
   joueur.epee:=nullarm;
 
   result := joueur;
+end;
+
+procedure initdef(joueur:player);
+begin
+  joueur.def:=joueur.eqarmure[1].def + joueur.eqarmure[2].def + joueur.eqarmure[3].def + joueur.eqarmure[4].def + joueur.eqarmure[5].def;
+end;
+procedure initatk(joueur:player);
+begin
+  joueur.atk:=
 end;
 end.
