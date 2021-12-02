@@ -8,8 +8,7 @@
       <Unit0>
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <CursorPos X="10" Y="9"/>
+        <CursorPos X="31" Y="3"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -90,9 +89,10 @@
       </Unit9>
       <Unit10>
         <Filename Value="perso.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <TopLine Value="6"/>
-        <CursorPos X="16" Y="44"/>
+        <CursorPos X="25" Y="42"/>
         <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit10>
@@ -113,122 +113,122 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="menuunit.pas"/>
-        <Caret Line="75" Column="32" TopLine="64"/>
+        <Caret Line="81" Column="15" TopLine="72"/>
       </Position1>
       <Position2>
         <Filename Value="menuunit.pas"/>
-        <Caret Line="81" Column="15" TopLine="72"/>
+        <Caret Line="84" Column="43" TopLine="71"/>
       </Position2>
       <Position3>
-        <Filename Value="menuunit.pas"/>
-        <Caret Line="84" Column="43" TopLine="71"/>
+        <Filename Value="crtperso.pas"/>
       </Position3>
       <Position4>
-        <Filename Value="crtperso.pas"/>
-      </Position4>
-      <Position5>
         <Filename Value="menuunit.pas"/>
         <Caret Line="89" Column="18" TopLine="79"/>
-      </Position5>
-      <Position6>
+      </Position4>
+      <Position5>
         <Filename Value="forge.pas"/>
         <Caret Line="10" Column="34"/>
-      </Position6>
-      <Position7>
+      </Position5>
+      <Position6>
         <Filename Value="menuunit.pas"/>
         <Caret Line="90" Column="12" TopLine="68"/>
+      </Position6>
+      <Position7>
+        <Filename Value="utilities.pas"/>
+        <Caret Line="301" Column="5" TopLine="263"/>
       </Position7>
       <Position8>
         <Filename Value="utilities.pas"/>
-        <Caret Line="301" Column="5" TopLine="263"/>
+        <Caret Line="22" Column="68" TopLine="16"/>
       </Position8>
       <Position9>
         <Filename Value="utilities.pas"/>
-        <Caret Line="22" Column="68" TopLine="16"/>
+        <Caret Line="272" Column="20" TopLine="251"/>
       </Position9>
       <Position10>
         <Filename Value="utilities.pas"/>
-        <Caret Line="272" Column="20" TopLine="251"/>
+        <Caret Line="50" Column="16" TopLine="12"/>
       </Position10>
       <Position11>
-        <Filename Value="utilities.pas"/>
-        <Caret Line="50" Column="16" TopLine="12"/>
-      </Position11>
-      <Position12>
         <Filename Value="perso.pas"/>
         <Caret Line="37" Column="35"/>
-      </Position12>
-      <Position13>
+      </Position11>
+      <Position12>
         <Filename Value="utilities.pas"/>
         <Caret Line="272" Column="19" TopLine="250"/>
+      </Position12>
+      <Position13>
+        <Filename Value="inventaire.pas"/>
+        <Caret Line="145" Column="18" TopLine="51"/>
       </Position13>
       <Position14>
         <Filename Value="inventaire.pas"/>
-        <Caret Line="145" Column="18" TopLine="51"/>
+        <Caret Line="28" Column="26" TopLine="8"/>
       </Position14>
       <Position15>
         <Filename Value="inventaire.pas"/>
-        <Caret Line="28" Column="26" TopLine="8"/>
+        <Caret Line="143" Column="40" TopLine="54"/>
       </Position15>
       <Position16>
         <Filename Value="inventaire.pas"/>
-        <Caret Line="143" Column="40" TopLine="54"/>
+        <Caret Line="138" Column="35" TopLine="54"/>
       </Position16>
       <Position17>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="138" Column="35" TopLine="54"/>
+        <Filename Value="forge.pas"/>
+        <Caret Line="187"/>
       </Position17>
       <Position18>
         <Filename Value="forge.pas"/>
-        <Caret Line="187"/>
+        <Caret Line="16" Column="40" TopLine="7"/>
       </Position18>
       <Position19>
         <Filename Value="forge.pas"/>
-        <Caret Line="16" Column="40" TopLine="7"/>
+        <Caret Line="7" Column="50"/>
       </Position19>
       <Position20>
         <Filename Value="forge.pas"/>
-        <Caret Line="7" Column="50"/>
+        <Caret Line="9" Column="34"/>
       </Position20>
       <Position21>
         <Filename Value="forge.pas"/>
-        <Caret Line="9" Column="34"/>
+        <Caret Line="20" Column="34"/>
       </Position21>
       <Position22>
         <Filename Value="forge.pas"/>
-        <Caret Line="20" Column="34"/>
+        <Caret Line="22" Column="20"/>
       </Position22>
       <Position23>
         <Filename Value="forge.pas"/>
-        <Caret Line="22" Column="20"/>
+        <Caret Line="49" Column="33" TopLine="8"/>
       </Position23>
       <Position24>
         <Filename Value="forge.pas"/>
-        <Caret Line="49" Column="33" TopLine="8"/>
+        <Caret Line="66" Column="57" TopLine="46"/>
       </Position24>
       <Position25>
         <Filename Value="forge.pas"/>
-        <Caret Line="66" Column="57" TopLine="46"/>
+        <Caret Line="133" Column="51" TopLine="84"/>
       </Position25>
       <Position26>
         <Filename Value="forge.pas"/>
-        <Caret Line="133" Column="51" TopLine="84"/>
+        <Caret Line="167" Column="51" TopLine="146"/>
       </Position26>
       <Position27>
         <Filename Value="forge.pas"/>
-        <Caret Line="167" Column="51" TopLine="146"/>
+        <Caret Line="205" Column="34" TopLine="183"/>
       </Position27>
       <Position28>
-        <Filename Value="forge.pas"/>
-        <Caret Line="205" Column="34" TopLine="183"/>
-      </Position28>
-      <Position29>
         <Filename Value="menuunit.pas"/>
         <Caret Line="90" Column="16" TopLine="69"/>
+      </Position28>
+      <Position29>
+        <Filename Value="mh.lpr"/>
+        <Caret Line="8" Column="39"/>
       </Position29>
       <Position30>
         <Filename Value="mh.lpr"/>
-        <Caret Line="8" Column="39"/>
+        <Caret Line="9" Column="10"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

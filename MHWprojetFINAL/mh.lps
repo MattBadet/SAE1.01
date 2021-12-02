@@ -8,6 +8,7 @@
       <Unit0>
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos X="31" Y="3"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
@@ -66,7 +67,6 @@
         <EditorIndex Value="5"/>
         <TopLine Value="210"/>
         <CursorPos X="17" Y="231"/>
-        <FoldState Value=" T3if0X0"/>
         <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -83,13 +83,11 @@
         <Filename Value="inventaire.pas"/>
         <EditorIndex Value="6"/>
         <CursorPos X="35" Y="20"/>
-        <FoldState Value=" T3iN0O6 T1jZ02p"/>
         <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="perso.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <TopLine Value="6"/>
         <CursorPos X="25" Y="42"/>
