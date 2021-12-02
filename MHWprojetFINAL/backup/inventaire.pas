@@ -24,6 +24,9 @@ procedure desequiperbottes(joueur:player;epe:armure);//DESEQUIPER DES BOTTES
 procedure desequiperbouclier(joueur:player;epe:armure);//DESEQUIPER UN BOUCLIER
 procedure afficheinv(joueur:player);//TEMP POUR LES TEST DE L'INV
 
+procedure deletepotion(obj:potion);//Enlever une potion de l'inventaire
+procedure deletebombe(obj:bombe); //Enlever une bombe de l'inventaire
+
 implementation
 
 procedure initialisationinv();
@@ -218,9 +221,27 @@ begin
      for i:=1 to length(joueur.eqarmure) do
         writeln(IntToStr(i) + ':' + joueur.eqarmure[i].nom);
      writeln('----------------------------------------- Armure Equipe');
-     writeln(IntToStr(i) + ':' + invarmure[i].nom);
+     writeln(IntToStr(i) + ':' + joueur.epee.nom);
 
   end;
+
+procedure deletepotion(obj:potion);
+begin
+  for i:=1 to length(invpotion) do
+  begin
+    if invpotion[i+1]=nullpotion then
+       invpotion[i]:=nullpotion;
+  end;
+end;
+
+procedure deletebombe(obj:potion);
+begin
+  for i:=1 to length(invpotion) do
+  begin
+    if invbombe[i+1]=nullbombe then
+       invbombe[i]:=nullbombe;
+  end;
+end;
 
 end.
 
