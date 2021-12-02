@@ -22,17 +22,17 @@ begin
 
   while rep do
   begin
-    choixU := 2;//afficheChambre(); //Récupération du choix de l'utilisateur
+    choixU := afficheChambre(); //Récupération du choix de l'utilisateur
 
     if (choixU = 1) then //Le joueur ouvre l'inventaire
     begin
-      //afficheInventairePerso();
+      afficheFichePerso();
     end
     else
     begin
       if (choixU = 2) then//le joueur va dormir
       begin
-        //litAffichage(dormi);
+        litAffichage(dormi);
 
         if dormi = FALSE then
         begin
@@ -59,16 +59,49 @@ var
   choixU : integer;
 
 begin
-  choixU := 1;//afficheMarchand;
+  choixU := afficheMarchand;
 
-  case choixU of
-  1:ajouterinvpotion(petitepotion);
-  2:ajouterinvpotion(moyennepotion);
-  3:ajouterinvpotion(grandepotion);
-  4:ajouterinvbombe(bombepetite);
-  5:ajouterinvbombe(bombemoyenne);
+  if (choixU = 1) AND (joueur.materiaux[6] >= 50) then
+  begin
+    ajouterinvpotion(petitepotion);
+    joueur.materiaux[6] := joueur.materiaux[6] - 50;
+  end
+  else
+  begin
+    if (choixU = 2) AND (joueur.materiaux[6] >= 150) then
+    begin
+      ajouterinvpotion(moyennepotion);
+      joueur.materiaux[6] := joueur.materiaux[6] - 150;
+    end
+    else
+    begin
+      if (choixU = 3) AND (joueur.materiaux[6] >= 400) then
+      begin
+        ajouterinvpotion(grandepotion);
+        joueur.materiaux[6] := joueur.materiaux[6] - 400;
+      end
+      else
+      begin
+        if (choixU = 4) AND (joueur.materiaux[6] >= 100) then
+        begin
+          ajouterinvbombe(bombepetite);
+          joueur.materiaux[6] := joueur.materiaux[6] - 100;
+        end
+        else
+        begin
+          if (choixU = 5) AND (joueur.materiaux[6] >= 250) then
+          begin
+            ajouterinvbombe(bombemoyenne);
+            joueur.materiaux[6] := joueur.materiaux[6] - 250;
+          end
+          else
+          begin
+            AffichagePasArgent;
+          end;
+        end;
+      end;
+    end;
   end;
-
 end;
 
 //Ville : choix entre les batiments et le combat
@@ -78,7 +111,7 @@ var
   choixU : integer; //Le choix de l'utilisateur (qu'es-ce qu'il veut faire)
 
 begin
-  choixU := 5;//afficheVille();
+  choixU := afficheVille();
 
   if choixU = 5 then
   dormi := FALSE;
@@ -87,7 +120,7 @@ begin
   1 : chambre(joueur, dormi);
   2 : marchand();
   3 : cantineMenu(joueur);
-  4 : forgeMenu();
+  4 : forgeMenu(joueur);
   5 : combat(joueur);
   else menuGeneral();
   end;
@@ -103,8 +136,8 @@ var
 
 begin
   dormi := FALSE;
-  //regles();
-  //joueur := afficheCreationPerso();
+  regles;
+  joueur := afficheCreationPerso();
   ville(joueur, dormi);
 end;
 
@@ -115,7 +148,7 @@ var
   choixU : boolean;
 
 begin
-  //choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
+  choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
 
   if choixU then
   nouvellePartie;
