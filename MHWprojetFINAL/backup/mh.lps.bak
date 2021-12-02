@@ -18,7 +18,7 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="135"/>
-        <CursorPos X="136" Y="142"/>
+        <CursorPos X="22" Y="141"/>
         <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -52,7 +52,6 @@
         <EditorIndex Value="2"/>
         <TopLine Value="277"/>
         <CursorPos X="5" Y="288"/>
-        <FoldState Value=" T3j50u$"/>
         <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -68,7 +67,6 @@
         <Filename Value="forge.pas"/>
         <EditorIndex Value="5"/>
         <CursorPos Y="20"/>
-        <FoldState Value=" T3J033 pj5jD0X3+"/>
         <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit7>
