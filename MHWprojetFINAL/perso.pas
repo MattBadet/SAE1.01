@@ -34,12 +34,12 @@ begin
   joueur.vieNue:=300;
   joueur.def:=0;
   joueur.atk:=0;
-  joueur.materiaux[1]:=1;
-  joueur.materiaux[2]:=2;
-  joueur.materiaux[3]:=3;
-  joueur.materiaux[4]:=4;
-  joueur.materiaux[5]:=5;
-  joueur.materiaux[6]:=6;
+  joueur.materiaux[1]:=0;
+  joueur.materiaux[2]:=0;
+  joueur.materiaux[3]:=0;
+  joueur.materiaux[4]:=0;
+  joueur.materiaux[5]:=0;
+  joueur.materiaux[6]:=0;
   joueur.xp:=0;
   joueur.epee:=nullarm;
 

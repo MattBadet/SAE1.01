@@ -4,7 +4,7 @@ unit combatUnit;
 
 interface
 
-uses utilities, inventaire, cantine, forge, perso, affichagemenu;
+uses utilities, inventaire, perso, affichagemenu;
 
 type
   race = (normal,dragon,demon);

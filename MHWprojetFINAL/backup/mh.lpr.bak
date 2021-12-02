@@ -1,5 +1,12 @@
 program mh;
 
+uses menuUnit,perso;
+
+var joueur:player;
+
 begin
+  joueur:=createjoueur('pol','homme');
+  afficheinv(joueur);
+  readln;
 end.
 

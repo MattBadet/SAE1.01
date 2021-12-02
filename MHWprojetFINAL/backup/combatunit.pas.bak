@@ -4,7 +4,7 @@ unit combatUnit;
 
 interface
 
-uses utilities, inventaire, cantine, forge, perso, affichagemenu;
+uses utilities, inventaire, cantine, perso, affichagemenu;
 
 type
   race = (normal,dragon,demon);
@@ -178,7 +178,7 @@ begin
       dU := (random(arme div 2) + (arme div 2)); //calcul des dégats que le joueur inflige au monstre
       reussite := random(100);
 
-      if Joueur.demoepee then //si l'épée est démoniaque, plus de chance de critique
+      if joueur.epee.material = 'reste' then //si l'épée est démoniaque, plus de chance de critique
       begin
         if ((reussite >= 20) AND (reussite <= 75)) then //Coup normal
         begin
@@ -244,7 +244,7 @@ var
 begin
   dM := random(round((((vieMi + vieMd) div 2) div 7) + ((((vieMi + vieMd) div 2) div 7) div 2) * 1.2)); //calcul des dégats que le monstre inglige au joueur
   reussite := random(100);
-                                       a
+
   if ((reussite >= 10) AND (reussite <= 80)) then //Le coup rate pas
   begin
     vieU := vieU - dM; //le monstre perd des pv
@@ -327,7 +327,7 @@ begin
   end; //while (vieU > 0) AND (vieM > 0) do
 
   if (vieU > 0) then
-  credit
+  //credit
   else
   joueur := loose(joueur);
 

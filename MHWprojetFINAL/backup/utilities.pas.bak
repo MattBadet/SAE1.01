@@ -268,7 +268,6 @@ casquescale: armure = (
         nom:'null';
         desc:'null';
         degat:0;
-        material:'null';
         idmaterial:0;
   );
   epeefer: arme = (
