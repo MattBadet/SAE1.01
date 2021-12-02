@@ -2,13 +2,13 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="11"/>
+    <Version Value="10"/>
     <BuildModes Active="Default"/>
     <Units Count="13">
       <Unit0>
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="20" Y="3"/>
+        <CursorPos X="7" Y="7"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -16,7 +16,7 @@
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="85"/>
+        <TopLine Value="102"/>
         <CursorPos X="5" Y="118"/>
         <UsageCount Value="15"/>
         <Loaded Value="True"/>
@@ -24,23 +24,24 @@
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
         <EditorIndex Value="11"/>
-        <TopLine Value="121"/>
-        <CursorPos X="34" Y="18"/>
+        <TopLine Value="175"/>
+        <CursorPos X="70" Y="131"/>
         <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="affichageobjet.pas"/>
         <UnitName Value="affichageObjet"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="10"/>
+        <TopLine Value="37"/>
         <UsageCount Value="14"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="cantine.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="63" Y="49"/>
+        <CursorPos X="48" Y="14"/>
         <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -48,8 +49,8 @@
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="160"/>
-        <CursorPos X="40" Y="181"/>
+        <TopLine Value="288"/>
+        <CursorPos X="20" Y="296"/>
         <FoldState Value=" T3M0N0131]3%"/>
         <UsageCount Value="15"/>
         <Loaded Value="True"/>
@@ -224,9 +225,5 @@
         <Caret Line="3" Column="20"/>
       </Position29>
     </JumpHistory>
-    <RunParams>
-      <FormatVersion Value="2"/>
-      <Modes Count="0" ActiveMode="default"/>
-    </RunParams>
   </ProjectSession>
 </CONFIG>
