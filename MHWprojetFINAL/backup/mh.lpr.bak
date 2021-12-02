@@ -1,5 +1,10 @@
 program mh;
 
+uses menuUnit,perso;
+
 begin
+  joueur:=createjoueur('pol','homme');
+  afficheinv(joueur);
+  readln;
 end.
 

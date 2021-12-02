@@ -4,7 +4,7 @@ unit combatUnit;
 
 interface
 
-uses utilities, inventaire, cantine, forge, perso, affichagemenu;
+uses utilities, inventaire, perso, affichagemenu;
 
 type
   race = (normal,dragon,demon);
@@ -171,7 +171,7 @@ begin
   while rep do
   begin
     rep := FALSE;
-    choixA := TRUE;//menuCombat; //le joueur attaque ou va dans son inventaire
+    choixA := afficheMenuCombat; //le joueur attaque ou va dans son inventaire
 
     if (choixA = TRUE) then //si le joueur décide d'attaquer
     begin
@@ -203,11 +203,11 @@ begin
     end
     else //le joueur ouvre son inventaire
     begin
-      idObjet := 0;//afficheInventaire();
+      idObjet := afficheInventaire();
       if (idObjet = 0) then
       rep := TRUE
       else
-      //UtiliserObjet(idObjet);
+      UtiliserObjet(idObjet);
     end; //if (choixA = TRUE) then
     result := vieMd;
   end; //rep si joueur décide de simplement regarder son inventaire
@@ -272,20 +272,20 @@ begin
   arme := joueur.atk;
 
 
-  //afficheCombat(monstreActu);
+  afficheCombat(monstreActu.id);
 
-  if (vieU > vieMd) then //si le joeur a plus de vie que le monstre il commence
+  if (vieU > vieMd) then //si le joueur a plus de vie que le monstre il commence
   vieMd := tourJ(vieMd, arme, joueur);
-  //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+  afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
   begin
     vieU := tourM(vieMi, vieMd, vieU); //Tour du monstre
-    //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
     vieMd := tourJ(vieMd, arme, joueur); //Tour du joueur
-    //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
 
@@ -313,21 +313,21 @@ begin
   vieMd := vieMi;
   arme := joueur.atk;
 
-  //afficheCombat(boss);
+  afficheCombat(boss.id);
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
   begin
     vieU := tourBoss(vieMi, vieMd, vieU); //Tour du boss
-    //attaqueBoss(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
     vieMd := tourJ(vieMd, arme,joueur); //Tour du joueur
-    //attaqueBoss(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
 
   if (vieU > 0) then
-  //credit
+  credit
   else
   joueur := loose(joueur);
 
