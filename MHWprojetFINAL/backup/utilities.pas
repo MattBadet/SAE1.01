@@ -8,45 +8,52 @@ uses
   Classes, SysUtils;
 
 type
+  //RECORD BOMBE
   bombe = packed record
     nom:string;
     desc:string;
     degat:integer;
     prix:integer;
   end;
-
+  //RECORD POTION
   potion = packed record
     nom:string;
     desc:string;
     effet:integer;
     prix:integer;
   end;
+  //RECORD OBJET
   objet = packed record
     nom:string;
     desc:string;
     stack:integer;
   end;
+  //RECORD ARME
   arme = packed record
     nom:string;
     desc:string;
     degat:integer;
     material:string;
+    idmaterial: integer;
+    id: integer;
   end;
+  //RECORD ARMURE
   armure = packed record
     nom:string;
     desc:string;
     partie:string;
     def:integer;
     material:string;
+    idmaterial: integer;
+    id: integer;
   end;
 
 var
   //INVENTAIRES
-  invobjet:array[1..15] of objet;
   invarme:array[1..15] of arme;
   invpotion:array[1..5] of potion;
   invbombe:array[1..3] of bombe;
-  invarmure:array[1..5] of armure;
+  invarmure:array[1..15] of armure;
   choix,i:integer;
 const
   //ARMURE
@@ -56,6 +63,8 @@ const
               partie:'null';
               def:0;
               material:'null';
+              idmaterial: 0;
+              id: 0;
   );
 //CUIRE
   casquecuire: armure = (
@@ -64,6 +73,8 @@ const
                partie:'casque';
                def:150;
                material:'cuire';
+               idmaterial: 1;
+               id: 1;
   );
   plastroncuire: armure = (
                nom:'plastron en cuire';
@@ -71,6 +82,8 @@ const
                partie:'plastron';
                def:5;
                material:'cuire';
+               idmaterial: 1;
+               id: 2;
   );
   jambierecuire: armure = (
                nom:'jambiere en cuire';
@@ -78,6 +91,8 @@ const
                partie:'jambiere';
                def:150;
                material:'cuire';
+               idmaterial: 1;
+               id: 3;
   );
   bottescuire: armure = (
                nom:'bottes en cuire';
@@ -85,6 +100,8 @@ const
                partie:'bottes';
                def:150;
                material:'cuire';
+               idmaterial: 1;
+               id: 4;
   );
 //FER
   casquefer: armure = (
@@ -93,6 +110,8 @@ const
                partie:'casque';
                def:250;
                material:'fer';
+               idmaterial: 2;
+               id: 5;
   );
   plastronfer: armure = (
                nom:'plastron en fer';
@@ -100,6 +119,8 @@ const
                partie:'plastron';
                def:250;
                material:'fer';
+               idmaterial: 2;
+               id: 6;
   );
   jambierefer: armure = (
                nom:'jambiere en fer';
@@ -107,6 +128,8 @@ const
                partie:'jambiere';
                def:250;
                material:'fer';
+               idmaterial: 2;
+               id: 7;
   );
   bottesfer: armure = (
                nom:'bottes en fer';
@@ -114,6 +137,8 @@ const
                partie:'bottes';
                def:250;
                material:'fer';
+               idmaterial: 2;
+               id: 8;
   );
   bouclierfer: armure = (
                nom:'bouclier en fer';
@@ -121,6 +146,8 @@ const
                partie:'bouclier';
                def:250;
                material:'fer';
+               idmaterial: 2;
+               id: 9;
   );
 //ACIER
 casqueacier: armure = (
@@ -129,6 +156,8 @@ casqueacier: armure = (
                partie:'casque';
                def:15;
                material:'acier';
+               idmaterial: 3;
+               id: 10;
   );
   plastronacier: armure = (
                nom:'plastron en acier';
@@ -136,6 +165,8 @@ casqueacier: armure = (
                partie:'plastron';
                def:15;
                material:'acier';
+               idmaterial: 3;
+               id: 11;
   );
   jambiereacier: armure = (
                nom:'jambiere en acier';
@@ -143,6 +174,8 @@ casqueacier: armure = (
                partie:'jambiere';
                def:15;
                material:'acier';
+               idmaterial: 3;
+               id: 12;
   );
   bottesacier: armure = (
                nom:'bottes en acier';
@@ -150,6 +183,8 @@ casqueacier: armure = (
                partie:'bottes';
                def:15;
                material:'acier';
+               idmaterial: 3;
+               id: 13;
   );
   bouclieracier: armure = (
                nom:'bouclier en fer';
@@ -157,6 +192,8 @@ casqueacier: armure = (
                partie:'bouclier';
                def:15;
                material:'acier';
+               idmaterial: 3;
+               id: 14;
   );
 //ECAILLE DE DRAGON
 casquescale: armure = (
@@ -165,6 +202,8 @@ casquescale: armure = (
                partie:'casque';
                def:10;
                material:'scale';
+               idmaterial: 4;
+               id: 15;
   );
   plastronscale: armure = (
                nom:'plastron en écaille de dragon';
@@ -172,6 +211,8 @@ casquescale: armure = (
                partie:'plastron';
                def:10;
                material:'scale';
+               idmaterial: 4;
+               id: 16;
   );
   jambierescale: armure = (
                nom:'jambiere en écaille de dragon';
@@ -179,6 +220,8 @@ casquescale: armure = (
                partie:'jambiere';
                def:10;
                material:'scale';
+               idmaterial: 4;
+               id: 17;
   );
   bottesscale: armure = (
                nom:'bottes en écaille de dragon';
@@ -186,6 +229,8 @@ casquescale: armure = (
                partie:'bottes';
                def:10;
                material:'scale';
+               idmaterial: 4;
+               id: 18;
   );
   bouclierscale: armure = (
                nom:'bouclier en écaille de dragon';
@@ -193,6 +238,8 @@ casquescale: armure = (
                partie:'bouclier';
                def:10;
                material:'scale';
+               idmaterial: 4;
+               id: 19;
   );
   //BOMBE
   nullbombe: bombe = (
@@ -243,55 +290,49 @@ casquescale: armure = (
         nom:'null';
         desc:'null';
         degat:0;
+        material:'null';
+        idmaterial:0;
+        id: 0;
+  );
+  epeebois: arme = (
+         nom:'epee en bois';
+         desc:'pour le combat';
+         degat:25;
+         material: 'bois';
+         idmaterial: 2;
+         id: 20;
   );
   epeefer: arme = (
          nom:'epee en fer';
          desc:'pour le combat';
-         degat:5;
+         degat:50;
          material: 'fer';
+         idmaterial: 2;
+         id: 21;
   );
   epeeacier: arme = (
          nom:'epee en acier';
          desc:'pour le combat';
-         degat:5;
+         degat:100;
          material: 'acier';
+         idmaterial: 3;
+         id: 22;
   );
   epeescale: arme = (
          nom:'epee en écaille de dragon';
          desc:'pour le combat';
-         degat:5;
+         degat:200;
          material: 'scale';
+         idmaterial: 4;
+         id: 23;
   );
   epeedemo: arme = (
          nom:'epee en reste démoniaque';
          desc:'pour le combat';
-         degat:5;
+         degat:250;
          material: 'reste';
-  );
-  nullobj: objet = (
-           nom:'null';
-           desc:'null';
-  );
-  //OBJET
-  fer: objet = (
-       nom:'fer';
-       desc:'fer';
-       stack:1;
-  );
-  acier: objet = (
-       nom:'acier';
-       desc:'acier';
-       stack:1;
-  );
-  scale: objet = (
-       nom:'scale';
-       desc:'scale';
-       stack:1;
-  );
-  reste: objet = (
-       nom:'reste';
-       desc:'reste démoniaque';
-       stack:1;
+         idmaterial:5;
+         id: 24;
   );
 
 implementation

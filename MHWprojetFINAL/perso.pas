@@ -17,6 +17,7 @@ type
     def:integer;
     atk:integer;
     materiaux:array[1..6] of integer;
+    eqarmure:array[1..5] of armure;
     xp:integer;
     epee:arme;
   end;
@@ -40,6 +41,12 @@ begin
   joueur.materiaux[4]:=0;
   joueur.materiaux[5]:=0;
   joueur.materiaux[6]:=0;
+  joueur.eqarmure[1]:=nullarmure;
+  joueur.eqarmure[2]:=nullarmure;
+  joueur.eqarmure[3]:=nullarmure;
+  joueur.eqarmure[4]:=nullarmure;
+  joueur.eqarmure[5]:=nullarmure;
+  joueur.eqarmure[6]:=nullarmure;
   joueur.xp:=0;
   joueur.epee:=nullarm;
 

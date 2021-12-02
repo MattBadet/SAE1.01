@@ -51,9 +51,9 @@ type
 var
   //INVENTAIRES
   invarme:array[1..15] of arme;
+  invarmure:array[1..15] of armure;
   invpotion:array[1..5] of potion;
   invbombe:array[1..3] of bombe;
-  invarmure:array[1..5] of armure;
   choix,i:integer;
 const
   //ARMURE

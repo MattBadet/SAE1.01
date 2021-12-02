@@ -8,17 +8,21 @@ uses
   Classes, SysUtils, utilities, perso;
 
 procedure initialisationinv();//INITIALISATION DE L'INVENTAIRE
-procedure ajouterinvobjet(obj:objet);//AJOUT D'UN ITEM DANS L'INVENTAIRE OBJET
 procedure ajouterinvarme(obj:arme);//AJOUT D'UN ITEM DANS L'INVENTAIRE ARME
 procedure ajouterinvbombe(obj:bombe);//AJOUT D'UN ITEM DANS L'INVENTAIRE BOMBE
 procedure ajouterinvpotion(obj:potion);//AJOUT D'UN ITEM DANS L'INVENTAIRE POTION
-procedure equipercasque(epe:armure);//EQUIPER UN CASQUE
-procedure equiperplastron(epe:armure);//EQUIPER UN PLASTRON
-procedure equiperjambiere(epe:armure);//EQUIPER UNE JAMBIERE
-procedure equiperbottes(epe:armure);//EQUIPER DES BOTTES
-procedure equiperbouclier(epe:armure);//EQUIPER UN BOUCLIER
-procedure equiperepee(joueur:player;obj:arme);//EQUIPER UNE EPEE
-procedure afficheinv();
+procedure equipercasque(joueur:player;epe:armure);//EQUIPER UN CASQUE
+procedure equiperplastron(joueur:player;epe:armure);//EQUIPER UN PLASTRON
+procedure equiperjambiere(joueur:player;epe:armure);//EQUIPER UNE JAMBIERE
+procedure equiperbottes(joueur:player;epe:armure);//EQUIPER DES BOTTES
+procedure equiperbouclier(joueur:player;epe:armure);//EQUIPER UN BOUCLIER
+procedure desequiperepee(joueur:player;obj:arme);//DESEQUIPER UNE EPEE
+procedure desequipercasque(joueur:player;epe:armure);//DESEQUIPER UN CASQUE
+procedure desequiperplastron(joueur:player;epe:armure);//DESEQUIPER UN PLASTRON
+procedure desequiperjambiere(joueur:player;epe:armure);//DESEQUIPER UNE JAMBIERE
+procedure desequiperbottes(joueur:player;epe:armure);//DESEQUIPER DES BOTTES
+procedure desequiperbouclier(joueur:player;epe:armure);//DESEQUIPER UN BOUCLIER
+procedure afficheinv(joueur:player);//TEMP POUR LES TEST DE L'INV
 
 implementation
 
@@ -27,8 +31,6 @@ var i:integer;
 begin
   for i:=1 to length(invarme) do
      invarme[i]:=nullarm;
-  for i:=1 to length(invobjet) do
-     invobjet[i]:=nullobj;
   for i:=1 to length(invbombe) do
      invbombe[i]:=nullbombe;
   for i:=1 to length(invpotion) do
@@ -36,37 +38,7 @@ begin
   for i:=1 to length(invarmure) do
      invarmure[i]:=nullarmure;
 end;
-procedure equiperepee(joueur:player;obj:arme);
-begin
-  joueur.epee:=obj;
-end;
 
-procedure ajouterinvobjet(obj:objet);
-var
-  fini:Boolean;
-  y:integer;
-begin
-  y:=1;
-  fini:=False;
-  while fini = False do
-  begin
-    if invobjet[y].nom = obj.nom then
-    begin
-       if invobjet[y].stack < 5 then
-          invobjet[y].stack:=invobjet[y].stack+1;
-       fini:=True;
-    end
-    else if invobjet[y].nom = 'null' then
-    begin
-       invobjet[y]:=obj;
-       fini:=True
-    end
-    else if invobjet[y].nom <> 'null' then
-    begin
-       y:=y+1;
-    end;
-  end;
-end;
 procedure ajouterinvarme(obj:arme);
 var
   fini:Boolean;
@@ -92,7 +64,6 @@ begin
     end;
   end;
 end;
-
 procedure ajouterinvbombe(obj:bombe);
 var
   fini:Boolean;
@@ -143,33 +114,94 @@ begin
     end;
   end;
 end;
-procedure equipercasque(epe:armure);
+procedure ajouterinvarmure(obj:armure);
+var
+  fini:Boolean;
+  y:integer;
 begin
-  invarmure[1]:=epe;
-end;
-procedure equiperplastron(epe:armure);
-begin
-  invarmure[2]:=epe;
-end;
-procedure equiperjambiere(epe:armure);
-begin
-  invarmure[3]:=epe;
-end;
-procedure equiperbottes(epe:armure);
-begin
-  invarmure[4]:=epe;
-end;
-procedure equiperbouclier(epe:armure);
-begin
-  invarmure[5]:=epe;
+  y:=1;
+  fini:=False;
+  while fini = False do
+  begin
+    if invarmure[y].nom = 'null' then
+    begin
+       invarmure[y]:=obj;
+       fini:=True
+    end;
+    if invarmure[y].nom <> 'null' then
+    begin
+       y:=y+1;
+       if y > length(invarmure) then
+       begin
+          fini:=True;
+          writeln('inventory full');
+       end;
+    end;
+  end;
 end;
 
-procedure afficheinv();
+procedure equiperepee(joueur:player;obj:arme);
+begin
+  joueur.epee:=obj;
+end;
+procedure equipercasque(joueur:player;epe:armure);
+begin
+  joueur.eqarmure[1]:=epe;
+end;
+procedure equiperplastron(joueur:player;epe:armure);
+begin
+  joueur.eqarmure[2]:=epe;
+end;
+procedure equiperjambiere(joueur:player;epe:armure);
+begin
+  joueur.eqarmure[3]:=epe;
+end;
+procedure equiperbottes(joueur:player;epe:armure);
+begin
+  joueur.eqarmure[4]:=epe;
+end;
+procedure equiperbouclier(joueur:player;epe:armure);
+begin
+  joueur.eqarmure[5]:=epe;
+end;
+
+procedure desequiperepee(joueur:player;obj:arme);
+begin
+  ajouterinvarme(joueur.epee);
+  joueur.epee:=nullarm;
+end;
+procedure desequipercasque(joueur:player;epe:armure);
+begin
+  ajouterinvarmure(joueur.eqarmure[1]);
+  joueur.eqarmure[1]:=nullarmure;
+end;
+procedure desequiperplastron(joueur:player;epe:armure);
+begin
+  ajouterinvarmure(joueur.eqarmure[2]);
+  joueur.eqarmure[2]:=nullarmure;
+end;
+procedure desequiperjambiere(joueur:player;epe:armure);
+begin
+  ajouterinvarmure(joueur.eqarmure[3]);
+  joueur.eqarmure[3]:=nullarmure;
+end;
+procedure desequiperbottes(joueur:player;epe:armure);
+begin
+  ajouterinvarmure(joueur.eqarmure[4]);
+  joueur.eqarmure[4]:=nullarmure;
+end;
+procedure desequiperbouclier(joueur:player;epe:armure);
+begin
+  ajouterinvarmure(joueur.eqarmure[5]);
+  joueur.eqarmure[5]:=nullarmure;
+end;
+
+procedure afficheinv(joueur:player);
 var i:integer;
 begin
      writeln('----------------------------------------- Objet');
-     for i:=1 to length(invobjet) do
-        writeln(IntToStr(i) + ':' + invobjet[i].nom ,'  ',invobjet[i].stack );
+     for i:=1 to length(joueur.materiaux) do
+        writeln(i,'  ',joueur.materiaux[i] );
      writeln('----------------------------------------- Arme');
      for i:=1 to length(invarme) do
         writeln(IntToStr(i) + ':' + invarme[i].nom);
@@ -182,6 +214,12 @@ begin
      writeln('----------------------------------------- Armure');
      for i:=1 to length(invarmure) do
         writeln(IntToStr(i) + ':' + invarmure[i].nom);
+     writeln('----------------------------------------- Arme Equipe');
+     for i:=1 to length(joueur.eqarmure) do
+        writeln(IntToStr(i) + ':' + joueur.eqarmure[i].nom);
+     writeln('----------------------------------------- Armure Equipe');
+     writeln(IntToStr(i) + ':' + invarmure[i].nom);
+
   end;
 
 end.

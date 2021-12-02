@@ -19,9 +19,10 @@ type
     materiaux:array[1..6] of integer;
     xp:integer;
     epee:arme;
+    eqarmure:array[1..5] of armure;
   end;
 
-function createjoueur(nom,sexe:string):player;
+function createjoueur(nom,sexe:string):player;//INITIALISATION DU JOUEUR
 
 implementation
 
@@ -34,12 +35,18 @@ begin
   joueur.vieNue:=300;
   joueur.def:=0;
   joueur.atk:=0;
-  joueur.materiaux[1]:=1;
-  joueur.materiaux[2]:=2;
-  joueur.materiaux[3]:=3;
-  joueur.materiaux[4]:=4;
-  joueur.materiaux[5]:=5;
-  joueur.materiaux[6]:=6;
+  joueur.materiaux[1]:=0;
+  joueur.materiaux[2]:=0;
+  joueur.materiaux[3]:=0;
+  joueur.materiaux[4]:=0;
+  joueur.materiaux[5]:=0;
+  joueur.materiaux[6]:=0;
+  joueur.eqarmure[1]:=nullarmure;
+  joueur.eqarmure[2]:=nullarmure;
+  joueur.eqarmure[3]:=nullarmure;
+  joueur.eqarmure[4]:=nullarmure;
+  joueur.eqarmure[5]:=nullarmure;
+  joueur.eqarmure[6]:=nullarmure;
   joueur.xp:=0;
   joueur.epee:=nullarm;
 
