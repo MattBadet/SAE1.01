@@ -3,6 +3,8 @@ program mh;
 uses menuUnit,perso;
 
 begin
-  menuUnit
+  joueur:=createjoueur('pol','homme');
+  afficheinv(joueur);
+  readln;
 end.
 

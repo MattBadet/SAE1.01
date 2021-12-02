@@ -120,7 +120,7 @@ begin
   1 : chambre(joueur, dormi);
   2 : marchand();
   3 : cantineMenu(joueur);
-  4 : forgeMenu();
+  4 : forgeMenu(joueur);
   5 : combat(joueur);
   else menuGeneral();
   end;

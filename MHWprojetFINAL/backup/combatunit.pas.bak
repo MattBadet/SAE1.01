@@ -4,7 +4,7 @@ unit combatUnit;
 
 interface
 
-uses utilities, inventaire, cantine, forge, perso, affichagemenu;
+uses utilities, inventaire, cantine, perso, affichagemenu;
 
 type
   race = (normal,dragon,demon);
@@ -327,7 +327,7 @@ begin
   end; //while (vieU > 0) AND (vieM > 0) do
 
   if (vieU > 0) then
-  credit
+  //credit
   else
   joueur := loose(joueur);
 
