@@ -121,10 +121,6 @@ begin
       2:affichage(95,3,'dragon2');
       4:affichage(80,2,'phoenix');
     end;
-    dessinerCadreXY(70,5,80,7,simple,white,black);
-    ecrireEnPositionXY(72,6,'Inventaire');
-    dessinerCadreXY(70,9,80,11,simple,white,black);
-    ecrireEnPositionXY(72,10,'Combattre');
     vie(210,250,105,28);
 end;
 
