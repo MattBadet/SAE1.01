@@ -115,7 +115,7 @@ var
   choixU : boolean;
 
 begin
-  choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
+  //choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
 
   if choixU then
   nouvellePartie;
