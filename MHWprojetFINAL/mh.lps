@@ -2,14 +2,14 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <BuildModes Active="Default"/>
     <Units Count="13">
       <Unit0>
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="15" Y="6"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -19,15 +19,14 @@
         <EditorIndex Value="1"/>
         <TopLine Value="24"/>
         <CursorPos X="25" Y="44"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
         <EditorIndex Value="10"/>
-        <TopLine Value="109"/>
-        <CursorPos X="52" Y="8"/>
-        <UsageCount Value="18"/>
+        <CursorPos X="28" Y="14"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -35,14 +34,14 @@
         <UnitName Value="affichageObjet"/>
         <EditorIndex Value="9"/>
         <CursorPos X="27" Y="48"/>
-        <UsageCount Value="18"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="cantine.pas"/>
         <EditorIndex Value="4"/>
         <CursorPos X="17"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -50,8 +49,7 @@
         <UnitName Value="combatUnit"/>
         <EditorIndex Value="2"/>
         <CursorPos X="14" Y="12"/>
-        <FoldState Value=" T3M0N3 pj7jg08[948jS0J3?"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -59,7 +57,7 @@
         <UnitName Value="crtPerso"/>
         <EditorIndex Value="11"/>
         <TopLine Value="50"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -67,7 +65,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="4"/>
         <CursorPos Y="20"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -76,7 +74,7 @@
         <EditorIndex Value="8"/>
         <TopLine Value="320"/>
         <CursorPos X="11" Y="135"/>
-        <UsageCount Value="18"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -84,7 +82,7 @@
         <EditorIndex Value="6"/>
         <TopLine Value="224"/>
         <CursorPos X="23" Y="228"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -92,7 +90,7 @@
         <EditorIndex Value="7"/>
         <TopLine Value="15"/>
         <CursorPos X="25" Y="37"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -100,7 +98,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="252"/>
         <CursorPos X="14" Y="254"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -109,7 +107,7 @@
         <UsageCount Value="8"/>
       </Unit12>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="30" HistoryIndex="28">
       <Position1>
         <Filename Value="menuunit.pas"/>
         <Caret Line="87" Column="28" TopLine="79"/>
@@ -219,18 +217,22 @@
         <Caret Line="232" Column="23" TopLine="214"/>
       </Position27>
       <Position28>
-        <Filename Value="utilities.pas"/>
-        <Caret Line="49" Column="25" TopLine="57"/>
-      </Position28>
-      <Position29>
         <Filename Value="combatunit.pas"/>
         <Caret Line="164" Column="3" TopLine="150"/>
-      </Position29>
-      <Position30>
+      </Position28>
+      <Position29>
         <Filename Value="affichagemenu.pas"/>
         <Caret Line="14" Column="28"/>
+      </Position29>
+      <Position30>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="44" Column="25" TopLine="24"/>
       </Position30>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
   <Debugging>
     <BreakPoints Count="1">

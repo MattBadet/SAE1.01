@@ -5,12 +5,12 @@ unit affichagemenu;
 
 interface
 uses
-  Classes, SysUtils, GestionEcran, affichageObjet, crtperso;
+  Classes, SysUtils, GestionEcran, affichageObjet;
 
-procedure precombat(); // ecran de liaison entre la ville et le combat
-function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
-procedure regles(); // affiche les règles et le synopsis
+function afficheVille():Integer; // Affichage du menu d'une partie
+procedure credit(); // Affichage des crédits
 function afficheCreationPerso():player; // menu de la création du personnage
+procedure regles(); // affiche les règles et le synopsis
 function afficheMenuPrincipale():Boolean; // menu de la ville
 
 implementation
@@ -90,43 +90,18 @@ begin
     write('`\ /''');
 end;
 
-procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
+procedure vie(pv,pvMax,x,y:Integer);
 var
   i:Integer;
 begin
     dessinerCadreXY(x,y,x+10,y+2,simple,white,black);
     deplacerCurseurXY(x+1,y+1);
     couleurTexte(Green);
-    for i:=1 to (pv div(pvMax div 10)) do  // en fonction du pourcentage de vie remplie une barre de vie
-        write('█');                       // par tranche de 10%
+    for i:=1 to (pv div(pvMax div 10)) do
+        write('█');
     deplacerCurseurXY(x+2,y+3);
     couleurTexte(white);
-    write(pv:4,'/',pvMax:4);
-end;
-
-procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero); // renouvelle les pv à chaque tour
-begin
-    vie(pvHero,pvMaxHero,19,27);
-    vie(pvMonstre,pvMaxMonstre,19,27);
-end;
-
-function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
-var
-  choix:Integer; // choix du menu
-begin
-    dessinerCadreXY(68,5,82,7,simple,white,black);
-    ecrireEnPositionXY(70,6,'1 - Inventaire');
-    dessinerCadreXY(68,9,82,11,simple,white,black);
-    ecrireEnPositionXY(70,10,'2 - Combattre');
-    dessinerCadreXY(68,13,82,15,simple,white,black);
-    ecrireEnPositionXY(70,17,'Votre choix : ');
-    readln(choix);
-    case choix of
-      1:Result:=False;
-      2:Result:=True;
-      else
-        Result:=afficheMenuCombat();
-    end;
+    write(pv,'/',pvMax);
 end;
 
 procedure afficheCombat(monstre:Integer); // fenêtre de combat
@@ -140,6 +115,10 @@ begin
       2:affichage(95,3,'dragon2');
       4:affichage(80,2,'phoenix');
     end;
+    dessinerCadreXY(70,5,80,7,simple,white,black);
+    ecrireEnPositionXY(72,6,'Inventaire');
+    dessinerCadreXY(70,9,80,11,simple,white,black);
+    ecrireEnPositionXY(72,10,'Combattre');
     vie(210,250,105,28);
 end;
 
@@ -149,6 +128,8 @@ begin
 end;
 
 procedure afficheInventaire(); // afffichage de l'inventaire
+var
+  x,y,i:Integer;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,33,simple,white,black);
@@ -157,29 +138,12 @@ begin
     write('Inventaire');
     dessinerCadreXY(2,3,40,32,simple,white,black);
     dessinerCadreXY(42,3,146,32,simple,white,black);
-    deplacerCurseurXY(18,4);
-    write('Objet');
-    // test remplissage inventaire
-    deplacerCurseurXY(5,6);
-    write('Inventaire');
-    deplacerCurseurXY(5,8);
-    write('Inventaire');
-    deplacerCurseurXY(5,10);
-    write('Inventaire');
-    deplacerCurseurXY(5,12);
-    write('Inventaire');
-    deplacerCurseurXY(5,14);
-    write('Inventaire');
-    deplacerCurseurXY(5,16);
-    write('Inventaire');
-    deplacerCurseurXY(5,18);
-    write('Inventaire');
-    deplacerCurseurXY(5,20);
-    write('Inventaire');
-    deplacerCurseurXY(5,22);
-    write('Inventaire');
-    deplacerCurseurXY(5,24);
-    write('Inventaire');
+    ecrireEnPositionXY(18,4,'Objet');
+    // remplissage inventaire
+    x:=5;
+    y:=6;
+    for i:=0 to length(inventaire) do
+        ecrireEnPositionXY(x,y+2*i,inventaire.nomObjet);
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,24,144,31,simple,white,black);
@@ -195,40 +159,26 @@ begin
 end;
 
 procedure afficheForge(); // afffichage de la forge
+var
+  x,y,i:Integer;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
     dessinerCadreXY(71,0,79,2,simple,white,black);
     deplacerCurseurXY(73,1);
     write('Forge');
-    dessinerCadreXY(2,3,40,30,simple,white,black);      // objets disponibles
-    dessinerCadreXY(42,3,146,30,simple,white,black);   // crafts
+    dessinerCadreXY(2,3,40,30,simple,white,black);     // objets disponibles
+    dessinerCadreXY(42,3,146,30,simple,white,black);  // crafts
     dessinerCadreXY(2,31,146,33,simple,white,black); // resources
     deplacerCurseurXY(5,32);
     write('Ressources Disponilbes : X trucs  X machins ....');
     deplacerCurseurXY(18,4);
     write('Objet');
     // test remplissage forge
-    deplacerCurseurXY(5,6);
-    write('Objet Forge');
-    deplacerCurseurXY(5,8);
-    write('Objet Forge');
-    deplacerCurseurXY(5,10);
-    write('Objet Forge');
-    deplacerCurseurXY(5,12);
-    write('Objet Forge');
-    deplacerCurseurXY(5,14);
-    write('Objet Forge');
-    deplacerCurseurXY(5,16);
-    write('Objet Forge');
-    deplacerCurseurXY(5,18);
-    write('Objet Forge');
-    deplacerCurseurXY(5,20);
-    write('Objet Forge');
-    deplacerCurseurXY(5,22);
-    write('Objet Forge');
-    deplacerCurseurXY(5,24);
-    write('Objet Forge');
+    x:=5;
+    y:=6;
+    for i:=0 to length(inventaire) do
+        ecrireEnPositionXY(x,y+2*i,forge.nomObjet);
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
@@ -249,40 +199,26 @@ begin
 end;
 
 procedure afficheMarchand(); // afffichage du marchand
+var
+  x,y,i:Integer;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
     dessinerCadreXY(69,0,81,2,simple,white,black);
     deplacerCurseurXY(71,1);
     write('Marchand');
-    dessinerCadreXY(2,3,40,30,simple,white,black);     // objets disponibles
-    dessinerCadreXY(42,3,146,33,simple,white,black);  // crafts
+    dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
+    dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     deplacerCurseurXY(5,32);
     write('Pièces d''Or Disponilbes : Xpo');
     deplacerCurseurXY(18,4);
     write('Objet');
-    // test remplissage forge
-    deplacerCurseurXY(5,6);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,8);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,10);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,12);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,14);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,16);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,18);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,20);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,22);
-    write('Objet Marchand');
-    deplacerCurseurXY(5,24);
-    write('Objet Marchand');
+    // remplissage marchand
+    x:=5;
+    y:=6;
+    for i:=0 to length(inventaire) do
+        ecrireEnPositionXY(x,y+2*i,marchand.nomObjet);
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
@@ -296,33 +232,28 @@ begin
     // Module Marchand
     dessinerCadreXY(3,0,37,16,simple,white,black);
     affichage(5,3,'marchand');
-    deplacerCurseurXY(15,15);
-    write('1 - Marchand');
+    ecrireEnPositionXY(15,15,'1 - Marchand');
     // Module Cantine
     dessinerCadreXY(41,0,75,16,simple,white,black);
     affichage(48,4,'burger');
-    deplacerCurseurXY(53,15);
-    write('2 - Cantine');
+    ecrireEnPositionXY(53,15,'2 - Cantine');
     // Module Forge
     dessinerCadreXY(79,0,113,16,simple,white,black);
     affichage(89,7,'enclume');
-    deplacerCurseurXY(93,15);
-    write('3 - Forge');
+    ecrireEnPositionXY(93,15,'3 - Forge');
     // Module Chambre
     dessinerCadreXY(116,0,147,16,simple,white,black);
     affichage(122,1,'lit');
-    deplacerCurseurXY(128,15);
-    write('4 - Chambre');
+    ecrireEnPositionXY(128,15,'4 - Chambre');
     // Module Combat
     dessinerCadreXY(5,19,90,32,simple,white,black);
     affichage(8,20,'epee');
-    deplacerCurseurXY(43,31);
-    write('5 - Partir en Chasse');
+    ecrireEnPositionXY(43,31,'5 - Partir en Chasse');
     // Module Exit
     dessinerCadreXY(110,19,144,32,simple,white,black);
     affichage(120,20,'croix');
-    deplacerCurseurXY(121,31);
-    write('6 - Quitter');
+    ecrireEnPositionXY(121,31,'6 - Quitter');
+    // Réponse (choix du menu)
     ecrireEnPositionXY(17,70,'Votre Choix : ');
     readln(choix);
     case choix of

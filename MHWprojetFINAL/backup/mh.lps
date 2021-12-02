@@ -2,113 +2,111 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="11"/>
+    <Version Value="10"/>
     <BuildModes Active="Default"/>
     <Units Count="13">
       <Unit0>
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="15" Y="6"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="118"/>
-        <CursorPos X="75" Y="121"/>
-        <UsageCount Value="17"/>
+        <TopLine Value="24"/>
+        <CursorPos X="25" Y="44"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
-        <EditorIndex Value="11"/>
-        <CursorPos X="23" Y="16"/>
-        <UsageCount Value="16"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="109"/>
+        <CursorPos X="52" Y="8"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="affichageobjet.pas"/>
         <UnitName Value="affichageObjet"/>
-        <EditorIndex Value="10"/>
-        <TopLine Value="37"/>
+        <EditorIndex Value="9"/>
         <CursorPos X="27" Y="48"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="cantine.pas"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="14"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="17"/>
-        <UsageCount Value="17"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="161"/>
-        <CursorPos X="15" Y="180"/>
-        <UsageCount Value="17"/>
+        <CursorPos X="14" Y="12"/>
+        <FoldState Value=" T3M0N3 pj7jg08[948jS0J3?"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="crtperso.pas"/>
         <UnitName Value="crtPerso"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="50"/>
-        <UsageCount Value="17"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
         <EditorIndex Value="5"/>
-        <CursorPos Y="255"/>
-        <FoldState Value=" T3J033 pj5jD0X3+"/>
-        <UsageCount Value="17"/>
+        <TopLine Value="4"/>
+        <CursorPos Y="20"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="gestionecran.pas"/>
         <UnitName Value="GestionEcran"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="125"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="320"/>
         <CursorPos X="11" Y="135"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="inventaire.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="159"/>
-        <CursorPos X="49" Y="221"/>
-        <FoldState Value=" T3S0B4 pjAjS03515N"/>
-        <UsageCount Value="17"/>
+        <TopLine Value="224"/>
+        <CursorPos X="23" Y="228"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="perso.pas"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="4"/>
-        <CursorPos X="36" Y="20"/>
-        <UsageCount Value="17"/>
+        <TopLine Value="15"/>
+        <CursorPos X="25" Y="37"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="utilities.pas"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="271"/>
-        <CursorPos X="36" Y="54"/>
-        <UsageCount Value="17"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="252"/>
+        <CursorPos X="14" Y="254"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\Aimeric\monsterHunter.lpr"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit12>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
@@ -213,29 +211,36 @@
         <Caret Line="57" Column="19" TopLine="44"/>
       </Position25>
       <Position26>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="171" Column="30" TopLine="16"/>
+        <Filename Value="utilities.pas"/>
+        <Caret Line="236" Column="26" TopLine="229"/>
       </Position26>
       <Position27>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="194" TopLine="15"/>
+        <Filename Value="utilities.pas"/>
+        <Caret Line="232" Column="23" TopLine="214"/>
       </Position27>
       <Position28>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="24" Column="66" TopLine="5"/>
+        <Filename Value="utilities.pas"/>
+        <Caret Line="49" Column="25" TopLine="57"/>
       </Position28>
       <Position29>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="147" TopLine="10"/>
+        <Filename Value="combatunit.pas"/>
+        <Caret Line="164" Column="3" TopLine="150"/>
       </Position29>
       <Position30>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="24" Column="44" TopLine="7"/>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="14" Column="28"/>
       </Position30>
     </JumpHistory>
-    <RunParams>
-      <FormatVersion Value="2"/>
-      <Modes Count="0" ActiveMode="default"/>
-    </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="inventaire.pas"/>
+        <Line Value="19"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

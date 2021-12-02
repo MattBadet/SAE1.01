@@ -6,7 +6,7 @@ unit affichageObjet;
 
 interface
 uses
-  Classes, SysUtils, GestionEcran;
+  Classes, SysUtils, GestionEcran, crtperso;
 procedure affichage(x,y:Integer;objet:string);
 
 implementation
