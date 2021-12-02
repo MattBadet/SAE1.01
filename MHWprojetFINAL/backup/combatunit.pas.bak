@@ -158,6 +158,7 @@ begin
   result := generDrop(joueur, monstreActu, vieMi);
 end;
 
+//Utilisation d'objet pendant le combat
 procedure inventaireCombat(vieJ, vieMaxJ, vieM : integer);
 
 var

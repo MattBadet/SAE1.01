@@ -61,46 +61,53 @@ var
 begin
   choixU := afficheMarchand;
 
-  if (choixU = 1) AND (joueur.materiaux[6] >= 50) then
+  if choixU = 1 then //Le joueur veut acheter quequechose chez le marchand
   begin
-    ajouterinvpotion(petitepotion);
-    joueur.materiaux[6] := joueur.materiaux[6] - 50;
-  end
-  else
-  begin
-    if (choixU = 2) AND (joueur.materiaux[6] >= 150) then
+    if (choixU = 1) AND (joueur.materiaux[6] >= 50) then
     begin
-      ajouterinvpotion(moyennepotion);
-      joueur.materiaux[6] := joueur.materiaux[6] - 150;
+      ajouterinvpotion(petitepotion);
+      joueur.materiaux[6] := joueur.materiaux[6] - 50;
     end
     else
     begin
-      if (choixU = 3) AND (joueur.materiaux[6] >= 400) then
+      if (choixU = 2) AND (joueur.materiaux[6] >= 150) then
       begin
-        ajouterinvpotion(grandepotion);
-        joueur.materiaux[6] := joueur.materiaux[6] - 400;
+        ajouterinvpotion(moyennepotion);
+        joueur.materiaux[6] := joueur.materiaux[6] - 150;
       end
       else
       begin
-        if (choixU = 4) AND (joueur.materiaux[6] >= 100) then
+        if (choixU = 3) AND (joueur.materiaux[6] >= 400) then
         begin
-          ajouterinvbombe(bombepetite);
-          joueur.materiaux[6] := joueur.materiaux[6] - 100;
+          ajouterinvpotion(grandepotion);
+          joueur.materiaux[6] := joueur.materiaux[6] - 400;
         end
         else
         begin
-          if (choixU = 5) AND (joueur.materiaux[6] >= 250) then
+          if (choixU = 4) AND (joueur.materiaux[6] >= 100) then
           begin
-            ajouterinvbombe(bombemoyenne);
-            joueur.materiaux[6] := joueur.materiaux[6] - 250;
+            ajouterinvbombe(bombepetite);
+            joueur.materiaux[6] := joueur.materiaux[6] - 100;
           end
           else
           begin
-            AffichagePasArgent;
+            if (choixU = 5) AND (joueur.materiaux[6] >= 250) then
+            begin
+              ajouterinvbombe(bombemoyenne);
+              joueur.materiaux[6] := joueur.materiaux[6] - 250;
+            end
+            else
+            begin
+              AffichagePasArgent;
+            end;
           end;
         end;
       end;
     end;
+  end
+  else //Le joueur veut vendre un objet
+  begin
+
   end;
 end;
 
