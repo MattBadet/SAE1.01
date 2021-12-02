@@ -4,7 +4,7 @@ unit combatUnit;
 
 interface
 
-uses utilities, inventaire, cantine, perso, affichagemenu;
+uses utilities, inventaire, perso, affichagemenu;
 
 type
   race = (normal,dragon,demon);
@@ -158,6 +158,12 @@ begin
   result := generDrop(joueur, monstreActu, vieMi);
 end;
 
+procedure inventaireCombat();
+
+begin
+  afficheInventaire
+end;
+
 //Tour du joueur
 function tourJ(vieMd, arme : integer;joueur : player): integer;
 
@@ -203,11 +209,7 @@ begin
     end
     else //le joueur ouvre son inventaire
     begin
-      idObjet := afficheInventaire();
-      if (idObjet = 0) then
-      rep := TRUE
-      else
-      UtiliserObjet(idObjet);
+      inventaireCombat;
     end; //if (choixA = TRUE) then
     result := vieMd;
   end; //rep si joueur décide de simplement regarder son inventaire
@@ -313,7 +315,7 @@ begin
   vieMd := vieMi;
   arme := joueur.atk;
 
-  afficheCombat(boss);
+  afficheCombat(boss.id);
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
   begin
@@ -327,7 +329,7 @@ begin
   end; //while (vieU > 0) AND (vieM > 0) do
 
   if (vieU > 0) then
-  //credit
+  credit
   else
   joueur := loose(joueur);
 

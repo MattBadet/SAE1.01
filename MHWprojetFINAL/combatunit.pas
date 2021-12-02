@@ -158,6 +158,12 @@ begin
   result := generDrop(joueur, monstreActu, vieMi);
 end;
 
+procedure inventaireCombat();
+
+begin
+  afficheInventaire;
+end;
+
 //Tour du joueur
 function tourJ(vieMd, arme : integer;joueur : player): integer;
 
@@ -203,11 +209,7 @@ begin
     end
     else //le joueur ouvre son inventaire
     begin
-      idObjet := afficheInventaire();
-      if (idObjet = 0) then
-      rep := TRUE
-      else
-      UtiliserObjet(idObjet);
+      inventaireCombat;
     end; //if (choixA = TRUE) then
     result := vieMd;
   end; //rep si joueur décide de simplement regarder son inventaire
