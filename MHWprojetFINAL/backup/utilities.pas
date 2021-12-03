@@ -288,7 +288,7 @@ casquescale: armure = (
                 id:4;
   );
   grandepotion: potion = (
-                nom:'petite';
+                nom:'grande';
                 desc:'grande potion';
                 effet:30;
                 prix:15;

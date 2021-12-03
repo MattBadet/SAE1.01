@@ -1,5 +1,5 @@
 unit inventaire;
-
+//Le role de cette unité est de gérer l'inventaire donc tous ce qui est ajouter a un inventaire ou alors supprimer un objet.
 {$mode objfpc}{$H+}
 
 interface
@@ -60,7 +60,7 @@ var
 begin
   y:=1;
   fini:=False;
-  while fini = False do
+  while fini = False do //cet boucle parcours l'inventaire pour ajouter l'arme a un endroit ou il n'y a pas encore d'arme
   begin
     if invarme[y].nom = 'null' then
     begin
@@ -85,7 +85,7 @@ var
 begin
   y:=1;
   fini:=False;
-  while fini = False do
+  while fini = False do//cet boucle parcours l'inventaire pour ajouter la bombe a un endroit ou il n'y a pas encore de bombe
   begin
     if invbombe[y].nom = 'null' then
     begin
@@ -110,7 +110,7 @@ var
 begin
   y:=1;
   fini:=False;
-  while fini = False do
+  while fini = False do//cet boucle parcours l'inventaire pour ajouter la potion a un endroit ou il n'y a pas encore de potion
   begin
     if invpotion[y].nom = 'null' then
     begin
@@ -135,7 +135,7 @@ var
 begin
   y:=1;
   fini:=False;
-  while fini = False do
+  while fini = False do//cet boucle parcours l'inventaire pour ajouter l'armure a un endroit ou il n'y a pas encore de une armure
   begin
     if invarmure[y].nom = 'null' then
     begin
