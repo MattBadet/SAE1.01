@@ -354,7 +354,7 @@ begin
   end; //while (vieU > 0) AND (vieM > 0) do
 
   if (vieU > 0) then
-  credit
+  afficheCredit
   else
   joueur := loose(joueur);
 

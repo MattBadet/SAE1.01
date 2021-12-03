@@ -157,10 +157,13 @@ var
   choixU : integer;
 
 begin
-  choixU := afficheMarchand;
+  choixU := afficheMarchand; //demande au joueur si il veut acheter ou vendre
 
   if choixU = 1 then //Le joueur veut acheter quequechose chez le marchand
   begin
+
+    choixU := afficheAchat; //renvoie l'id de l'objet a acheter
+
     if (choixU = 1) AND (joueur.materiaux[6] >= 50) then
     begin
       ajouterinvpotion(petitepotion);
@@ -205,101 +208,128 @@ begin
   end
   else //Le joueur veut vendre un objet
   begin
+
+    choixU = afficheVente; //renvoie l'id de l'objet a vendre
+
     if choixU = 1 then
       begin
         deletecasque(joueur, casquecuire);
+        joueur.materiaux[6] := joueur.materiaux[6] + 12;
       end
       else if choixU = 2 then
       begin
         deleteplastron(joueur, plastroncuire);
+        joueur.materiaux[6] := joueur.materiaux[6] + 50;
       end;
       if choixU = 3 then
       begin
         deletejambiere(joueur, jambierecuire);
+        joueur.materiaux[6] := joueur.materiaux[6] + 25;
       end;
       if choixU = 4 then
       begin
         deletebottes(joueur, bottescuire);
+        joueur.materiaux[6] := joueur.materiaux[6] + 12;
       end;
       if choixU = 5 then
       begin
         deletecasque(joueur, casquefer);
+        joueur.materiaux[6] := joueur.materiaux[6] + 50;
       end;
       if choixU = 6 then
       begin
         deleteplastron(joueur, plastronfer);
+        joueur.materiaux[6] := joueur.materiaux[6] + 150;
       end;
       if choixU = 7 then
       begin
         deletejambiere(joueur, jambierefer);
+        joueur.materiaux[6] := joueur.materiaux[6] + 100;
       end;
       if choixU = 8 then
       begin
         deletebottes(joueur, bottesfer);
+        joueur.materiaux[6] := joueur.materiaux[6] + 50;
       end;
       if choixU = 9 then
       begin
         deletebouclier(joueur, bouclierfer);
+        joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 10 then
       begin
         deletecasque(joueur, casqueacier);
+        joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 11 then
       begin
         deleteplastron(joueur, plastronacier);
+        joueur.materiaux[6] := joueur.materiaux[6] + 300;
       end;
       if choixU = 12 then
       begin
         deletejambiere(joueur, jambiereacier);
+        joueur.materiaux[6] := joueur.materiaux[6] + 150;
       end;
       if choixU = 13 then
       begin
         deletebottes(joueur, bottesacier);
+        joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 14 then
       begin
         deletebouclier(joueur, bouclieracier);
+        joueur.materiaux[6] := joueur.materiaux[6] + 100;
       end;
       if choixU = 15 then
       begin
         deletecasque(joueur, casquescale);
+        joueur.materiaux[6] := joueur.materiaux[6] + 125;
       end;
       if choixU = 16 then
       begin
         deleteplastron(joueur, plastronscale);
+        joueur.materiaux[6] := joueur.materiaux[6] + 500;
       end;
       if choixU = 17 then
       begin
         deletejambiere(joueur, jambierescale);
+        joueur.materiaux[6] := joueur.materiaux[6] + 250;
       end;
       if choixU = 18 then
       begin
         deletebottes(joueur, bottesscale);
+        joueur.materiaux[6] := joueur.materiaux[6] + 125;
       end;
       if choixU = 19 then
       begin
         deletebouclier(joueur, bouclierscale);
+        joueur.materiaux[6] := joueur.materiaux[6] + 175;
       end;
       if choixU = 20 then
       begin
         deleteepee(joueur, epeebois);
+        joueur.materiaux[6] := joueur.materiaux[6] + 5;
       end;
       if choixU = 21 then
       begin
         deleteepee(joueur, epeefer);
+        joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 22 then
       begin
         deleteepee(joueur, epeeacier);
+        joueur.materiaux[6] := joueur.materiaux[6] + 150;
       end;
       if choixU = 23 then
       begin
         deleteepee(joueur, epeescale);
+        joueur.materiaux[6] := joueur.materiaux[6] + 250;
       end;
       if choixU = 24 then
       begin
         deleteepee(joueur, epeedemo);
+        joueur.materiaux[6] := joueur.materiaux[6] + 500;
       end;
   end;
 end;

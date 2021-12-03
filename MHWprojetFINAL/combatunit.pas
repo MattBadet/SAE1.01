@@ -1,3 +1,4 @@
+//unité contenant tout le code logique demandé pour le combat
 unit combatUnit;
 
 {$mode objfpc}{$H+}
