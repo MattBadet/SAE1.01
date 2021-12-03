@@ -2,7 +2,7 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <BuildModes Active="Default"/>
     <Units Count="13">
       <Unit0>
@@ -17,7 +17,6 @@
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="1"/>
         <CursorPos X="67"/>
-        <FoldState Value=" T3E0{u013s"/>
         <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -52,7 +51,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="178"/>
         <CursorPos X="15" Y="199"/>
-        <FoldState Value=" T3N0N3 pj7jg0801]Bibk70b2/"/>
+        <FoldState Value=" T3N0N3 pj7jg08013R"/>
         <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -110,7 +109,7 @@
         <UsageCount Value="7"/>
       </Unit12>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="combatunit.pas"/>
         <Caret Line="160" Column="39" TopLine="85"/>
@@ -189,48 +188,48 @@
       </Position19>
       <Position20>
         <Filename Value="inventaire.pas"/>
-        <Caret Line="16" Column="30" TopLine="26"/>
+        <Caret Line="254" Column="37" TopLine="237"/>
       </Position20>
       <Position21>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="254" Column="37" TopLine="237"/>
+        <Filename Value="combatunit.pas"/>
+        <Caret Column="64"/>
       </Position21>
       <Position22>
         <Filename Value="combatunit.pas"/>
-        <Caret Column="64"/>
+        <Caret Line="169" Column="9" TopLine="152"/>
       </Position22>
       <Position23>
-        <Filename Value="combatunit.pas"/>
-        <Caret Line="169" Column="9" TopLine="152"/>
-      </Position23>
-      <Position24>
         <Filename Value="affichagemenu.pas"/>
         <Caret Line="13" Column="65" TopLine="2"/>
-      </Position24>
-      <Position25>
+      </Position23>
+      <Position24>
         <Filename Value="combatunit.pas"/>
         <Caret Line="174" Column="18" TopLine="163"/>
+      </Position24>
+      <Position25>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="168" Column="11" TopLine="157"/>
       </Position25>
       <Position26>
-        <Filename Value="affichagemenu.pas"/>
-        <Caret Line="168" Column="11" TopLine="157"/>
-      </Position26>
-      <Position27>
         <Filename Value="combatunit.pas"/>
         <Caret Line="169" Column="9" TopLine="152"/>
-      </Position27>
-      <Position28>
+      </Position26>
+      <Position27>
         <Filename Value="affichagemenu.pas"/>
         <Caret Line="168" Column="11" TopLine="157"/>
+      </Position27>
+      <Position28>
+        <Filename Value="combatunit.pas"/>
+        <Caret Line="169" Column="9" TopLine="152"/>
       </Position28>
       <Position29>
         <Filename Value="combatunit.pas"/>
-        <Caret Line="169" Column="9" TopLine="152"/>
-      </Position29>
-      <Position30>
-        <Filename Value="combatunit.pas"/>
         <Caret Line="174" Column="29" TopLine="163"/>
-      </Position30>
+      </Position29>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
 </CONFIG>

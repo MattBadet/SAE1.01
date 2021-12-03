@@ -16,8 +16,9 @@ function afficheVente(invPotion:array of potion;PO:Integer):Integer; // affficha
 function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
 function afficheCantine():Integer; // Affichage de la cantine
 procedure afficheForge(forge:array of armure); // afffichage de la forge
-procedure afficheChambre(); // Menu de la chambre qui donne accès à l'inventaire et au repos
-procedure afficheInventaire(inventaire:array of arme); // afffichage de l'inventaire
+function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
+function afficheInventaireChambre(inventaire:array of arme):Integer; // afffichage de l'inventaire depuis la chambre
+function afficheInventaireCombat(inventaire:array of arme):Integer; // afffichage de l'inventaire depuis un combat
 procedure precombat(); // ecran de liaison entre la ville et le combat
 procedure afficheCombat(monstre:Integer); // fenêtre de combat
 function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
@@ -165,9 +166,35 @@ begin
 
 end;
 
-procedure afficheInventaire(inventaire:array of arme); // afffichage de l'inventaire
+function afficheInventaireCombat(inventaire:array of arme):integer; // afffichage de l'inventaire depuis un combat
 var
-  x,y,i:Integer;
+  x,y,i,choix:Integer;
+begin
+    effacerEcran();
+    dessinerCadreXY(1,1,148,33,simple,white,black);
+    dessinerCadreXY(67,0,83,2,simple,white,black);
+    deplacerCurseurXY(70,1);
+    write('Inventaire');
+    dessinerCadreXY(2,3,40,32,simple,white,black);
+    dessinerCadreXY(42,3,146,32,simple,white,black);
+    ecrireEnPositionXY(18,4,'Objet');
+    // remplissage inventaire
+    x:=5;
+    y:=6;
+    for i:=1 to length(invpotion) do
+        ecrireEnPositionXY(x,y+2*i,(i,':',invpotion[i].nom));
+    x:=17;
+    for i:=1 to length(invbombe) do
+        ecrireEnPositionXY(x,y,(i,':',invbombe[i].nom));
+    // test statistique objet
+    affichage(50,8,'epee');
+    dessinerCadreXY(44,24,144,31,simple,white,black);
+    readln(choix);
+    Result:=choix;
+end;
+function afficheInventaireChambre(inventaire:array of arme):integer; // afffichage de l'inventaire depuis la chambre
+var
+  x,y,i,choix:Integer;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,33,simple,white,black);
@@ -185,9 +212,31 @@ begin
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,24,144,31,simple,white,black);
+    readln(choix);
+    Result:=choix;
 end;
+    {writeln('----------------------------------------- Objet');
+     for i:=1 to length(joueur.materiaux) do
+        writeln(i,'  ',joueur.materiaux[i] );
+     writeln('----------------------------------------- Arme');
+     for i:=1 to length(invarme) do
+        writeln(IntToStr(i) + ':' + invarme[i].nom);
+     writeln('----------------------------------------- Bombe');
+     for i:=1 to length(invbombe) do
+        writeln(IntToStr(i) + ':' + invbombe[i].nom);
+     writeln('----------------------------------------- Potion');
+     for i:=1 to length(invpotion) do
+        writeln(IntToStr(i) + ':' + invpotion[i].nom);
+     writeln('----------------------------------------- Armure');
+     for i:=1 to length(invarmure) do
+        writeln(IntToStr(i) + ':' + invarmure[i].nom);
+     writeln('----------------------------------------- Arme Equipe');
+     for i:=1 to length(joueur.eqarmure) do
+        writeln(IntToStr(i) + ':' + joueur.eqarmure[i].nom);
+     writeln('----------------------------------------- Armure Equipe');
+     writeln(IntToStr(i) + ':' + joueur.epee.nom);}
 
-procedure afficheChambre(); // Menu de la chambre qui donne accès à l'inventaire et au repos
+function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 begin
     effacerEcran();
     affichage(0,0,'plancher');
@@ -426,4 +475,5 @@ begin
 end;
 
 end.
+
 

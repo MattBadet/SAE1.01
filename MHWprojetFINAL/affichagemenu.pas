@@ -207,10 +207,19 @@ begin
     // remplissage inventaire
     x:=5;
     y:=6;
-    for i:=0 to length(inventaire) do
-        ecrireEnPositionXY(x,y+2*i,inventaire[i].nom);
-    // test statistique objet
-    affichage(50,8,'epee');
+    // Arme
+    for i:=1 to length(invarme) do
+        writeln(IntToStr(i) + ':' + invarme[i].nom);
+    // Armure
+    for i:=1 to length(invarmure) do
+        writeln(IntToStr(i) + ':' + invarmure[i].nom);
+    // Arme Equipe
+    for i:=1 to length(joueur.eqarmure) do
+        writeln(IntToStr(i) + ':' + joueur.eqarmure[i].nom);
+    // Armure Equipe
+    writeln(IntToStr(i) + ':' + joueur.epee.nom);
+    for i:=1 to length(invarme) do
+        writeln(IntToStr(i) + ':' + invarme[i].nom);
     dessinerCadreXY(44,24,144,31,simple,white,black);
     readln(choix);
     Result:=choix;
