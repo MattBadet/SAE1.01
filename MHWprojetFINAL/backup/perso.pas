@@ -48,7 +48,6 @@ begin
   joueur.eqarmure[3]:=nullarmure;
   joueur.eqarmure[4]:=nullarmure;
   joueur.eqarmure[5]:=nullarmure;
-  joueur.eqarmure[6]:=nullarmure;
   joueur.xp:=0;
   joueur.epee:=nullarm;
 
@@ -61,6 +60,6 @@ begin
 end;
 procedure initatk(joueur:player);
 begin
-  joueur.atk:=
+  joueur.atk:=joueur.epee.degat;
 end;
 end.

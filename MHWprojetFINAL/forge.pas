@@ -1,5 +1,5 @@
 unit forge;
-
+//le role de cette unité est de simulé la fabrication d'élément d'armure ou d'armes.
 {$mode objfpc}{$H+}
 
 interface
