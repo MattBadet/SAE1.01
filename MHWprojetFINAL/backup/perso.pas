@@ -1,5 +1,5 @@
 unit perso;
-
+//le role de cette unité est de définir le personnage créer par le joueur
 {$mode objfpc}{$H+}
 
 interface
@@ -22,17 +22,18 @@ type
     epee:arme;
   end;
 
-function createjoueur(nom,sexe:string):player;//INITIALISATION DU JOUEUR
+function createjoueur(nom,sexe,taille:string):player;//INITIALISATION DU JOUEUR
 procedure initdef(joueur:player);//INITIALISATION DE LA DEFENSE
 procedure initatk(joueur:player);//INITIALISATION DE L'ATTAQUE
 
 implementation
 
-function createjoueur(nom,sexe:string):player;
+function createjoueur(nom,sexe,taille:string):player;
 var joueur:player;
 begin
   joueur.nom:=nom;
   joueur.sexe:=sexe;
+  joueur.taille:=taille;
   joueur.vieActu:=300;
   joueur.vieNue:=300;
   joueur.def:=0;
