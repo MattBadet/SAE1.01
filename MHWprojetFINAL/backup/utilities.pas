@@ -14,6 +14,7 @@ type
     desc:string;
     degat:integer;
     prix:integer;
+    id:integer;
   end;
   //RECORD POTION
   potion = packed record
@@ -21,6 +22,7 @@ type
     desc:string;
     effet:integer;
     prix:integer;
+    id:integer;
   end;
   //RECORD OBJET
   objet = packed record
@@ -51,9 +53,9 @@ type
 var
   //INVENTAIRES
   invarme:array[1..15] of arme;
+  invarmure:array[1..15] of armure;
   invpotion:array[1..5] of potion;
   invbombe:array[1..3] of bombe;
-  invarmure:array[1..15] of armure;
   choix,i:integer;
 const
   //ARMURE
@@ -247,18 +249,21 @@ casquescale: armure = (
              desc:'null';
              degat:0;
              prix:0;
+             id:0;
   );
   bombepetite: bombe = (
          nom:'bombe petite';
          desc:'une bombe qui explose';
          degat:100;
          prix:3;
+         id:1;
   );
   bombemoyenne: bombe = (
                 nom:'bombe grande';
                 desc:'une bombequi explose plus fort';
                 degat:300;
                 prix:7;
+                id:2;
   );
   //POTION
   nullpotion: potion = (
@@ -266,24 +271,28 @@ casquescale: armure = (
               desc:'null';
               effet:0;
               prix:0;
+              id:0;
   );
   petitepotion: potion = (
                 nom:'petite';
                 desc:'petite potion';
                 effet:10;
                 prix:5;
+                id:3;
   );
   moyennepotion: potion = (
                 nom:'moyenne';
                 desc:'moyenne potion';
                 effet:20;
                 prix:10;
+                id:4;
   );
   grandepotion: potion = (
-                nom:'petite';
+                nom:'grande';
                 desc:'grande potion';
                 effet:30;
                 prix:15;
+                id:5;
   );
   //EPEE
   nullarm: arme = (
@@ -299,7 +308,7 @@ casquescale: armure = (
          desc:'pour le combat';
          degat:25;
          material: 'bois';
-         idmaterial: 2;
+         idmaterial: 7;
          id: 20;
   );
   epeefer: arme = (

@@ -23,7 +23,7 @@ begin
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
-  case choix of
+  case choix of //AGIT SELON LE CHOIX DE L'UTILISATEUR
        1:createepee(joueur,epeefer);
        2:createepee(joueur,epeeacier);
        3:createepee(joueur,epeescale);
@@ -252,7 +252,6 @@ begin
   else
       writeln('La tentative a echouer');
 end;
-
 
 end.
 

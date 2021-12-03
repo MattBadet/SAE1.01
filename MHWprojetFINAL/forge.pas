@@ -1,5 +1,5 @@
 unit forge;
-
+//le role de cette unité est de simulé la fabrication d'élément d'armure ou d'armes.
 {$mode objfpc}{$H+}
 
 interface
@@ -23,7 +23,7 @@ begin
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
-  case choix of
+  case choix of //AGIT SELON LE CHOIX DE L'UTILISATEUR
        1:createepee(joueur,epeefer);
        2:createepee(joueur,epeeacier);
        3:createepee(joueur,epeescale);

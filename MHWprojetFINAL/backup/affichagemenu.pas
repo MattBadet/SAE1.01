@@ -7,6 +7,18 @@ interface
 uses
   Classes, SysUtils, GestionEcran, affichageObjet;
 
+procedure afficheDeadMenu();
+procedure afficheVictoire();
+procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
+procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero); // renouvelle les pv à chaque tour
+function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
+procedure afficheCombat(monstre:Integer); // fenêtre de combat
+procedure precombat(); // ecran de liaison entre la ville et le combat
+procedure afficheInventaire(); // afffichage de l'inventaire
+procedure afficheChambre(); // Menu de la chambre qui donne accès à l'inventaire et au repos
+procedure afficheForge(); // afffichage de la forge
+procedure afficheCantine(); // Affichage de la cantine
+procedure afficheMarchand(); // afffichage du marchand
 function afficheVille():Integer; // Affichage du menu d'une partie
 procedure credit(); // Affichage des crédits
 function afficheCreationPerso():player; // menu de la création du personnage
@@ -90,18 +102,43 @@ begin
     write('`\ /''');
 end;
 
-procedure vie(pv,pvMax,x,y:Integer);
+procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
 var
   i:Integer;
 begin
     dessinerCadreXY(x,y,x+10,y+2,simple,white,black);
     deplacerCurseurXY(x+1,y+1);
     couleurTexte(Green);
-    for i:=1 to (pv div(pvMax div 10)) do
-        write('█');
+    for i:=1 to (pv div(pvMax div 10)) do  // en fonction du pourcentage de vie remplie une barre de vie
+        write('█');                       // par tranche de 10%
     deplacerCurseurXY(x+2,y+3);
     couleurTexte(white);
-    write(pv,'/',pvMax);
+    write(pv:4,'/',pvMax:4);
+end;
+
+procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero); // renouvelle les pv à chaque tour
+begin
+    vie(pvHero,pvMaxHero,19,27);
+    vie(pvMonstre,pvMaxMonstre,19,27);
+end;
+
+function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
+var
+  choix:Integer; // choix du menu
+begin
+    dessinerCadreXY(68,5,82,7,simple,white,black);
+    ecrireEnPositionXY(70,6,'1 - Inventaire');
+    dessinerCadreXY(68,9,82,11,simple,white,black);
+    ecrireEnPositionXY(70,10,'2 - Combattre');
+    dessinerCadreXY(68,13,82,15,simple,white,black);
+    ecrireEnPositionXY(70,17,'Votre choix : ');
+    readln(choix);
+    case choix of
+      1:Result:=False;
+      2:Result:=True;
+      else
+        Result:=afficheMenuCombat();
+    end;
 end;
 
 procedure afficheCombat(monstre:Integer); // fenêtre de combat
