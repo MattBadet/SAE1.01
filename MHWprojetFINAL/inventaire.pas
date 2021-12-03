@@ -239,7 +239,7 @@ procedure deletepotion(obj:potion);
 begin
   for i:=1 to length(invpotion) do
   begin
-    if invpotion[i+1]=nullpotion then
+    if invpotion[i].id=obj.id then
        invpotion[i]:=nullpotion;
   end;
 end;
@@ -247,7 +247,7 @@ procedure deletebombe(obj:bombe);
 begin
   for i:=1 to length(invbombe) do
   begin
-    if invbombe[i+1]=nullbombe then
+    if invbombe[i].id=obj.id then
        invbombe[i]:=nullbombe;
   end;
 end;
