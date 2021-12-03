@@ -171,7 +171,7 @@ begin
   if id = 1 then
   begin
   deletebombe(bombepetite);
-  vieM := vieM - bombepetit.degat;
+  vieM := vieM - bombepetite.degat;
   end;
   if id = 2 then
   begin
@@ -181,17 +181,17 @@ begin
   if id = 3 then
   begin
   deletepotion(petitepotion);
-  vieU := vieU + round(vieMaxJ div 10);
+  vieJ := vieJ + round(vieMaxJ div 10);
   end;
   if id = 4 then
   begin
   deletepotion(moyennepotion);
-  vieU := vieU + round(vieMaxJ div 5);
+  vieJ := vieJ + round(vieMaxJ div 5);
   end;
   if id = 5 then
   begin
   deletepotion(grandepotion);
-  vieU := vieU + round(vieMaxJ div 3);
+  vieJ := vieJ + round(vieMaxJ div 3);
   end;
 end;
 

@@ -1,3 +1,4 @@
+//unité contenant tout le code logique demandé pour le combat
 unit combatUnit;
 
 {$mode objfpc}{$H+}
@@ -170,7 +171,7 @@ begin
   if id = 1 then
   begin
   deletebombe(bombepetite);
-  vieM := vieM - bombepetit.degat;
+  vieM := vieM - bombepetite.degat;
   end;
   if id = 2 then
   begin
