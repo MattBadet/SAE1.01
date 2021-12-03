@@ -252,6 +252,30 @@ begin
        invbombe[i]:=nullbombe;
   end;
 end;
+procedure deleteepee(obj:arme);
+begin
+  obj:=nullarme;
+end;
+procedure deletecasque(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deleteplastron(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deletejambiere(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deletebottes(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deletebouclier(obj:armure);
+begin
+  obj:=nullarmure;
+end;
 
 end.
 
