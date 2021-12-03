@@ -12,6 +12,7 @@ type
   player = packed record
     nom:string;
     sexe:string;
+    taille:string;
     vieActu:integer;
     vieNue:integer;
     def:integer;
@@ -22,17 +23,18 @@ type
     epee:arme;
   end;
 
-function createjoueur(nom,sexe:string):player;//INITIALISATION DU JOUEUR
+function createjoueur(nom,sexe,taille:string):player;//INITIALISATION DU JOUEUR
 procedure initdef(joueur:player);//INITIALISATION DE LA DEFENSE
 procedure initatk(joueur:player);//INITIALISATION DE L'ATTAQUE
 
 implementation
 
-function createjoueur(nom,sexe:string):player;
+function createjoueur(nom,sexe,taille:string):player;
 var joueur:player;
 begin
   joueur.nom:=nom;
   joueur.sexe:=sexe;
+  joueur.taille:=taille;
   joueur.vieActu:=300;
   joueur.vieNue:=300;
   joueur.def:=0;
