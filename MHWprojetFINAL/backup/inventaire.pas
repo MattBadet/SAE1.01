@@ -11,6 +11,7 @@ procedure initialisationinv();//INITIALISATION DE L'INVENTAIRE
 procedure ajouterinvarme(obj:arme);//AJOUT D'UN ITEM DANS L'INVENTAIRE ARME
 procedure ajouterinvbombe(obj:bombe);//AJOUT D'UN ITEM DANS L'INVENTAIRE BOMBE
 procedure ajouterinvpotion(obj:potion);//AJOUT D'UN ITEM DANS L'INVENTAIRE POTION
+procedure equiperepee(joueur:player;obj:arme);//EQUIPER UNE EPEE
 procedure equipercasque(joueur:player;epe:armure);//EQUIPER UN CASQUE
 procedure equiperplastron(joueur:player;epe:armure);//EQUIPER UN PLASTRON
 procedure equiperjambiere(joueur:player;epe:armure);//EQUIPER UNE JAMBIERE
@@ -150,22 +151,27 @@ end;
 procedure equipercasque(joueur:player;epe:armure);
 begin
   joueur.eqarmure[1]:=epe;
+  initdef(joueur);
 end;
 procedure equiperplastron(joueur:player;epe:armure);
 begin
   joueur.eqarmure[2]:=epe;
+  initdef(joueur);
 end;
 procedure equiperjambiere(joueur:player;epe:armure);
 begin
   joueur.eqarmure[3]:=epe;
+  initdef(joueur);
 end;
 procedure equiperbottes(joueur:player;epe:armure);
 begin
   joueur.eqarmure[4]:=epe;
+  initdef(joueur);
 end;
 procedure equiperbouclier(joueur:player;epe:armure);
 begin
   joueur.eqarmure[5]:=epe;
+  initdef(joueur);
 end;
 
 procedure desequiperepee(joueur:player;obj:arme);
@@ -177,26 +183,31 @@ procedure desequipercasque(joueur:player;epe:armure);
 begin
   ajouterinvarmure(joueur.eqarmure[1]);
   joueur.eqarmure[1]:=nullarmure;
+  initdef(joueur);
 end;
 procedure desequiperplastron(joueur:player;epe:armure);
 begin
   ajouterinvarmure(joueur.eqarmure[2]);
   joueur.eqarmure[2]:=nullarmure;
+  initdef(joueur);
 end;
 procedure desequiperjambiere(joueur:player;epe:armure);
 begin
   ajouterinvarmure(joueur.eqarmure[3]);
   joueur.eqarmure[3]:=nullarmure;
+  initdef(joueur);
 end;
 procedure desequiperbottes(joueur:player;epe:armure);
 begin
   ajouterinvarmure(joueur.eqarmure[4]);
   joueur.eqarmure[4]:=nullarmure;
+  initdef(joueur);
 end;
 procedure desequiperbouclier(joueur:player;epe:armure);
 begin
   ajouterinvarmure(joueur.eqarmure[5]);
   joueur.eqarmure[5]:=nullarmure;
+  initdef(joueur);
 end;
 
 procedure afficheinv(joueur:player);
@@ -229,7 +240,7 @@ procedure deletepotion(obj:potion);
 begin
   for i:=1 to length(invpotion) do
   begin
-    if invpotion[i+1]=nullpotion then
+    if invpotion[i].id=obj.id then
        invpotion[i]:=nullpotion;
   end;
 end;
@@ -237,9 +248,13 @@ procedure deletebombe(obj:bombe);
 begin
   for i:=1 to length(invbombe) do
   begin
-    if invbombe[i+1]=nullbombe then
+    if invbombe[i].id=obj.id then
        invbombe[i]:=nullbombe;
   end;
+end;
+procedure deleteepee(obj:arme);
+begin
+  obj:=nullarme;
 end;
 
 end.
