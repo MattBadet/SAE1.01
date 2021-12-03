@@ -5,25 +5,26 @@ unit affichagemenu;
 
 interface
 uses
-  Classes, SysUtils, GestionEcran, affichageObjet;
+  Classes, SysUtils, GestionEcran, affichageObjet,perso,inventaire,utilities;
 
-procedure afficheDeadMenu();
-procedure afficheVictoire();
-procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
-procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero); // renouvelle les pv à chaque tour
-function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
-procedure afficheCombat(monstre:Integer); // fenêtre de combat
-procedure precombat(); // ecran de liaison entre la ville et le combat
-procedure afficheInventaire(); // afffichage de l'inventaire
-procedure afficheChambre(); // Menu de la chambre qui donne accès à l'inventaire et au repos
-procedure afficheForge(); // afffichage de la forge
-procedure afficheCantine(); // Affichage de la cantine
-procedure afficheMarchand(); // afffichage du marchand
-function afficheVille():Integer; // Affichage du menu d'une partie
-procedure credit(); // Affichage des crédits
-function afficheCreationPerso():player; // menu de la création du personnage
-procedure regles(); // affiche les règles et le synopsis
 function afficheMenuPrincipale():Boolean; // menu de la ville
+procedure regles(); // affiche les règles et le synopsis
+function afficheCreationPerso():player; // menu de la création du personnage
+procedure credit(); // Affichage des crédits
+function afficheVille():Integer; // Affichage du menu d'une partie
+function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
+function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
+function afficheCantine():Integer; // Affichage de la cantine
+procedure afficheForge(forge:array of armure); // afffichage de la forge
+procedure afficheChambre(); // Menu de la chambre qui donne accès à l'inventaire et au repos
+procedure afficheInventaire(inventaire:array of arme); // afffichage de l'inventaire
+procedure precombat(); // ecran de liaison entre la ville et le combat
+procedure afficheCombat(monstre:Integer); // fenêtre de combat
+function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
+procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero:Integer); // renouvelle les pv à chaque tour
+procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
+procedure afficheVictoire(); // affiche l'écran de victoire
+procedure afficheDeadMenu(); // affiche l'écran de défaite
 
 implementation
 
@@ -116,7 +117,7 @@ begin
     write(pv:4,'/',pvMax:4);
 end;
 
-procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero); // renouvelle les pv à chaque tour
+procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero:Integer); // renouvelle les pv à chaque tour
 begin
     vie(pvHero,pvMaxHero,19,27);
     vie(pvMonstre,pvMaxMonstre,19,27);
@@ -164,7 +165,7 @@ begin
 
 end;
 
-procedure afficheInventaire(); // afffichage de l'inventaire
+procedure afficheInventaire(inventaire:array of arme); // afffichage de l'inventaire
 var
   x,y,i:Integer;
 begin
@@ -180,7 +181,7 @@ begin
     x:=5;
     y:=6;
     for i:=0 to length(inventaire) do
-        ecrireEnPositionXY(x,y+2*i,inventaire.nomObjet);
+        ecrireEnPositionXY(x,y+2*i,inventaire[i].nom);
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,24,144,31,simple,white,black);
@@ -195,7 +196,7 @@ begin
     affichage(90,9,'grLit');
 end;
 
-procedure afficheForge(); // afffichage de la forge
+procedure afficheForge(forge:array of armure); // afffichage de la forge
 var
   x,y,i:Integer;
 begin
@@ -211,17 +212,19 @@ begin
     write('Ressources Disponilbes : X trucs  X machins ....');
     deplacerCurseurXY(18,4);
     write('Objet');
-    // test remplissage forge
+    // remplissage forge
     x:=5;
     y:=6;
-    for i:=0 to length(inventaire) do
-        ecrireEnPositionXY(x,y+2*i,forge.nomObjet);
-    // test statistique objet
+    for i:=0 to length(forge) do
+        ecrireEnPositionXY(x,y+2*i,forge[i].nom);
+    // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
 end;
 
-procedure afficheCantine(); // Affichage de la cantine
+function afficheCantine():Integer; // Affichage de la cantine
+var
+  choix:Integer;
 begin
     effacerEcran();
     dessinerCadreXY(2,5,48,30,simple,white,black);
@@ -233,9 +236,12 @@ begin
     affichage(105,21,'burger');
     affichage(132,15,'frite');
     affichage(110,6,'biere');
+    ecrireEnPositionXY(67,1,'Votre Choix : ');
+    readln(choix);
+    Result:=choix;
 end;
 
-procedure afficheMarchand(); // afffichage du marchand
+function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
 var
   x,y,i:Integer;
 begin
@@ -248,14 +254,45 @@ begin
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     deplacerCurseurXY(5,32);
-    write('Pièces d''Or Disponilbes : Xpo');
+    write('Pièces d''Or Disponilbes : ',PO);
+    deplacerCurseurXY(18,4);
+    write('Objet');
+    // remplissage marchand potion
+    x:=5;
+    y:=6;
+    for i:=1 to 2 do
+        ecrireEnPositionXY(x,y+2*i,invPotion[i].nom);
+    // remplissage marchand bombe
+    x:=5;
+    y:=10;
+    for i:=1 to 2 do
+        ecrireEnPositionXY(x,y+2*i,invBombe[i].nom);
+    // test statistique objet
+    affichage(50,8,'epee');
+    dessinerCadreXY(44,25,144,32,simple,white,black);
+end;
+
+function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
+var
+  x,y,i:Integer;
+begin
+    effacerEcran();
+    dessinerCadreXY(1,1,148,34,simple,white,black);
+    dessinerCadreXY(69,0,81,2,simple,white,black);
+    deplacerCurseurXY(71,1);
+    write('Marchand');
+    dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
+    dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
+    dessinerCadreXY(2,31,40,33,simple,white,black); // resources
+    deplacerCurseurXY(5,32);
+    write('Pièces d''Or Disponilbes : ',PO);
     deplacerCurseurXY(18,4);
     write('Objet');
     // remplissage marchand
     x:=5;
     y:=6;
-    for i:=0 to length(inventaire) do
-        ecrireEnPositionXY(x,y+2*i,marchand.nomObjet);
+    for i:=0 to length(invPotion) do
+        ecrireEnPositionXY(x,y+2*i,invPotion[i].nom);
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
@@ -380,12 +417,13 @@ begin
     ecrireEnPositionXY(88,22,'Votre Choix : ');
     readln(choix);
     Case choix of
-      1:Retult:=True();
-      2:Result:=False;();
+      1:Result:=True;
+      2:Result:=False;
       3:write('');
       else
-        Result:=afficheville();
+        Result:=afficheMenuPrincipale();
       end;
 end;
 
 end.
+
