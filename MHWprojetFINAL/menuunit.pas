@@ -205,7 +205,103 @@ begin
   end
   else //Le joueur veut vendre un objet
   begin
-
+    if choixU = 1 then
+      begin
+        deletecasque(joueur, casquecuire);
+        joueur.materiaux[6] := joueur.materiaux[6]
+      end
+      else if choixU = 2 then
+      begin
+        deleteplastron(joueur, plastroncuire);
+      end;
+      if choixU = 3 then
+      begin
+        deletejambiere(joueur, jambierecuire);
+      end;
+      if choixU = 4 then
+      begin
+        deletebottes(joueur, bottescuire);
+      end;
+      if choixU = 5 then
+      begin
+        deletecasque(joueur, casquefer);
+      end;
+      if choixU = 6 then
+      begin
+        deleteplastron(joueur, plastronfer);
+      end;
+      if choixU = 7 then
+      begin
+        deletejambiere(joueur, jambierefer);
+      end;
+      if choixU = 8 then
+      begin
+        deletebottes(joueur, bottesfer);
+      end;
+      if choixU = 9 then
+      begin
+        deletebouclier(joueur, bouclierfer);
+      end;
+      if choixU = 10 then
+      begin
+        deletecasque(joueur, casqueacier);
+      end;
+      if choixU = 11 then
+      begin
+        deleteplastron(joueur, plastronacier);
+      end;
+      if choixU = 12 then
+      begin
+        deletejambiere(joueur, jambiereacier);
+      end;
+      if choixU = 13 then
+      begin
+        deletebottes(joueur, bottesacier);
+      end;
+      if choixU = 14 then
+      begin
+        deletebouclier(joueur, bouclieracier);
+      end;
+      if choixU = 15 then
+      begin
+        deletecasque(joueur, casquescale);
+      end;
+      if choixU = 16 then
+      begin
+        deleteplastron(joueur, plastronscale);
+      end;
+      if choixU = 17 then
+      begin
+        deletejambiere(joueur, jambierescale);
+      end;
+      if choixU = 18 then
+      begin
+        deletebottes(joueur, bottesscale);
+      end;
+      if choixU = 19 then
+      begin
+        deletebouclier(joueur, bouclierscale);
+      end;
+      if choixU = 20 then
+      begin
+        deleteepee(joueur, epeebois);
+      end;
+      if choixU = 21 then
+      begin
+        deleteepee(joueur, epeefer);
+      end;
+      if choixU = 22 then
+      begin
+        deleteepee(joueur, epeeacier);
+      end;
+      if choixU = 23 then
+      begin
+        deleteepee(joueur, epeescale);
+      end;
+      if choixU = 24 then
+      begin
+        deleteepee(joueur, epeedemo);
+      end;
   end;
 end;
 
