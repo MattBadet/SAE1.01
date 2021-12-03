@@ -247,7 +247,7 @@ procedure deletebombe(obj:bombe);
 begin
   for i:=1 to length(invbombe) do
   begin
-    if invbombe[i]=obj then
+    if invbombe[i].id=obj.id then
        invbombe[i]:=nullbombe;
   end;
 end;

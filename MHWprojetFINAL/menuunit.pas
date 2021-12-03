@@ -24,9 +24,107 @@ begin
   begin
     choixU := afficheChambre(); //Récupération du choix de l'utilisateur
 
+
     if (choixU = 1) then //Le joueur ouvre l'inventaire
     begin
-      afficheFichePerso();
+      choixU := afficheInventaireChambre(); //le joueur choisis l'objet qu'il veut équiper
+
+      if choixU = 1 then
+      begin
+        equipercasque(joueur, casquecuire);
+      end
+      else if choixU = 2 then
+      begin
+        equiperplastron(joueur, plastroncuire);
+      end;
+      if choixU = 3 then
+      begin
+        equiperjambiere(joueur, jambierecuire);
+      end;
+      if choixU = 4 then
+      begin
+        equiperbottes(joueur, bottescuire);
+      end;
+      if choixU = 5 then
+      begin
+        equipercasque(joueur, casquefer);
+      end;
+      if choixU = 6 then
+      begin
+        equiperplastron(joueur, plastronfer);
+      end;
+      if choixU = 7 then
+      begin
+        equiperjambiere(joueur, jambierefer);
+      end;
+      if choixU = 8 then
+      begin
+        equiperbottes(joueur, bottesfer);
+      end;
+      if choixU = 9 then
+      begin
+        equiperbouclier(joueur, bouclierfer);
+      end;
+      if choixU = 10 then
+      begin
+        equipercasque(joueur, casqueacier);
+      end;
+      if choixU = 11 then
+      begin
+        equiperplastron(joueur, plastronacier);
+      end;
+      if choixU = 12 then
+      begin
+        equiperjambiere(joueur, jambiereacier);
+      end;
+      if choixU = 13 then
+      begin
+        equiperbottes(joueur, bottesacier);
+      end;
+      if choixU = 14 then
+      begin
+        equiperbouclier(joueur, bouclieracier);
+      end;
+      if choixU = 15 then
+      begin
+        equipercasque(joueur, casquescale);
+      end;
+      if choixU = 16 then
+      begin
+        equiperplastron(joueur, plastronscale);
+      end;
+      if choixU = 17 then
+      begin
+        equiperjambiere(joueur, jambierescale);
+      end;
+      if choixU = 18 then
+      begin
+        equiperbottes(joueur, bottesscale);
+      end;
+      if choixU = 19 then
+      begin
+        equiperbouclier(joueur, bouclierscale);
+      end;
+      if choixU = 20 then
+      begin
+        equiperepee(joueur, epeebois);
+      end;
+      if choixU = 21 then
+      begin
+        equiperepee(joueur, epeefer);
+      end;
+      if choixU = 22 then
+      begin
+        equiperepee(joueur, epeeacier);
+      end;
+      if choixU = 23 then
+      begin
+        equiperepee(joueur, epeescale);
+      end;
+      if choixU = 24 then
+      begin
+        equiperepee(joueur, epeedemo);
+      end;
     end
     else
     begin

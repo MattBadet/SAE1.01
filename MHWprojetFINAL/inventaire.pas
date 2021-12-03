@@ -11,6 +11,7 @@ procedure initialisationinv();//INITIALISATION DE L'INVENTAIRE
 procedure ajouterinvarme(obj:arme);//AJOUT D'UN ITEM DANS L'INVENTAIRE ARME
 procedure ajouterinvbombe(obj:bombe);//AJOUT D'UN ITEM DANS L'INVENTAIRE BOMBE
 procedure ajouterinvpotion(obj:potion);//AJOUT D'UN ITEM DANS L'INVENTAIRE POTION
+procedure equiperepee(joueur:player;obj:arme);//EQUIPER UNE EPEE
 procedure equipercasque(joueur:player;epe:armure);//EQUIPER UN CASQUE
 procedure equiperplastron(joueur:player;epe:armure);//EQUIPER UN PLASTRON
 procedure equiperjambiere(joueur:player;epe:armure);//EQUIPER UNE JAMBIERE
