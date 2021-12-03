@@ -8,25 +8,35 @@ uses
   Classes, SysUtils, utilities, perso;
 
 procedure initialisationinv();//INITIALISATION DE L'INVENTAIRE
+//PARTIE AJOUT D'OBJET DANS L'INVENTAIRE
 procedure ajouterinvarme(obj:arme);//AJOUT D'UN ITEM DANS L'INVENTAIRE ARME
 procedure ajouterinvbombe(obj:bombe);//AJOUT D'UN ITEM DANS L'INVENTAIRE BOMBE
 procedure ajouterinvpotion(obj:potion);//AJOUT D'UN ITEM DANS L'INVENTAIRE POTION
+//PARTIE EQUIPER ARMURE OU ARME
 procedure equiperepee(joueur:player;obj:arme);//EQUIPER UNE EPEE
 procedure equipercasque(joueur:player;epe:armure);//EQUIPER UN CASQUE
 procedure equiperplastron(joueur:player;epe:armure);//EQUIPER UN PLASTRON
-procedure equiperjambiere(joueur:player;epe:armure);//EQUIPER UNE JAMBIERE
+procedure equiperjambiere(joueur:player;epe:armure);//EQUIPER DES JAMBIERES
 procedure equiperbottes(joueur:player;epe:armure);//EQUIPER DES BOTTES
 procedure equiperbouclier(joueur:player;epe:armure);//EQUIPER UN BOUCLIER
+//PARTIE DESEQUIPER ARMURE OU ARME
 procedure desequiperepee(joueur:player;obj:arme);//DESEQUIPER UNE EPEE
 procedure desequipercasque(joueur:player;epe:armure);//DESEQUIPER UN CASQUE
 procedure desequiperplastron(joueur:player;epe:armure);//DESEQUIPER UN PLASTRON
 procedure desequiperjambiere(joueur:player;epe:armure);//DESEQUIPER UNE JAMBIERE
 procedure desequiperbottes(joueur:player;epe:armure);//DESEQUIPER DES BOTTES
 procedure desequiperbouclier(joueur:player;epe:armure);//DESEQUIPER UN BOUCLIER
-procedure afficheinv(joueur:player);//TEMP POUR LES TEST DE L'INV
 
+procedure afficheinv(joueur:player);//TEMP POUR LES TEST DE L'INV
+//PARTIE ENLEVER UN OBJET DE L'INVENTAIRE
 procedure deletepotion(obj:potion);//Enlever une potion de l'inventaire
 procedure deletebombe(obj:bombe); //Enlever une bombe de l'inventaire
+procedure deleteepee(obj:arme);//Enlever une epee de l'inventaire
+procedure deletecasque(obj:armure);//Enlever un casque de l'inventaire
+procedure deleteplastron(obj:armure);//Enlever un plastron de l'inventaire
+procedure deletejambiere(obj:armure);//Enlever des jambieres de l'inventaire
+procedure deletebottes(obj:armure);//Enlever des bottes de l'inventaire
+procedure deletebouclier(obj:armure);//Enlever un bouclier de l'inventaire
 
 implementation
 
@@ -254,7 +264,27 @@ begin
 end;
 procedure deleteepee(obj:arme);
 begin
-  obj:=nullarme;
+  obj:=nullarm;
+end;
+procedure deletecasque(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deleteplastron(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deletejambiere(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deletebottes(obj:armure);
+begin
+  obj:=nullarmure;
+end;
+procedure deletebouclier(obj:armure);
+begin
+  obj:=nullarmure;
 end;
 
 end.

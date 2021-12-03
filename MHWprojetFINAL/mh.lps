@@ -9,24 +9,22 @@
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="15" Y="6"/>
-        <UsageCount Value="51"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="14"/>
+        <TopLine Value="101"/>
         <CursorPos X="11" Y="154"/>
-        <FoldState Value=" T3D0{u013w"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="2"/>
+        <TopLine Value="161"/>
         <CursorPos X="64" Y="13"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
@@ -35,6 +33,7 @@
         <Filename Value="affichageobjet.pas"/>
         <UnitName Value="affichageObjet"/>
         <EditorIndex Value="9"/>
+        <TopLine Value="675"/>
         <CursorPos X="34" Y="9"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
@@ -53,7 +52,6 @@
         <EditorIndex Value="2"/>
         <TopLine Value="49"/>
         <CursorPos X="10" Y="17"/>
-        <FoldState Value=" T3M0N3 pj7jg08[948jS0J3?"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -83,9 +81,11 @@
       </Unit8>
       <Unit9>
         <Filename Value="inventaire.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="26"/>
-        <CursorPos X="30" Y="16"/>
+        <TopLine Value="96"/>
+        <CursorPos X="15" Y="257"/>
+        <FoldState Value=" T3i20O5 piajO04C15:"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit9>
@@ -100,8 +100,8 @@
       <Unit11>
         <Filename Value="utilities.pas"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="317"/>
-        <CursorPos X="11" Y="338"/>
+        <TopLine Value="248"/>
+        <CursorPos X="38" Y="278"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit11>
@@ -229,8 +229,8 @@
         <Caret Line="92" Column="14" TopLine="87"/>
       </Position29>
       <Position30>
-        <Filename Value="inventaire.pas"/>
-        <Caret Line="16" Column="30" TopLine="26"/>
+        <Filename Value="utilities.pas"/>
+        <Caret Line="278" Column="38" TopLine="248"/>
       </Position30>
     </JumpHistory>
     <RunParams>
