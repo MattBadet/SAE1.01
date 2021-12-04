@@ -386,8 +386,6 @@ end;
 function afficheVente(po:Integer):Integer; // afffichage des ventes du marchand
 var
   x,y,i,choix1,choix2:Integer;
-  //arme:arme;
-  //armure:armure;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
@@ -397,22 +395,28 @@ begin
     ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand
-    // Arme
-    dessinerCadreXY(2,3,30,33,simple,white,black);
-    ecrireEnPositionXY(6,4,'Armes Inventaire');
-    x:=4;
-    y:=6;
-    for i:=1 to length(invarme) do
-        ecrireEnPositionXY(x,y+i,'Armre '+IntToStr(i) + ' : ' + invarme[i].nom);
-    // Armure
-    dessinerCadreXY(31,3,60,33,simple,white,black);
-    ecrireEnPositionXY(35,4,'Armures Inventaire');
-    x:=33;
-    for i:=1 to length(invarmure) do
-        ecrireEnPositionXY(x,y+i,'Armure '+IntToStr(i) + ' : ' + invarmure[i].nom);
-    // statistique objet
     ecrireEnPositionXY(80,10,' Voulez-vous vendre 1-une arme 2-une armure ? : ');
     readln(choix1);
+    if choix1=1 then
+    begin
+      // Arme
+      dessinerCadreXY(2,3,30,30,simple,white,black);
+      ecrireEnPositionXY(6,4,'Armes Inventaire');
+      x:=4;
+      y:=6;
+      for i:=1 to length(invarme) do
+            ecrireEnPositionXY(x,y+i,'Armre '+IntToStr(i) + ' : ' + invarme[i].nom);
+    end
+    else
+    begin
+       // Armure
+       dessinerCadreXY(31,3,60,30,simple,white,black);
+       ecrireEnPositionXY(35,4,'Armures Inventaire');
+       x:=33;
+       for i:=1 to length(invarmure) do
+             ecrireEnPositionXY(x,y+i,'Armure '+IntToStr(i) + ' : ' + invarmure[i].nom);
+    end;
+    // statistique objet
     ecrireEnPositionXY(80,12,' Quel item voulez-vous vendre ? : ');
     readln(choix2);
     if choix=1 then
