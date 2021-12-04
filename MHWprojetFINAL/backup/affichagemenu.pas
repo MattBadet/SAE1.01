@@ -362,13 +362,13 @@ begin
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
+    // bombe
+    ecrireEnPositionXY(5,14,('4-'+bombepetite.nom));
+    ecrireEnPositionXY(5,16,('5-'+bombemoyenne.nom));
     // potion
     ecrireEnPositionXY(5,6,('1-'+petitepotion.nom));
     ecrireEnPositionXY(5,8,('2-'+moyennepotion.nom));
     ecrireEnPositionXY(5,10,('3-'+grandepotion.nom));
-    // bombe
-    ecrireEnPositionXY(5,14,('4-'+bombepetite.nom));
-    ecrireEnPositionXY(5,16,('5-'+bombemoyenne.nom));
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
@@ -381,6 +381,7 @@ procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de P
 begin
     dessinerCadreXY(55,16,95,18,simple,white,black);
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
+    readln;
 end;
 
 function afficheVente(po:Integer):Integer; // afffichage des ventes du marchand
