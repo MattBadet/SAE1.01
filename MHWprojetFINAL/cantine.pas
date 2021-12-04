@@ -51,7 +51,7 @@ procedure cantineMenu(joueur : player);//ENTRE DANS LA CANTINE
 implementation
 procedure cantineMenu(joueur : player);
 begin
-  choixmenu(1,joueur);//affichecantine());
+  choixmenu(affichecantine(),joueur);//affichecantine());
 end;
 procedure choixmenu(choix:integer;joueur : player);
 begin
