@@ -1,7 +1,8 @@
 unit utilities;
-
+//Le role de cette unité est d'initialiser tous les objets du jeu.
+//J'ai fais cela car celui ci prend beaucoup de place dans une autre unité.
 {$mode objfpc}{$H+}
-
+{$codepage UTF8}
 interface
 
 uses
@@ -238,7 +239,7 @@ casquescale: armure = (
                nom:'bouclier en écaille de dragon';
                desc:'pour se protéger';
                partie:'bouclier';
-               def:10;
+               def:350;
                material:'scale';
                idmaterial: 4;
                id: 19;
@@ -252,15 +253,15 @@ casquescale: armure = (
              id:0;
   );
   bombepetite: bombe = (
-         nom:'bombe petite';
+         nom:'Petite Bombe';
          desc:'une bombe qui explose';
          degat:100;
          prix:3;
          id:1;
   );
   bombemoyenne: bombe = (
-                nom:'bombe grande';
-                desc:'une bombequi explose plus fort';
+                nom:'Grande Bombe';
+                desc:'une bombe qui explose plus fort';
                 degat:300;
                 prix:7;
                 id:2;
@@ -274,21 +275,21 @@ casquescale: armure = (
               id:0;
   );
   petitepotion: potion = (
-                nom:'petite';
+                nom:'Petite Potion';
                 desc:'petite potion';
                 effet:10;
                 prix:5;
                 id:3;
   );
   moyennepotion: potion = (
-                nom:'moyenne';
+                nom:'Moyenne Potion';
                 desc:'moyenne potion';
                 effet:20;
                 prix:10;
                 id:4;
   );
   grandepotion: potion = (
-                nom:'petite';
+                nom:'Grande Potion';
                 desc:'grande potion';
                 effet:30;
                 prix:15;
