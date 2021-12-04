@@ -405,11 +405,11 @@ begin
   ecrireEnPositionXY(x+15,y+9,'/''  _ `---'''' , . ``---'' _  `\');
   ecrireEnPositionXY(x+14,y+10,'/     \    ,=''/ \`=.    /     \');
   ecrireEnPositionXY(x+13,y+11,'|__   /|\_,--.,-.--,--._/|\   __|');
-  ecrireEnPositionXY(x+20,y+12,'\\`\ |  |  | /,//'');
+  ecrireEnPositionXY(x+20,y+12,'\\`\ |  |  | /,//''');
   ecrireEnPositionXY(x+22,y+13,'||--+--|--+-/-|');
   ecrireEnPositionXY(x+21,y+14,'/''\_\_\ | /_/_/`\');
   ecrireEnPositionXY(x+21,y+15,'\_     `~''     _/');
-  ecrireEnPositionXY(x+23,y+16,'`-._______,-'');
+  ecrireEnPositionXY(x+23,y+16,'`-._______,-''');
 end;
 
 procedure plancher();  // affiche l'arrière plan de la chambre
@@ -501,6 +501,7 @@ begin
   'phoenix':phoenix(x,y);
   'dragon1':dragon1(x,y);
   'dragon2':dragon2(x,y);
+  'boos':boss(x,y);
   'armure':armure(x,y);
   'hero':hero(x,y);
   'decoCelt':decoCelt(x,y);
