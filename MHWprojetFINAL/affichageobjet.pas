@@ -59,25 +59,25 @@ end;
 
 procedure grLit(x,y:Integer); // Affichage du lit de la chambre
 begin
-  ecrireEnPositionXY(x+18,y;'()              ()');
-  ecrireEnPositionXY(x+11,y+1;'(      ||______________||      )');
-  ecrireEnPositionXY(x+10,y+2;'(_)     |                |     (_)');
-  ecrireEnPositionXY(x+10,y+3;'|`|     |     Dormir     |     |`|');
-  ecrireEnPositionXY(x+5,y+4;'()_  | |     |_______  _______|     | |  _()');
-  ecrireEnPositionXY(x+7,y+5;'_\_|_|_/_  {_______}{_______}  _\_|_|_/_');
-  ecrireEnPositionXY(x+8,y+6;'|__~__|___%%%%%%%%%%%%%%%%%%___|__~__|');
-  ecrireEnPositionXY(x+5,y+7;'___|_____|__%%%%%%%%%%%%%%%%%%%%__|_____|___');
-  ecrireEnPositionXY(x+8,y+8;'|     | %%%%%%%%%%%%%%%%%%%%%% |     |');
-  ecrireEnPositionXY(x+9,y+9;'`=====%%%%%%%%%%%%%%%%%%%%%%%%=====`');
-  ecrireEnPositionXY(x+8,y+10;'`=====%%%%%%%%%%%%%%%%%%%%%%%%%%=====`');
-  ecrireEnPositionXY(x+7,y+11;'`=====%%%%%%%%%%%%%%%%%%%%%%%%%%%%=====`');
-  ecrireEnPositionXY(x+6,y+12;'`=====/||||||||||||||||||||||||||||\=====`');
-  ecrireEnPositionXY(x+5,y+13;'`======||||||||||||||||||||||||||||||======`');
-  ecrireEnPositionXY(x+4,y+14;'`=======||||||||||||||||||||||||||||||=======`');
-  ecrireEnPositionXY(x+3,y+15;'`==============================================`');
-  ecrireEnPositionXY(x+2,y+16;'`================================================`');
-  ecrireEnPositionXY(x+1,y+17;'`==================================================`');
-  ecrireEnPositionXY(x,y+18;'`====================================================`');
+  ecrireEnPositionXY(x+18,y,'()              ()');
+  ecrireEnPositionXY(x+11,y+1,'(      ||______________||      )');
+  ecrireEnPositionXY(x+10,y+2,'(_)     |                |     (_)');
+  ecrireEnPositionXY(x+10,y+3,'|`|     |     Dormir     |     |`|');
+  ecrireEnPositionXY(x+5,y+4,'()_  | |     |_______  _______|     | |  _()');
+  ecrireEnPositionXY(x+7,y+5,'_\_|_|_/_  {_______}{_______}  _\_|_|_/_');
+  ecrireEnPositionXY(x+8,y+6,'|__~__|___%%%%%%%%%%%%%%%%%%___|__~__|');
+  ecrireEnPositionXY(x+5,y+7,'___|_____|__%%%%%%%%%%%%%%%%%%%%__|_____|___');
+  ecrireEnPositionXY(x+8,y+8,'|     | %%%%%%%%%%%%%%%%%%%%%% |     |');
+  ecrireEnPositionXY(x+9,y+9,'`=====%%%%%%%%%%%%%%%%%%%%%%%%=====`');
+  ecrireEnPositionXY(x+8,y+10,'`=====%%%%%%%%%%%%%%%%%%%%%%%%%%=====`');
+  ecrireEnPositionXY(x+7,y+11,'`=====%%%%%%%%%%%%%%%%%%%%%%%%%%%%=====`');
+  ecrireEnPositionXY(x+6,y+12,'`=====/||||||||||||||||||||||||||||\=====`');
+  ecrireEnPositionXY(x+5,y+13,'`======||||||||||||||||||||||||||||||======`');
+  ecrireEnPositionXY(x+4,y+14,'`=======||||||||||||||||||||||||||||||=======`');
+  ecrireEnPositionXY(x+3,y+15,'`==============================================`');
+  ecrireEnPositionXY(x+2,y+16,'`================================================`');
+  ecrireEnPositionXY(x+1,y+17,'`==================================================`');
+  ecrireEnPositionXY(x,y+18,'`====================================================`');
 end;
 
 procedure coffre(x,y:Integer); // Affichage du symbole "coffre" ligne par ligne
@@ -154,7 +154,7 @@ begin
     ecrireEnPositionXY(x,y+19,'\ \ \/ /\ \/ / /');
     ecrireEnPositionXY(x,y+20,' \ \/ /  \/ / /');
     ecrireEnPositionXY(x,y+21,'  \ \/\/\ \/\/');
-    deplacerCurseurXY(x,y+22,'  /\/\ \/\/\ \');
+    ecrireEnPositionXY(x,y+22,'  /\/\ \/\/\ \');
     ecrireEnPositionXY(x,y+23,' / / /\/ / /\ \');
     ecrireEnPositionXY(x,y+24,'/ / /\ \/\/\ \ \');
     ecrireEnPositionXY(x,y+25,'\ \ \/\/\ \/ / /');
@@ -172,7 +172,7 @@ begin
     ecrireEnPositionXY(x+3,y+2,'( _/-\\-._');
     ecrireEnPositionXY(x+2,y+3,'/,|`--._,-^|            ,');
     ecrireEnPositionXY(x+2,y+4,'\_| |`-._/||          ,''|');
-    deplacerCurseurXY(x+4,y+5,'|  `-, / |         /  /');
+    ecrireEnPositionXY(x+4,y+5,'|  `-, / |         /  /');
     ecrireEnPositionXY(x+4,y+6,'|     || |        /  /');
     ecrireEnPositionXY(x+5,y+7,'`r-._||/   __   /  /');
     ecrireEnPositionXY(x+1,y+8,'__,-<_     )`-/  `./  /');
@@ -212,7 +212,7 @@ begin
   ecrireEnPositionXY(x,y+12,'|||\|        |/|||');
   ecrireEnPositionXY(x,y+13,''''''' |___/\___| ''''''');
   ecrireEnPositionXY(x+5,y+14,'\_ || _/');
-  ecrireEnPositionXY(x+5,y+15'<_ >< _>');
+  ecrireEnPositionXY(x+5,y+15,'<_ >< _>');
   ecrireEnPositionXY(x+5,y+16,'|  ||  |');
   ecrireEnPositionXY(x+5,y+17,'|  ||  |');
   ecrireEnPositionXY(x+4,y+18,'_\.:||:./_');
@@ -247,7 +247,7 @@ begin
   ecrireEnPositionXY(x+5,y+22,'_--''   _--''   |     _---_---''  |  \ \__/\|/');
   ecrireEnPositionXY(x+4,y+23,'(-(-===(-(-(===/    (-(-=(-(-(==/   \____/');
   couleurTexte(White); // chagement de couleur pour passer l'avant du griffon en blanc
-  ecrireEnPositionXY(x+5,y+6),'.---`,');
+  ecrireEnPositionXY(x+5,y+6,'.---`,');
   ecrireEnPositionXY(x+1,y+7,'__--\/6-  \');
   ecrireEnPositionXY(x,y+8,'(----/    \\\');
   ecrireEnPositionXY(x+3,y+9,'~/-\  \\\\\');
@@ -345,7 +345,7 @@ begin
   ecrireEnPositionXY(x+7,y+13,'(@ (@@@@(@@      `''  (( ~  .` .');
   ecrireEnPositionXY(x+11,y+14,'@@@@@             (((` ~ .-~');
   ecrireEnPositionXY(x+10,y+15,'/                 /~((((` . ~');
-  ecrireEnPositionXY(x+9,y+16),'/                 /~-((((((`.\');
+  ecrireEnPositionXY(x+9,y+16,'/                 /~-((((((`.\');
   ecrireEnPositionXY(x+8,y+17,'/                 /-~-/(((((((`');
   ecrireEnPositionXY(x+7,y+18,'/                 /~-~/  `((((((');
   ecrireEnPositionXY(x+6,y+19,'/              ___/-~-/     `""""');

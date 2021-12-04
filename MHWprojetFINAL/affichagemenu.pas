@@ -286,7 +286,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : ',IntToStr(PO)));
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(PO)));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand potion
     x:=5;
@@ -394,7 +394,6 @@ end;
 
 function afficheCreationPerso():player; // menu de la création du personnage
 var
-  choix:Integer; // contient le choix du menu
   joueur:player; // le personnage une fois créé
 begin
     changerTailleConsole(150,35);

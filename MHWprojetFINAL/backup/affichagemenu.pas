@@ -45,24 +45,15 @@ begin
     ecrireEnPositionXY(x,y+4,'     |  |"|_/\/|            | | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|            |\/\_|"|  |');
     ecrireEnPositionXY(x,y+5,'     ;  |-;| /_|            |-|                         ''^`   (o o)  ''^`                          | |            |_\ |;-|  ;');
     ecrireEnPositionXY(x,y+6,'    / \_| |/ \ |            | |                               `\Y/''                               |-|            | / \| |_/ \');
-    deplacerCurseurXY(x,y+7);
-    write('   /      \/\( |            |-|                                                                   | |            | )/\/      \');
-    deplacerCurseurXY(x,y+8);
-    write('   |   /  |` ) |            | |                             YOU DIED !                            |-|            | ( ''|  \   |');
-    deplacerCurseurXY(x,y+9);
-    write('   /   \ _/    |            |-|                                                                   | |            |    \_ /   \');
-    deplacerCurseurXY(x,y+10);
-    write('  /--._/  \    |            | |                                                                   |-|            |    /  \_.--\');
-    deplacerCurseurXY(x,y+11);
-    write('  `/|)    |    /            |_|___________________________________________________________________| |            \    |    (|\`');
-    deplacerCurseurXY(x,y+12);
-    write('    /     |   |             (@)              l   /\ /         ( (       \ /\   l                `\|-|             |   |     \');
-    deplacerCurseurXY(x,y+13);
-    write('  .''      |   |                              l /   V           \ \       V   \ l                  (@)             |   |      ''.');
-    deplacerCurseurXY(x,y+14);
-    write(' /         \  |                              l/                _) )_          \I                                  |  /         \');
-    deplacerCurseurXY(x,y+15);
-    write('(_.-.__.__./  /                                                `\ /''                                              \  \.__.__.-._)');
+    ecrireEnPositionXY(x,y+7,'   /      \/\( |            |-|                                                                   | |            | )/\/      \');
+    ecrireEnPositionXY(x,y+8,'   |   /  |` ) |            | |                             YOU DIED !                            |-|            | ( ''|  \   |');
+    ecrireEnPositionXY(x,y+9,'   /   \ _/    |            |-|                                                                   | |            |    \_ /   \');
+    ecrireEnPositionXY(x,y+10,'  /--._/  \    |            | |                                                                   |-|            |    /  \_.--\');
+    ecrireEnPositionXY(x,y+11,'  `/|)    |    /            |_|___________________________________________________________________| |            \    |    (|\`');
+    ecrireEnPositionXY(x,y+12,'    /     |   |             (@)              l   /\ /         ( (       \ /\   l                `\|-|             |   |     \');
+    ecrireEnPositionXY(x,y+13,'  .''      |   |                              l /   V           \ \       V   \ l                  (@)             |   |      ''.');
+    ecrireEnPositionXY(x,y+14,' /         \  |                              l/                _) )_          \I                                  |  /         \');
+    ecrireEnPositionXY(x,y+15,'(_.-.__.__./  /                                                `\ /''                                              \  \.__.__.-._)');
 end;
 
 procedure afficheVictoire();
@@ -72,38 +63,22 @@ begin
     x:= 34;
     y:=8;
     dessinerCadreXY(x-5,y-2,x+77,y+17,simple,white,black);
-    deplacerCurseurXY(x+34,y);
-    write('/   \');
-    deplacerCurseurXY(x+26,y+1);
-    write(')      ((   ))     (');
-    deplacerCurseurXY(x,y+2);
-    write('(@)                      /|\      ))_((     /|\ ');
-    deplacerCurseurXY(x,y+3);
-    write('|-|                     / | \    (/\|/\)   / | \                      (@)');
-    deplacerCurseurXY(x,y+4);
-    write('| | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|');
-    deplacerCurseurXY(x,y+5);
-    write('|-|                         ''^`   (o o)  ''^`                          | |');
-    deplacerCurseurXY(x,y+6);
-    write('| |                               `\Y/''                               |-|');
-    deplacerCurseurXY(x,y+7);
-    write('|-|                                                                   | |');
-    deplacerCurseurXY(x,y+8);
-    write('| |                             VICTOIRE !                            |-|');
-    deplacerCurseurXY(x,y+9);
-    write('|-|                                                                   | |');
-    deplacerCurseurXY(x,y+10);
-    write('| |                                                                   |-|');
-    deplacerCurseurXY(x,y+11);
-    write('|_|___________________________________________________________________| |');
-    deplacerCurseurXY(x,y+12);
-    write('(@)              l   /\ /         ( (       \ /\   l                `\|-|');
-    deplacerCurseurXY(x+17,y+13);
-    write('l /   V           \ \       V   \ l                  (@)');
-    deplacerCurseurXY(x+17,y+14);
-    write('l/                _) )_          \I');
-    deplacerCurseurXY(x+35,y+15);
-    write('`\ /''');
+    ecrireEnPositionXY(x+34,y,'/   \');
+    ecrireEnPositionXY(x+26,y+1,')      ((   ))     (');
+    ecrireEnPositionXY(x,y+2,'(@)                      /|\      ))_((     /|\ ');
+    ecrireEnPositionXY(x,y+3,'|-|                     / | \    (/\|/\)   / | \                      (@)');
+    ecrireEnPositionXY(x,y+4,'| | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|');
+    ecrireEnPositionXY(x,y+5,'|-|                         ''^`   (o o)  ''^`                          | |');
+    ecrireEnPositionXY(x,y+6,'| |                               `\Y/''                               |-|');
+    ecrireEnPositionXY(x,y+7,'|-|                                                                   | |');
+    ecrireEnPositionXY(x,y+8,'| |                             VICTOIRE !                            |-|');
+    ecrireEnPositionXY(x,y+9,'|-|                                                                   | |');
+    ecrireEnPositionXY(x,y+10,'| |                                                                   |-|');
+    ecrireEnPositionXY(x,y+11,'|_|___________________________________________________________________| |');
+    ecrireEnPositionXY(x,y+12,'(@)              l   /\ /         ( (       \ /\   l                `\|-|');
+    ecrireEnPositionXY(x+17,y+13,'l /   V           \ \       V   \ l                  (@)');
+    ecrireEnPositionXY(x+17,y+14,'l/                _) )_          \I');
+    ecrireEnPositionXY(x+35,y+15,'`\ /''');
 end;
 
 procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
@@ -175,8 +150,7 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,33,simple,white,black);
     dessinerCadreXY(67,0,83,2,simple,white,black);
-    deplacerCurseurXY(70,1);
-    write('Inventaire');
+    ecrireEnPositionXY(70,1,'Inventaire');
     dessinerCadreXY(2,3,40,32,simple,white,black);
     dessinerCadreXY(42,3,146,32,simple,white,black);
     ecrireEnPositionXY(18,4,'Objet');
@@ -201,8 +175,7 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,33,simple,white,black);
     dessinerCadreXY(67,0,83,2,simple,white,black);
-    deplacerCurseurXY(70,1);
-    write('Inventaire');
+    ecrireEnPositionXY(70,1,'Inventaire');
     dessinerCadreXY(2,3,40,32,simple,white,black);
     dessinerCadreXY(42,3,146,32,simple,white,black);
     ecrireEnPositionXY(18,4,'Objet');
@@ -269,10 +242,8 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);     // objets disponibles
     dessinerCadreXY(42,3,146,30,simple,white,black);  // crafts
     dessinerCadreXY(2,31,146,33,simple,white,black); // resources
-    deplacerCurseurXY(5,32);
-    write('Ressources Disponilbes : X trucs  X machins ....');
-    deplacerCurseurXY(18,4);
-    write('Objet');
+    ecrireEnPositionXY(5,32,'Ressources Disponilbes : X trucs  X machins ....');
+    ecrireEnPositionXY(18,4,'Objet');
     // remplissage forge
     x:=5;
     y:=6;
@@ -311,15 +282,12 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
     dessinerCadreXY(69,0,81,2,simple,white,black);
-    deplacerCurseurXY(71,1);
-    write('Marchand');
+    ecrireEnPositionXY(71,1,'Marchand');
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    deplacerCurseurXY(5,32);
-    write('Pièces d''Or Disponilbes : ',PO);
-    deplacerCurseurXY(18,4);
-    write('Objet');
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : ',IntToStr(PO)));
+    ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand potion
     x:=5;
     y:=6;
@@ -348,14 +316,12 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
     dessinerCadreXY(69,0,81,2,simple,white,black);
-    deplacerCurseurXY(71,1);
-    write('Marchand');
+    ecrireEnPositionXY(71,1,'Marchand');
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(PO)));
-    deplacerCurseurXY(18,4);
-    write('Objet');
+    ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand
     x:=5;
     y:=6;
@@ -428,7 +394,6 @@ end;
 
 function afficheCreationPerso():player; // menu de la création du personnage
 var
-  choix:Integer; // contient le choix du menu
   joueur:player; // le personnage une fois créé
 begin
     changerTailleConsole(150,35);
