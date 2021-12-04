@@ -10,15 +10,15 @@ uses
 function afficheMenuPrincipale():Boolean; // menu de la ville
 procedure regles(); // affiche les règles et le synopsis
 function afficheCreationPerso():player; // menu de la création du personnage
-procedure credit(); // Affichage des crédits
+procedure afficheCredit(); // Affichage des crédits
 function afficheVille():Integer; // Affichage du menu d'une partie
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
 function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
 function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
 function afficheCantine():Integer; // Affichage de la cantine
-procedure afficheForge(forge:array of armure); // afffichage de la forge
+function afficheForge(forge:array of armure):Integer; // afffichage de la forge
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
-procedure affciheDormir(); // Petite sieste
+procedure afficheDormir(); // Petite sieste
 function afficheInventaireChambre(joueur:player):Integer; // afffichage de l'inventaire depuis la chambre
 function afficheInventaireCombat(joueur:player):Integer; // afffichage de l'inventaire depuis un combat
 procedure precombat(); // ecran de liaison entre la ville et le combat
@@ -227,7 +227,7 @@ begin
     Result:=choix;
 end;
 
-procedure affciheDormir(); // Petite sieste
+procedure afficheDormir(); // Petite sieste
 begin
     ecrireEnPositionXY(54,11,' ______');
     ecrireEnPositionXY(54,12,'|___  /    ______');
@@ -252,12 +252,12 @@ begin
     affichage(22,10,'grCoffre');
     affichage(49,3,'armure');
     affichage(90,9,'grLit');
-    ecrireEnPositionXY(20,30,'Voulez-vous : 1-Dormir, 2-Voir votre Inventaire 3-Quitter : ');
+    ecrireEnPositionXY(20,2,'Voulez-vous : 1-Dormir, 2-Voir votre Inventaire et votre fiche Personange ou 3-Quitter : ');
     readln(choix);
     Result:=choix;
 end;
 
-procedure afficheForge(forge:array of armure); // afffichage de la forge
+function afficheForge(forge:array of armure):Integer; // afffichage de la forge
 var
   x,y,i,choix:Integer;
 begin
@@ -283,12 +283,6 @@ begin
     dessinerCadreXY(44,22,144,29,simple,white,black);
     readln(choix);
     Result:=choix;
-end;
-
-procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
-begin
-    dessinerCadreXY(55,16,95,18,simple,white,black),
-    ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
 end;
 
 function afficheCantine():Integer; // Affichage de la cantine
@@ -341,6 +335,12 @@ begin
     dessinerCadreXY(44,25,144,32,simple,white,black);
 end;
 
+procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
+begin
+    dessinerCadreXY(55,16,95,18,simple,white,black);
+    ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
+end;
+
 function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
 var
   x,y,i:Integer;
@@ -353,8 +353,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    deplacerCurseurXY(5,32);
-    write('Pièces d''Or Disponilbes : ',PO);
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(PO)));
     deplacerCurseurXY(18,4);
     write('Objet');
     // remplissage marchand
@@ -411,12 +410,20 @@ begin
     end;
 end;
 
-procedure credit(); // Affichage des crédits
+procedure afficheCredit(); // Affichage des crédits
 begin
     effacerEcran();
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
-
+    dessinerCadreXY(38,1,112,8,simple,white,black);
+    ecrireEnPositionXY(40,3,'  /\/\   ___  _ __  ___| |_ ___ _ __    /\  /\_   _ _ __ | |_ ___ _ __ ');
+    ecrireEnPositionXY(40,4,' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
+    ecrireEnPositionXY(40,5,'/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
+    ecrireEnPositionXY(40,6,'\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
+    ecrireEnPositionXY(69,10,'Hideo KOJIMA');
+    ecrireEnPositionXY(59,14,'Jeu commandé par Matthieu SIMONET');
+    ecrireEnPositionXY(45,16,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
+    ecrireEnPositionXY(63,18,'Inspiré par Hideo KOJIMA');
 end;
 
 function afficheCreationPerso():player; // menu de la création du personnage
@@ -427,14 +434,10 @@ begin
     changerTailleConsole(150,35);
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
-    deplacerCurseurXY(60,12);
-    write('Quel est votre sexe ? ');
-    deplacerCurseurXY(60,15);
-    write('Quel est votre taille ? ');
-    deplacerCurseurXY(60,18);
-    write('Comment vous appelez-vous ? ');
-    deplacerCurseurXY(60,21);
-    write('Comment allez- vous ? ');
+    ecrireEnPositionXY(60,12,'Quel est votre sexe ? ');
+    ecrireEnPositionXY(60,15,'Quel est votre taille ? ');
+    ecrireEnPositionXY(60,18,'Comment vous appelez-vous ? ');
+    ecrireEnPositionXY(60,21,'Comment allez- vous ? ');
     deplacerCurseurXY(82,12);
     readln(joueur.sexe);
     deplacerCurseurXY(84,15);
@@ -466,14 +469,10 @@ var
 begin
     changerTailleConsole(150,35);
     dessinerCadreXY(38,1,112,8,simple,white,black);
-    deplacerCurseurXY(40,3);
-    write('  /\/\   ___  _ __  ___| |_ ___ _ __    /\  /\_   _ _ __ | |_ ___ _ __ ');
-    deplacerCurseurXY(40,4);
-    write(' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
-    deplacerCurseurXY(40,5);
-    write('/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
-    deplacerCurseurXY(40,6);
-    write('\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
+    ecrireEnPositionXY(40,3,'  /\/\   ___  _ __  ___| |_ ___ _ __    /\  /\_   _ _ __ | |_ ___ _ __ ');
+    ecrireEnPositionXY(40,4,' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
+    ecrireEnPositionXY(40,5,'/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
+    ecrireEnPositionXY(40,6,'\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
     dessinerCadreXY(60,11,85,15,simple,white,black);
     dessinerCadreXY(60,17,85,21,simple,white,black);
     dessinerCadreXY(60,23,85,27,simple,white,black);

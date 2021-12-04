@@ -10,15 +10,15 @@ uses
 function afficheMenuPrincipale():Boolean; // menu de la ville
 procedure regles(); // affiche les règles et le synopsis
 function afficheCreationPerso():player; // menu de la création du personnage
-procedure credit(); // Affichage des crédits
+procedure afficheCredit(); // Affichage des crédits
 function afficheVille():Integer; // Affichage du menu d'une partie
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
 function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
 function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
 function afficheCantine():Integer; // Affichage de la cantine
-procedure afficheForge(forge:array of armure); // afffichage de la forge
+function afficheForge(forge:array of armure):Integer; // afffichage de la forge
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
-procedure affciheDormir(); // Petite sieste
+procedure afficheDormir(); // Petite sieste
 function afficheInventaireChambre(joueur:player):Integer; // afffichage de l'inventaire depuis la chambre
 function afficheInventaireCombat(joueur:player):Integer; // afffichage de l'inventaire depuis un combat
 procedure precombat(); // ecran de liaison entre la ville et le combat
@@ -45,24 +45,15 @@ begin
     ecrireEnPositionXY(x,y+4,'     |  |"|_/\/|            | | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|            |\/\_|"|  |');
     ecrireEnPositionXY(x,y+5,'     ;  |-;| /_|            |-|                         ''^`   (o o)  ''^`                          | |            |_\ |;-|  ;');
     ecrireEnPositionXY(x,y+6,'    / \_| |/ \ |            | |                               `\Y/''                               |-|            | / \| |_/ \');
-    deplacerCurseurXY(x,y+7);
-    write('   /      \/\( |            |-|                                                                   | |            | )/\/      \');
-    deplacerCurseurXY(x,y+8);
-    write('   |   /  |` ) |            | |                             YOU DIED !                            |-|            | ( ''|  \   |');
-    deplacerCurseurXY(x,y+9);
-    write('   /   \ _/    |            |-|                                                                   | |            |    \_ /   \');
-    deplacerCurseurXY(x,y+10);
-    write('  /--._/  \    |            | |                                                                   |-|            |    /  \_.--\');
-    deplacerCurseurXY(x,y+11);
-    write('  `/|)    |    /            |_|___________________________________________________________________| |            \    |    (|\`');
-    deplacerCurseurXY(x,y+12);
-    write('    /     |   |             (@)              l   /\ /         ( (       \ /\   l                `\|-|             |   |     \');
-    deplacerCurseurXY(x,y+13);
-    write('  .''      |   |                              l /   V           \ \       V   \ l                  (@)             |   |      ''.');
-    deplacerCurseurXY(x,y+14);
-    write(' /         \  |                              l/                _) )_          \I                                  |  /         \');
-    deplacerCurseurXY(x,y+15);
-    write('(_.-.__.__./  /                                                `\ /''                                              \  \.__.__.-._)');
+    ecrireEnPositionXY(x,y+7,'   /      \/\( |            |-|                                                                   | |            | )/\/      \');
+    ecrireEnPositionXY(x,y+8,'   |   /  |` ) |            | |                             YOU DIED !                            |-|            | ( ''|  \   |');
+    ecrireEnPositionXY(x,y+9,'   /   \ _/    |            |-|                                                                   | |            |    \_ /   \');
+    ecrireEnPositionXY(x,y+10,'  /--._/  \    |            | |                                                                   |-|            |    /  \_.--\');
+    ecrireEnPositionXY(x,y+11,'  `/|)    |    /            |_|___________________________________________________________________| |            \    |    (|\`');
+    ecrireEnPositionXY(x,y+12,'    /     |   |             (@)              l   /\ /         ( (       \ /\   l                `\|-|             |   |     \');
+    ecrireEnPositionXY(x,y+13,'  .''      |   |                              l /   V           \ \       V   \ l                  (@)             |   |      ''.');
+    ecrireEnPositionXY(x,y+14,' /         \  |                              l/                _) )_          \I                                  |  /         \');
+    ecrireEnPositionXY(x,y+15,'(_.-.__.__./  /                                                `\ /''                                              \  \.__.__.-._)');
 end;
 
 procedure afficheVictoire();
@@ -72,38 +63,22 @@ begin
     x:= 34;
     y:=8;
     dessinerCadreXY(x-5,y-2,x+77,y+17,simple,white,black);
-    deplacerCurseurXY(x+34,y);
-    write('/   \');
-    deplacerCurseurXY(x+26,y+1);
-    write(')      ((   ))     (');
-    deplacerCurseurXY(x,y+2);
-    write('(@)                      /|\      ))_((     /|\ ');
-    deplacerCurseurXY(x,y+3);
-    write('|-|                     / | \    (/\|/\)   / | \                      (@)');
-    deplacerCurseurXY(x,y+4);
-    write('| | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|');
-    deplacerCurseurXY(x,y+5);
-    write('|-|                         ''^`   (o o)  ''^`                          | |');
-    deplacerCurseurXY(x,y+6);
-    write('| |                               `\Y/''                               |-|');
-    deplacerCurseurXY(x,y+7);
-    write('|-|                                                                   | |');
-    deplacerCurseurXY(x,y+8);
-    write('| |                             VICTOIRE !                            |-|');
-    deplacerCurseurXY(x,y+9);
-    write('|-|                                                                   | |');
-    deplacerCurseurXY(x,y+10);
-    write('| |                                                                   |-|');
-    deplacerCurseurXY(x,y+11);
-    write('|_|___________________________________________________________________| |');
-    deplacerCurseurXY(x,y+12);
-    write('(@)              l   /\ /         ( (       \ /\   l                `\|-|');
-    deplacerCurseurXY(x+17,y+13);
-    write('l /   V           \ \       V   \ l                  (@)');
-    deplacerCurseurXY(x+17,y+14);
-    write('l/                _) )_          \I');
-    deplacerCurseurXY(x+35,y+15);
-    write('`\ /''');
+    ecrireEnPositionXY(x+34,y,'/   \');
+    ecrireEnPositionXY(x+26,y+1,')      ((   ))     (');
+    ecrireEnPositionXY(x,y+2,'(@)                      /|\      ))_((     /|\ ');
+    ecrireEnPositionXY(x,y+3,'|-|                     / | \    (/\|/\)   / | \                      (@)');
+    ecrireEnPositionXY(x,y+4,'| | -------------------/--|-voV---\`|''/--Vov-|--\---------------------|-|');
+    ecrireEnPositionXY(x,y+5,'|-|                         ''^`   (o o)  ''^`                          | |');
+    ecrireEnPositionXY(x,y+6,'| |                               `\Y/''                               |-|');
+    ecrireEnPositionXY(x,y+7,'|-|                                                                   | |');
+    ecrireEnPositionXY(x,y+8,'| |                             VICTOIRE !                            |-|');
+    ecrireEnPositionXY(x,y+9,'|-|                                                                   | |');
+    ecrireEnPositionXY(x,y+10,'| |                                                                   |-|');
+    ecrireEnPositionXY(x,y+11,'|_|___________________________________________________________________| |');
+    ecrireEnPositionXY(x,y+12,'(@)              l   /\ /         ( (       \ /\   l                `\|-|');
+    ecrireEnPositionXY(x+17,y+13,'l /   V           \ \       V   \ l                  (@)');
+    ecrireEnPositionXY(x+17,y+14,'l/                _) )_          \I');
+    ecrireEnPositionXY(x+35,y+15,'`\ /''');
 end;
 
 procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
@@ -175,8 +150,7 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,33,simple,white,black);
     dessinerCadreXY(67,0,83,2,simple,white,black);
-    deplacerCurseurXY(70,1);
-    write('Inventaire');
+    ecrireEnPositionXY(70,1,'Inventaire');
     dessinerCadreXY(2,3,40,32,simple,white,black);
     dessinerCadreXY(42,3,146,32,simple,white,black);
     ecrireEnPositionXY(18,4,'Objet');
@@ -201,8 +175,7 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,33,simple,white,black);
     dessinerCadreXY(67,0,83,2,simple,white,black);
-    deplacerCurseurXY(70,1);
-    write('Inventaire');
+    ecrireEnPositionXY(70,1,'Inventaire');
     dessinerCadreXY(2,3,40,32,simple,white,black);
     dessinerCadreXY(42,3,146,32,simple,white,black);
     ecrireEnPositionXY(18,4,'Objet');
@@ -227,7 +200,7 @@ begin
     Result:=choix;
 end;
 
-procedure affciheDormir(); // Petite sieste
+procedure afficheDormir(); // Petite sieste
 begin
     ecrireEnPositionXY(54,11,' ______');
     ecrireEnPositionXY(54,12,'|___  /    ______');
@@ -252,12 +225,12 @@ begin
     affichage(22,10,'grCoffre');
     affichage(49,3,'armure');
     affichage(90,9,'grLit');
-    ecrireEnPositionXY(20,30,'Voulez-vous : 1-Dormir, 2-Voir votre Inventaire 3-Quitter : ');
+    ecrireEnPositionXY(20,2,'Voulez-vous : 1-Dormir, 2-Voir votre Inventaire et votre fiche Personange ou 3-Quitter : ');
     readln(choix);
     Result:=choix;
 end;
 
-procedure afficheForge(forge:array of armure); // afffichage de la forge
+function afficheForge(forge:array of armure):Integer; // afffichage de la forge
 var
   x,y,i,choix:Integer;
 begin
@@ -269,10 +242,8 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);     // objets disponibles
     dessinerCadreXY(42,3,146,30,simple,white,black);  // crafts
     dessinerCadreXY(2,31,146,33,simple,white,black); // resources
-    deplacerCurseurXY(5,32);
-    write('Ressources Disponilbes : X trucs  X machins ....');
-    deplacerCurseurXY(18,4);
-    write('Objet');
+    ecrireEnPositionXY(5,32,'Ressources Disponilbes : X trucs  X machins ....');
+    ecrireEnPositionXY(18,4,'Objet');
     // remplissage forge
     x:=5;
     y:=6;
@@ -311,15 +282,12 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
     dessinerCadreXY(69,0,81,2,simple,white,black);
-    deplacerCurseurXY(71,1);
-    write('Marchand');
+    ecrireEnPositionXY(71,1,'Marchand');
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    deplacerCurseurXY(5,32);
-    write('Pièces d''Or Disponilbes : ',PO);
-    deplacerCurseurXY(18,4);
-    write('Objet');
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : ',IntToStr(PO)));
+    ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand potion
     x:=5;
     y:=6;
@@ -337,7 +305,7 @@ end;
 
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
 begin
-    dessinerCadreXY(55,16,95,18,simple,white,black),
+    dessinerCadreXY(55,16,95,18,simple,white,black);
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
 end;
 
@@ -348,15 +316,12 @@ begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
     dessinerCadreXY(69,0,81,2,simple,white,black);
-    deplacerCurseurXY(71,1);
-    write('Marchand');
+    ecrireEnPositionXY(71,1,'Marchand');
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    deplacerCurseurXY(5,32);
-    write('Pièces d''Or Disponilbes : ',PO);
-    deplacerCurseurXY(18,4);
-    write('Objet');
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(PO)));
+    ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand
     x:=5;
     y:=6;
@@ -411,12 +376,20 @@ begin
     end;
 end;
 
-procedure credit(); // Affichage des crédits
+procedure afficheCredit(); // Affichage des crédits
 begin
     effacerEcran();
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
-
+    dessinerCadreXY(38,1,112,8,simple,white,black);
+    ecrireEnPositionXY(40,3,'  /\/\   ___  _ __  ___| |_ ___ _ __    /\  /\_   _ _ __ | |_ ___ _ __ ');
+    ecrireEnPositionXY(40,4,' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
+    ecrireEnPositionXY(40,5,'/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
+    ecrireEnPositionXY(40,6,'\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
+    ecrireEnPositionXY(69,10,'Hideo KOJIMA');
+    ecrireEnPositionXY(59,14,'Jeu commandé par Matthieu SIMONET');
+    ecrireEnPositionXY(45,16,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
+    ecrireEnPositionXY(63,18,'Inspiré par Hideo KOJIMA');
 end;
 
 function afficheCreationPerso():player; // menu de la création du personnage
@@ -427,14 +400,10 @@ begin
     changerTailleConsole(150,35);
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
-    deplacerCurseurXY(60,12);
-    write('Quel est votre sexe ? ');
-    deplacerCurseurXY(60,15);
-    write('Quel est votre taille ? ');
-    deplacerCurseurXY(60,18);
-    write('Comment vous appelez-vous ? ');
-    deplacerCurseurXY(60,21);
-    write('Comment allez- vous ? ');
+    ecrireEnPositionXY(60,12,'Quel est votre sexe ? ');
+    ecrireEnPositionXY(60,15,'Quel est votre taille ? ');
+    ecrireEnPositionXY(60,18,'Comment vous appelez-vous ? ');
+    ecrireEnPositionXY(60,21,'Comment allez- vous ? ');
     deplacerCurseurXY(82,12);
     readln(joueur.sexe);
     deplacerCurseurXY(84,15);
@@ -466,14 +435,10 @@ var
 begin
     changerTailleConsole(150,35);
     dessinerCadreXY(38,1,112,8,simple,white,black);
-    deplacerCurseurXY(40,3);
-    write('  /\/\   ___  _ __  ___| |_ ___ _ __    /\  /\_   _ _ __ | |_ ___ _ __ ');
-    deplacerCurseurXY(40,4);
-    write(' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
-    deplacerCurseurXY(40,5);
-    write('/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
-    deplacerCurseurXY(40,6);
-    write('\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
+    ecrireEnPositionXY(40,3,'  /\/\   ___  _ __  ___| |_ ___ _ __    /\  /\_   _ _ __ | |_ ___ _ __ ');
+    ecrireEnPositionXY(40,4,' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
+    ecrireEnPositionXY(40,5,'/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
+    ecrireEnPositionXY(40,6,'\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
     dessinerCadreXY(60,11,85,15,simple,white,black);
     dessinerCadreXY(60,17,85,21,simple,white,black);
     dessinerCadreXY(60,23,85,27,simple,white,black);
