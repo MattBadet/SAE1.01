@@ -163,7 +163,7 @@ begin
   if choixU = 1 then //Le joueur veut acheter quequechose chez le marchand
   begin
 
-    choixU := afficheAchat(); //renvoie l'id de l'objet a acheter
+    choixU := afficheAchat(joueur.materiaux[6]); //renvoie l'id de l'objet a acheter
 
     if (choixU = 1) AND (joueur.materiaux[6] >= 50) then
     begin
@@ -210,7 +210,7 @@ begin
   else //Le joueur veut vendre un objet
   begin
 
-    choixU = afficheVente; //renvoie l'id de l'objet a vendre
+    choixU = afficheVente(joueur.materiaux[6]); //renvoie l'id de l'objet a vendre
 
     if choixU = 1 then
       begin
