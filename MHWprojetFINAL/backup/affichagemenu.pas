@@ -400,7 +400,7 @@ begin
     affichage(120,20,'croix');
     ecrireEnPositionXY(121,31,'6 - Quitter');
     // Réponse (choix du menu)
-    ecrireEnPositionXY(17,70,'Votre Choix : ');
+    ecrireEnPositionXY(70,17,'Votre Choix : ');
     readln(choix);
     case choix of
       1:Result:=2;
@@ -465,6 +465,7 @@ begin
     ecrireEnPositionXY(35,19,'commission a mis la main sur un artéfact magique ressemblant à une boussole,');
     ecrireEnPositionXY(35,20,'censé permettre d’accéder à l’île. Vous faites partie de la sixième grande');
     ecrireEnPositionXY(35,21,' expédition de chasseurs dont l’objectif est de découvrir les secret d’Aeternum.');
+    readln;
 end;
 
 function afficheMenuPrincipale():Boolean; // menu de la ville
@@ -486,7 +487,7 @@ begin
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
     dessinerCadreXy(60,29,85,33,simple,white,black);
-    ecrireEnPositionXY(88,22,'Votre Choix : ');
+    ecrireEnPositionXY(62,31,'Votre Choix : ');
     readln(choix);
     Case choix of
       1:Result:=True;
