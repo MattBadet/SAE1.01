@@ -262,7 +262,8 @@ begin
     y:=6;
     for i:=0 to length(armure) do
         ecrireEnPositionXY(x,y+i,armure[i].nom);
-    for i:=(length(armure)+2) to length(arme) do
+    x:=length(armure)+2;
+    for i:=0 to length(arme) do
         ecrireEnPositionXY(x,y+i,arme[i].nom);
     // statistique objet
     affichage(50,8,'epee');
