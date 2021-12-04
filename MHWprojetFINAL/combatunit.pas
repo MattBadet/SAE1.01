@@ -294,7 +294,7 @@ var
   monstreActu : monstre;
 
 begin
-  vieU := joueur.def;
+  vieU := joueur.vieActu;
   monstreActu := choixMonstre((random(4)+1)); //choix aléatoire du monstre
   vieMi := ((monstreActu.vieBase * calculLvl(joueur))div 2);
   vieMd := vieMi;
@@ -317,6 +317,8 @@ begin
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
+
+  joueur.vieActu := vieU;
 
   if (vieU > 0) then
   joueur := win(joueur, monstreActu, vieMi)

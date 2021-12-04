@@ -23,7 +23,10 @@ type
     epee:arme;
   end;
 
-function createjoueur(nom,sexe,taille:string):player;//INITIALISATION DU JOUEUR
+var
+  joueur : player;
+
+procedure createjoueur(nom,sexe,taille:string);//INITIALISATION DU JOUEUR
 function initdef(joueur:player): integer;//INITIALISATION DE LA DEFENSE
 function initatk(joueur:player): integer;//INITIALISATION DE L'ATTAQUE
 
@@ -40,8 +43,8 @@ begin
   result := joueur.atk;
 end;
 
-function createjoueur(nom,sexe,taille:string):player;
-var joueur:player;
+procedure createjoueur(nom,sexe,taille:string);
+
 begin
   joueur.nom:=nom;
   joueur.sexe:=sexe;
@@ -65,7 +68,5 @@ begin
   joueur.epee:=epeebois;
   joueur.def:=initdef(joueur);
   joueur.atk:=initatk(joueur);
-
-  result := joueur;
 end;
 end.

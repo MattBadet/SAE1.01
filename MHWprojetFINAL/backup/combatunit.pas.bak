@@ -84,7 +84,7 @@ end;
 function loose(joueur : player): player;
 
 begin
-  joueur.vieActu := (joueur.def div 5);
+  joueur.vieActu := 5;//(joueur.def div 5);
   result := joueur;
   afficheDeadMenu;
 end;
@@ -294,7 +294,7 @@ var
   monstreActu : monstre;
 
 begin
-  vieU := joueur.def;
+  vieU := joueur.vieActu;
   monstreActu := choixMonstre((random(4)+1)); //choix aléatoire du monstre
   vieMi := ((monstreActu.vieBase * calculLvl(joueur))div 2);
   vieMd := vieMi;
@@ -317,6 +317,8 @@ begin
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
+
+  joueur.vieActu := vieU;
 
   if (vieU > 0) then
   joueur := win(joueur, monstreActu, vieMi)
@@ -351,7 +353,7 @@ begin
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme, vieU, joueur, boss); //Tour du joueur
+    vieMd := tourJ(vieMd, arme, vieU, vieMi, joueur, boss);  //Tour du joueur
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
