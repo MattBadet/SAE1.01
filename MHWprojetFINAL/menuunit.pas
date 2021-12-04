@@ -382,7 +382,7 @@ end;
 procedure menuGeneral();
 
 var
-  choixU : boolean;
+  choixU : integer;
   rep : boolean;
 
 begin
@@ -394,7 +394,7 @@ begin
     if choixU = 1 then
     nouvellePartie
     else if choixU = 2 then
-    credit
+    afficheCredit
     else
     rep := FALSE;
   end;
