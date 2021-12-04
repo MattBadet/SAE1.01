@@ -1,59 +1,11 @@
-  deplacerCurseurXY(x,y);
-  write('');
-  deplacerCurseurXY(x,y+1);
-  write('');
-  deplacerCurseurXY(x,y+2);
-  write('');
-  deplacerCurseurXY(x,y+3);
-  write('');
-  deplacerCurseurXY(x,y+4);
-  write('');
-  deplacerCurseurXY(x,y+5);
-  write('');
-  deplacerCurseurXY(x,y+6);
-  write('');
-  deplacerCurseurXY(x,y+7);
-  write('');
-  deplacerCurseurXY(x,y+8);
-  write('');
-  deplacerCurseurXY(x,y+9);
-  write('');
-  deplacerCurseurXY(x,y+10);
-  write('');
-  deplacerCurseurXY(x,y+11);
-  write('');
-  deplacerCurseurXY(x,y+12);
-  write('');
-  deplacerCurseurXY(x,y+13);
-  write('');
-  deplacerCurseurXY(x,y+14);
-  write('');
-  deplacerCurseurXY(x,y+15);
-  write('');
-  deplacerCurseurXY(x,y+16);
-  write('');
-  deplacerCurseurXY(x,y+17);
-  write('');
-  deplacerCurseurXY(x,y+18);
-  write('');
-  deplacerCurseurXY(x,y+19);
-  write('');
-  deplacerCurseurXY(x,y+20);
-  write('');
-  deplacerCurseurXY(x,y+21);
-  write('');
-  deplacerCurseurXY(x,y+22);
-  write('');
-  deplacerCurseurXY(x,y+23);
-  write('');
-
+Titre
                         _                                 _            
   /\/\   ___  _ __  ___| |_ ___ _ __    /\  /\_   _ _ __ | |_ ___ _ __ 
  /    \ / _ \| '_ \/ __| __/ _ \ '__|  / /_/ / | | | '_ \| __/ _ \ '__|
 / /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |   
 \/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|   
                                                                           
-                                                                       
+ Déco                                                                      
 
     /\    /\
    /  \  /  \
@@ -85,6 +37,8 @@
   \ \/ /\ \/ /
    \  /  \  /
     \/    \/                                                                                                                      
+
+Objets
 
  .-------..___
   '-._     :_.-'
@@ -153,25 +107,6 @@
 
 
 
-
-  ,/         \.
- ((           ))         
-  \`.       ,'/          
-   )')     (`(             
- ,'`/       \,`.     
-(`-(         )-')
- \-'\,-'"`-./`-/ 
-  \-')     (`-/  
-  /`'       `'\   
- (  _       _  ) 
- | ( \     / ) |
- |  `.\   /,'  |
- |    `\ /'    |
- (             )
-  \           /
-   \         /
-    `.     ,'           
-hh    `-.-'
                            ___
                           ( ((
                            ) ))
@@ -183,22 +118,6 @@ hh    `-.-'
                            ) ))
                           (_((
 
-
-   |\                     /)
- /\_\\__               (_//
-|   `>\-`     _._       //`)
- \ /` \\  _.-`:::`-._  //
-  `    \|`    :::    `|/
-        |     :::     |
-        |.....:::.....|
-        |:::::::::::::|
-        |     :::     |
-        \     :::     /
-         \    :::    /
-          `-. ::: .-'
-           //`:::`\\
-          //   '   \\
-         |/         \\
 
 
                    ,____                                          /   \                                          ____,
@@ -255,7 +174,7 @@ ___<__(|) _   ""-/  / /   /
     |/,-'
     P'
 
-boof
+Boof
 
   |\ /| /|_/|
 |\||-|\||-/|/|
@@ -305,10 +224,7 @@ boof
  /__/      \__\
 
 
-\\//
-//\\
-
-Proposer le choix du personnage si on a le temps
+Personnage du Joueur
 
       _,.
     ,` -.)
@@ -333,7 +249,7 @@ Proposer le choix du personnage si on a le temps
 
 https://www.asciiart.eu/people/occupations/knights
 
-Affichage aléatoire du monstre
+Affichage du monstre
 
             //           //
            ///          ///
@@ -402,26 +318,6 @@ Affichage aléatoire du monstre
     /  /  _/ /    +                                      /              \/
    '  (__/                                             /                  \
 
-
-
-
-                ^    ^
-               / \  //\
- |\___/|      /   \//  .\
- /O  O  \__  /    //  | \ \
-/     /  \/_/    //   |  \  \
-@___@'    \/_   //    |   \   \ 
-   |       \/_ //     |    \    \ 
-   |        \///      |     \     \ 
-  _|_ /   )  //       |      \     _\
- '/,_ _ _/  ( ; -.    |    _ _\.-~        .-~~~^-.
- ,-{        _      `-.|.-~-.           .~         `.
-  '/\      /                 ~-. _ .-~      .-~^-.  \
-     `.   {            }                   /      \  \
-   .----~-.\        \-'                 .~         \  `. \^-.
-  ///.----..>    c   \             _ -~             `.  ^-`   ^-_
-    ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,   .-~
-                                                          /.-'
 
 
 

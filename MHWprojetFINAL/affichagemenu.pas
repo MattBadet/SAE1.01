@@ -1,4 +1,6 @@
-{ Cette unité à pour rôle de gérer l'affichage des Menus }
+{ Dans cette Unité, nous pouvons trouver les différentes procédures et fonctions
+  qui affichent dans la console les différents menus du jeux grâce aux objets
+  de l’unité suivantes. }
 unit affichagemenu;
 {$codepage UTF8}
 {$mode objfpc}{$H+}
