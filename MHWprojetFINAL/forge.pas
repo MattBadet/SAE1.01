@@ -56,7 +56,7 @@ begin
        4:createcasque(joueur,casquecuire);
        8:createcasque(joueur,casquefer);
        13:createcasque(joueur,casqueacier);
-       18createcasque(joueur,casquescale);
+       18:createcasque(joueur,casquescale);
        5:createplastron(joueur,plastroncuire);
        9:createplastron(joueur,plastronfer);
        14:createplastron(joueur,plastronacier);
