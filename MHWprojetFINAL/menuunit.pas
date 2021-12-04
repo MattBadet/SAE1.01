@@ -358,7 +358,7 @@ begin
     3 : cantineMenu(joueur);
     4 : forgeMenu(joueur);
     5 : combat(joueur);
-    else menuGeneral();
+    else rep := FALSE;
     end;
   end;
 
@@ -383,12 +383,20 @@ procedure menuGeneral();
 
 var
   choixU : boolean;
+  rep : boolean;
 
 begin
-  choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
+  rep := TRUE;
+  while rep do
+    begin
+    choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
 
-  if choixU then
-  nouvellePartie;
+    if choixU then
+    nouvellePartie
+    else
+    rep := FALSE;
+  end;
+
 end;
 
 end.
