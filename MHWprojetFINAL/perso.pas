@@ -23,6 +23,20 @@ type
     epee:arme;
   end;
 
+var
+  joueur : player = (
+  nom:string;
+  sexe:string;
+  taille:string;
+  vieActu:integer;
+  vieNue:integer;
+  def:integer;
+  atk:integer;
+  materiaux:array[1..6] of integer;
+  eqarmure:array[1..5] of armure;
+  xp:integer;
+  epee:arme; );
+
 function createjoueur(nom,sexe,taille:string):player;//INITIALISATION DU JOUEUR
 function initdef(joueur:player): integer;//INITIALISATION DE LA DEFENSE
 function initatk(joueur:player): integer;//INITIALISATION DE L'ATTAQUE
@@ -41,7 +55,7 @@ begin
 end;
 
 function createjoueur(nom,sexe,taille:string):player;
-var joueur:player;
+
 begin
   joueur.nom:=nom;
   joueur.sexe:=sexe;
