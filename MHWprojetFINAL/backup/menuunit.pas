@@ -1,6 +1,6 @@
 //Unité des menus de bases (lancement du jeu, menu général, ville)
 unit menuUnit;
-
+{$codepage UTF8}
 {$mode objfpc}{$H+}
 
 interface
@@ -370,11 +370,12 @@ procedure nouvellePartie();
 var
   joueur : player; //record du joueur
   dormi : boolean; //boolean indiquant si le joueur a fait une chasse depuis sa
-
+  info:array[1..3] of string;
 begin
   dormi := FALSE;
   regles;
-  joueur := afficheCreationPerso();
+  info :=afficheCreationPerso;
+  joueur := createjoueur(info[],info[],info[]);
   ville(joueur, dormi);
 end;
 

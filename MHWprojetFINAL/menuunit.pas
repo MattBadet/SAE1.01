@@ -370,11 +370,12 @@ procedure nouvellePartie();
 var
   joueur : player; //record du joueur
   dormi : boolean; //boolean indiquant si le joueur a fait une chasse depuis sa
-
+  info:array[1..3] of string;
 begin
   dormi := FALSE;
   regles;
-  joueur := afficheCreationPerso();
+  info :=afficheCreationPerso;
+  joueur := createjoueur(info[3],info[1],info[2]);
   ville(joueur, dormi);
 end;
 
