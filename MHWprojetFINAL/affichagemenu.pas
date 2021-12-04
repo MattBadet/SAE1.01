@@ -121,6 +121,7 @@ begin
     dessinerCadreXY(46,13,64,15,simple,white,black);
     ecrireEnPositionXY(48,14,'Votre choix : ');
     readln(choix);
+    dessinerCadreXY(46,5,64,15,simple,black,black);
     case choix of
       1:Result:=False;
       2:Result:=True;
@@ -259,8 +260,10 @@ begin
     // remplissage forge
     x:=5;
     y:=6;
-    for i:=0 to length(forge) do
-        ecrireEnPositionXY(x,y+2*i,forge[i].nom);
+    for i:=0 to length(armure) do
+        ecrireEnPositionXY(x,y+2*i,armure[i].nom);
+    for i:=(length(armure)+2) to length(arme) do
+        ecrireEnPositionXY(x,y+2*i,arme[i].nom);
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
