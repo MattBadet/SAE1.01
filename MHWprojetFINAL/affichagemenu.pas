@@ -181,26 +181,57 @@ begin
     dessinerCadreXY(1,1,148,33,simple,white,black);
     dessinerCadreXY(67,0,83,2,simple,white,black);
     ecrireEnPositionXY(70,1,'Inventaire');
-    dessinerCadreXY(2,3,40,32,simple,white,black);
-    dessinerCadreXY(42,3,146,32,simple,white,black);
-    ecrireEnPositionXY(18,4,'Objet');
     // remplissage inventaire
-    x:=5;
-    y:=6;
     // Arme
+    dessinerCadreXY(2,3,30,32,simple,white,black);
+    ecrireEnPositionXY(6,4,'Armes Inventaire');
+    x:=4;
+    y:=6;
     for i:=1 to length(invarme) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
     // Armure
+    dessinerCadreXY(31,3,60,32,simple,white,black);
+    ecrireEnPositionXY(35,4,'Armures Inventaire');
+    x:=33;
     for i:=1 to length(invarmure) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarmure[i].nom);
     // Arme Equipe
+    dessinerCadreXY(62,3,89,32,simple,white,black);
+    ecrireEnPositionXY(70,4,'Armes Equipée');
+    x:=64 ;
     for i:=1 to length(joueur.eqarmure) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + joueur.eqarmure[i].nom);
     // Armure Equipe
-    writeln(IntToStr(i) + ':' + joueur.epee.nom);
+    dessinerCadreXY(90,3,119,32,simple,white,black);
+    ecrireEnPositionXY(100,4,'Armure Equipée');
+    x:=92;
     for i:=1 to length(invarme) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
-    dessinerCadreXY(44,24,144,31,simple,white,black);
+    // Fiche personnage
+    dessinerCadreXY(120,3,149,32,simple,white,black);
+    x:=121;
+    ecrireEnPositionXY(x,6,('Nom : '+joueur.nom));
+    ecrireEnPositionXY(x,7,('Sexe : '+joueur.sexe));
+    ecrireEnPositionXY(x,8,('Taille : '+joueur.taille));
+    ecrireEnPositionXY(x,9,('Vie Actu'+IntToStr(joueur.vieActu)));
+    ecrireEnPositionXY(x,10,('Vie Nue'+IntToStr(joueur.vieNue)));
+    ecrireEnPositionXY(x,11,('Def'+IntToStr(joueur.def)));
+    ecrireEnPositionXY(x,12,('Atk'+IntToStr(joueur.atk)));
+    ecrireEnPositionXY(x,13,('Cuir : '+IntToStr(joueur.materiaux[1])));
+    ecrireEnPositionXY(x,14,('Fer : '+IntToStr(joueur.materiaux[2])));
+    ecrireEnPositionXY(x,15,('Acier : '+IntToStr(joueur.materiaux[3])));
+    ecrireEnPositionXY(x,16,('Ecaille : '+IntToStr(joueur.materiaux[4])));
+    ecrireEnPositionXY(x,17,('Demon : '+IntToStr(joueur.materiaux[5])));
+    ecrireEnPositionXY(x,18,('Or : '+IntToStr(joueur.materiaux[6])));
+    ecrireEnPositionXY(x,19,(''+joueur.eqarmure[1].nom));
+    ecrireEnPositionXY(x,20,(''+joueur.eqarmure[2].nom));
+    ecrireEnPositionXY(x,21,(''+joueur.eqarmure[3].nom));
+    ecrireEnPositionXY(x,22,(''+joueur.eqarmure[4].nom));
+    ecrireEnPositionXY(x,23,(''+joueur.eqarmure[5].nom));
+    ecrireEnPositionXY(x,24,(''+IntToStr(joueur.xp)));
+    ecrireEnPositionXY(x,25,(''+joueur.epee.nom));
+    ecrireEnPositionXY(x,26,(''+IntToStr(joueur.def)));
+    ecrireEnPositionXY(x,27,(''+IntToStr(joueur.atk)));
     readln(choix);
     Result:=choix;
 end;

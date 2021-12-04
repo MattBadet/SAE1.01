@@ -2,14 +2,14 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <BuildModes Active="Default"/>
     <Units Count="14">
       <Unit0>
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="20" Y="7"/>
-        <UsageCount Value="74"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -18,32 +18,32 @@
         <EditorIndex Value="1"/>
         <TopLine Value="265"/>
         <CursorPos X="20" Y="388"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="214"/>
-        <CursorPos X="23" Y="229"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="213"/>
+        <CursorPos X="56" Y="234"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="affichageobjet.pas"/>
         <UnitName Value="affichageObjet"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="443"/>
+        <TopLine Value="442"/>
         <CursorPos X="60" Y="341"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="cantine.pas"/>
         <EditorIndex Value="4"/>
         <CursorPos X="32"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -52,7 +52,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="302"/>
         <CursorPos X="18" Y="309"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -67,7 +67,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="36"/>
         <CursorPos X="62" Y="52"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -76,7 +76,7 @@
         <EditorIndex Value="10"/>
         <TopLine Value="13"/>
         <CursorPos X="16" Y="30"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -84,15 +84,14 @@
         <EditorIndex Value="6"/>
         <TopLine Value="22"/>
         <CursorPos X="71" Y="36"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="perso.pas"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="51"/>
-        <CursorPos X="33" Y="59"/>
-        <UsageCount Value="38"/>
+        <CursorPos Y="46"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -100,7 +99,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="22"/>
         <CursorPos X="43" Y="345"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -116,123 +115,131 @@
         <UsageCount Value="10"/>
       </Unit13>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="forge.pas"/>
-        <Caret Line="240" Column="45" TopLine="231"/>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="133" Column="21" TopLine="128"/>
       </Position1>
       <Position2>
-        <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="13"/>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="377" Column="10" TopLine="367"/>
       </Position2>
       <Position3>
-        <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="32" TopLine="36"/>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="378" Column="23" TopLine="366"/>
       </Position3>
       <Position4>
-        <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="14"/>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="377" Column="10" TopLine="366"/>
       </Position4>
       <Position5>
-        <Filename Value="forge.pas"/>
-        <Caret Line="7" Column="61"/>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="381" Column="23" TopLine="366"/>
       </Position5>
       <Position6>
-        <Filename Value="forge.pas"/>
-        <Caret Line="11" Column="37"/>
+        <Filename Value="perso.pas"/>
+        <Caret Line="44" Column="30" TopLine="35"/>
       </Position6>
       <Position7>
-        <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="13"/>
+        <Filename Value="perso.pas"/>
+        <Caret Line="41" Column="6" TopLine="20"/>
       </Position7>
       <Position8>
-        <Filename Value="forge.pas"/>
-        <Caret Line="25" Column="38" TopLine="13"/>
+        <Filename Value="perso.pas"/>
+        <Caret Line="52" Column="30" TopLine="33"/>
       </Position8>
       <Position9>
-        <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="13"/>
+        <Filename Value="perso.pas"/>
+        <Caret Line="28" Column="9" TopLine="19"/>
       </Position9>
       <Position10>
         <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="36"/>
+        <Caret Line="47" Column="20" TopLine="37"/>
       </Position10>
       <Position11>
-        <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="13"/>
-      </Position11>
-      <Position12>
-        <Filename Value="forge.pas"/>
-        <Caret Line="27" Column="30" TopLine="13"/>
-      </Position12>
-      <Position13>
-        <Filename Value="forge.pas"/>
-        <Caret Line="53" TopLine="35"/>
-      </Position13>
-      <Position14>
-        <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="36"/>
-      </Position14>
-      <Position15>
-        <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="37"/>
-      </Position15>
-      <Position16>
-        <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="37"/>
-      </Position16>
-      <Position17>
-        <Filename Value="menuunit.pas"/>
-        <Caret Line="133" Column="21" TopLine="128"/>
-      </Position17>
-      <Position18>
-        <Filename Value="menuunit.pas"/>
-        <Caret Line="377" Column="10" TopLine="367"/>
-      </Position18>
-      <Position19>
-        <Filename Value="menuunit.pas"/>
-        <Caret Line="378" Column="23" TopLine="366"/>
-      </Position19>
-      <Position20>
-        <Filename Value="menuunit.pas"/>
-        <Caret Line="377" Column="10" TopLine="366"/>
-      </Position20>
-      <Position21>
-        <Filename Value="menuunit.pas"/>
-        <Caret Line="381" Column="23" TopLine="366"/>
-      </Position21>
-      <Position22>
-        <Filename Value="perso.pas"/>
-        <Caret Line="44" Column="30" TopLine="35"/>
-      </Position22>
-      <Position23>
-        <Filename Value="perso.pas"/>
-        <Caret Line="41" Column="6" TopLine="20"/>
-      </Position23>
-      <Position24>
-        <Filename Value="perso.pas"/>
-        <Caret Line="52" Column="30" TopLine="33"/>
-      </Position24>
-      <Position25>
-        <Filename Value="perso.pas"/>
-        <Caret Line="28" Column="9" TopLine="19"/>
-      </Position25>
-      <Position26>
-        <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="37"/>
-      </Position26>
-      <Position27>
         <Filename Value="combatunit.pas"/>
         <Caret Line="241" Column="49" TopLine="224"/>
-      </Position27>
-      <Position28>
+      </Position11>
+      <Position12>
         <Filename Value="combatunit.pas"/>
         <Caret Line="303" Column="51" TopLine="296"/>
-      </Position28>
-      <Position29>
+      </Position12>
+      <Position13>
         <Filename Value="combatunit.pas"/>
         <Caret Line="316" Column="68" TopLine="301"/>
+      </Position13>
+      <Position14>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="192" Column="67" TopLine="171"/>
+      </Position14>
+      <Position15>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="194" Column="11" TopLine="172"/>
+      </Position15>
+      <Position16>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="197" Column="31" TopLine="176"/>
+      </Position16>
+      <Position17>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="206" Column="27" TopLine="184"/>
+      </Position17>
+      <Position18>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="212" Column="65" TopLine="194"/>
+      </Position18>
+      <Position19>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="233" Column="30" TopLine="205"/>
+      </Position19>
+      <Position20>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="216" Column="64" TopLine="197"/>
+      </Position20>
+      <Position21>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="217" Column="65" TopLine="198"/>
+      </Position21>
+      <Position22>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="218" Column="58" TopLine="199"/>
+      </Position22>
+      <Position23>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="219" Column="57" TopLine="200"/>
+      </Position23>
+      <Position24>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="230" Column="42" TopLine="201"/>
+      </Position24>
+      <Position25>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="226" Column="53" TopLine="207"/>
+      </Position25>
+      <Position26>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="234" Column="43" TopLine="207"/>
+      </Position26>
+      <Position27>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="227" Column="30" TopLine="207"/>
+      </Position27>
+      <Position28>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="226" Column="56" TopLine="207"/>
+      </Position28>
+      <Position29>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="230" Column="55" TopLine="208"/>
       </Position29>
+      <Position30>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="231" Column="53" TopLine="212"/>
+      </Position30>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
 </CONFIG>
