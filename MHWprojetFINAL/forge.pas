@@ -111,7 +111,7 @@ begin
   if reussie then
   begin
      writeln('Vous avez reussie a fabriquer un casque en ',epe.material);
-     equipercasque(epe);
+     equipercasque(joueur, epe);
   end
   else
       writeln('La tentative a echouer');
@@ -145,7 +145,7 @@ begin
   if reussie then
   begin
      writeln('Vous avez reussie a fabriquer un casque en ',epe.material);
-     equiperplastron(epe);
+     equiperplastron(joueur, epe);
   end
   else
       writeln('La tentative a echouer');
@@ -179,7 +179,7 @@ begin
   if reussie then
   begin
      writeln('Vous avez reussie a fabriquer un casque en ',epe.material);
-     equiperjambiere(epe);
+     equiperjambiere(joueur, epe);
   end
   else
       writeln('La tentative a echouer');
@@ -213,7 +213,7 @@ begin
   if reussie then
   begin
      writeln('Vous avez reussie a fabriquer un casque en ',epe.material);
-     equiperbottes(epe);
+     equiperbottes(joueur, epe);
   end
   else
       writeln('La tentative a echouer');
@@ -247,7 +247,7 @@ begin
   if reussie then
   begin
      writeln('Vous avez reussie a fabriquer un casque en ',epe.material);
-     equiperbouclier(epe);
+     equiperbouclier(joueur, epe);
   end
   else
       writeln('La tentative a echouer');

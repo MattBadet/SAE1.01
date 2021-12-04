@@ -28,7 +28,7 @@ begin
 
     if (choixU = 1) then //Le joueur ouvre l'inventaire
     begin
-      choixU := afficheInventaireChambre(); //le joueur choisis l'objet qu'il veut équiper
+      choixU := afficheInventaireChambre(joueur); //le joueur choisis l'objet qu'il veut équiper
 
       if choixU = 1 then
       begin
@@ -131,7 +131,7 @@ begin
     begin
       if (choixU = 2) then//le joueur va dormir
       begin
-        litAffichage(dormi);
+        afficheDormir(dormi);
 
         if dormi = FALSE then
         begin
