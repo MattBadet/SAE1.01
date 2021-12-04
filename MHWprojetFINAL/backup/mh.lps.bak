@@ -16,17 +16,16 @@
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="353"/>
+        <TopLine Value="365"/>
         <CursorPos X="29" Y="368"/>
         <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="10"/>
-        <TopLine Value="352"/>
-        <CursorPos X="37" Y="363"/>
+        <TopLine Value="372"/>
+        <CursorPos X="44" Y="385"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -50,8 +49,8 @@
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="292"/>
-        <CursorPos X="31" Y="302"/>
+        <TopLine Value="313"/>
+        <CursorPos X="17" Y="302"/>
         <FoldState Value=" T3oa0ZT"/>
         <UsageCount Value="41"/>
         <Loaded Value="True"/>
@@ -118,7 +117,9 @@
       </Unit13>
       <Unit14>
         <Filename Value="mh.lps"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
+        <CursorPos X="33" Y="15"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="XML"/>
