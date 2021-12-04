@@ -381,6 +381,7 @@ procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de P
 begin
     dessinerCadreXY(55,16,95,18,simple,white,black);
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
+    readln;
 end;
 
 function afficheVente(po:Integer):Integer; // afffichage des ventes du marchand
