@@ -215,25 +215,25 @@ begin
     x:=4;
     y:=6;
     for i:=1 to length(invarme) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarme[i].nom);
     // Armure
     dessinerCadreXY(31,3,60,32,simple,white,black);
     ecrireEnPositionXY(35,4,'Armures Inventaire');
     x:=33;
     for i:=1 to length(invarmure) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarmure[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarmure[i].nom);
     // Arme Equipe
     dessinerCadreXY(62,3,89,32,simple,white,black);
     ecrireEnPositionXY(70,4,'Armes Equipée');
     x:=64 ;
     for i:=1 to length(joueur.eqarmure) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + joueur.eqarmure[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + joueur.eqarmure[i].nom);
     // Armure Equipe
     dessinerCadreXY(90,3,118,32,simple,white,black);
     ecrireEnPositionXY(97,4,'Armure Equipée');
     x:=92;
     for i:=1 to length(invarme) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarme[i].nom);
     // Fiche personnage
     dessinerCadreXY(119,3,147,32,simple,white,black);
     ecrireEnPositionXY(121,4,'Fiche Personnage');
@@ -381,6 +381,7 @@ procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de P
 begin
     dessinerCadreXY(55,16,95,18,simple,white,black);
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
+    readln;
 end;
 
 function afficheVente(po:Integer):Integer; // afffichage des ventes du marchand

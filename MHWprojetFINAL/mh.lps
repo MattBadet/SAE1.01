@@ -9,7 +9,7 @@
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="20" Y="7"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="79"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,10 +23,11 @@
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="430"/>
-        <CursorPos X="165" Y="443"/>
-        <FoldState Value=" T3i00O5 picjV0A0323134B"/>
+        <TopLine Value="358"/>
+        <CursorPos X="12" Y="384"/>
+        <FoldState Value=" T3i10O01522 pigmW0B0749"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -48,10 +49,9 @@
       <Unit5>
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="47"/>
-        <CursorPos X="5" Y="47"/>
+        <TopLine Value="16"/>
+        <CursorPos X="59" Y="23"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -96,7 +96,6 @@
       <Unit11>
         <Filename Value="utilities.pas"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="231"/>
         <CursorPos X="27" Y="256"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>

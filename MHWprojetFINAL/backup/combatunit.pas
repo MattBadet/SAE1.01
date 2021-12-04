@@ -1,6 +1,6 @@
 //unité contenant tout le code logique demandé pour le combat
 unit combatUnit;
-
+{$codepage UTF8}
 {$mode objfpc}{$H+}
 
 interface
@@ -15,7 +15,7 @@ type
     spe: race;
   end;
 
-function combat(joueur : player): player;
+function combat(): player;
 function calculLvl(joueur: player): integer;
 
 implementation
@@ -146,6 +146,8 @@ begin
 
   //génération or
   joueur.materiaux[6] := joueur.materiaux[6] + (vieMi div 10);
+
+  result := joueur;
 end;
 
 //le joueur gagne le combat
@@ -196,7 +198,7 @@ begin
 end;
 
 //Tour du joueur
-function tourJ(vieMd, arme, vieU : integer;joueur : player): integer;
+function tourJ(vieMd, arme, vieU, vieMi : integer;joueur : player;monstreActu : monstre): integer;
 
 var
   dU, reussite, idObjet : integer; //dU = dégats du joueur ; reussite = echec ou critique
@@ -237,6 +239,8 @@ begin
   begin
     inventaireCombat(joueur, vieU, joueur.def, vieMd);
   end; //if (choixA = TRUE) then
+  afficheCombat(monstreActu.id);
+  afficheMajVie(vieMd, vieMi, vieU, joueur.def);
   result := vieMd;
 end;
 
@@ -292,8 +296,11 @@ var
   monstreActu : monstre;
 
 begin
-  vieU := joueur.def;
+  vieU := joueur.vieActu;
   monstreActu := choixMonstre((random(4)+1)); //choix aléatoire du monstre
+  if calculLvl(joueur) = 1 then
+  vieMi := monstreActu.vieBase
+  else
   vieMi := ((monstreActu.vieBase * calculLvl(joueur))div 2);
   vieMd := vieMi;
   arme := joueur.atk;
@@ -302,7 +309,7 @@ begin
   afficheCombat(monstreActu.id);
 
   if (vieU > vieMd) then //si le joueur a plus de vie que le monstre il commence
-  vieMd := tourJ(vieMd, arme, vieU, joueur);
+  vieMd := tourJ(vieMd, arme, vieU, vieMi, joueur, monstreActu);
   afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
@@ -311,15 +318,18 @@ begin
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme, vieU, joueur); //Tour du joueur
+    vieMd := tourJ(vieMd, arme, vieU, vieMi, joueur, monstreActu);  //Tour du joueur
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
+
+  joueur.vieActu := vieU;
 
   if (vieU > 0) then
   joueur := win(joueur, monstreActu, vieMi)
   else
   joueur := loose(joueur);
+  readln;
 
   result := joueur;
 end;
@@ -349,7 +359,7 @@ begin
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme, vieU, joueur); //Tour du joueur
+    vieMd := tourJ(vieMd, arme, vieU, vieMi, joueur, boss);  //Tour du joueur
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
@@ -363,7 +373,7 @@ begin
 end;
 
 //Logique central du combat
-function combat(joueur : player): player;
+function combat(): player;
 
 var
   choixU : boolean;
@@ -381,7 +391,7 @@ begin
     else
     joueur := combatMonstre(joueur);
   end;
-
+  result := joueur;
 end;
 
 end.

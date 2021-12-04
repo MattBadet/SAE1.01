@@ -38,6 +38,7 @@ function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inve
 procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero:Integer); // renouvelle les pv à chaque tour
 procedure afficheVictoire(); // affiche l'écran de victoire
 procedure afficheDeadMenu(); // affiche l'écran de défaite
+function calculLvl(joueur: player): integer; //calcul du lvl du joueur en fonction de son xp
 
 implementation
 
@@ -67,8 +68,7 @@ begin
     readln;
 end;
 
-function calculLvl(joueur: player): integer; //
-
+function calculLvl(joueur: player): integer; //calcul du lvl du joueur en fonction de son xp
 begin
   if (joueur.xp < 100) then
   result := 1;
@@ -215,25 +215,25 @@ begin
     x:=4;
     y:=6;
     for i:=1 to length(invarme) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarme[i].nom);
     // Armure
     dessinerCadreXY(31,3,60,32,simple,white,black);
     ecrireEnPositionXY(35,4,'Armures Inventaire');
     x:=33;
     for i:=1 to length(invarmure) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarmure[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarmure[i].nom);
     // Arme Equipe
     dessinerCadreXY(62,3,89,32,simple,white,black);
     ecrireEnPositionXY(70,4,'Armes Equipée');
     x:=64 ;
     for i:=1 to length(joueur.eqarmure) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + joueur.eqarmure[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + joueur.eqarmure[i].nom);
     // Armure Equipe
     dessinerCadreXY(90,3,118,32,simple,white,black);
     ecrireEnPositionXY(97,4,'Armure Equipée');
     x:=92;
     for i:=1 to length(invarme) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarme[i].nom);
     // Fiche personnage
     dessinerCadreXY(119,3,147,32,simple,white,black);
     ecrireEnPositionXY(121,4,'Fiche Personnage');
