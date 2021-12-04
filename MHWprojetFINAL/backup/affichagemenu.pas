@@ -321,8 +321,8 @@ begin
     y:=6;
     for i:=0 to length(arme)-1 do
         ecrireEnPositionXY(x,y+i,(IntToStr(i)+'-'+arme[i].nom+' - '+IntToStr(arme[i].cout)));
-    for i:=length(arme) to length(armure)-1 do
-        ecrireEnPositionXY(x,y+i+length(arme),(IntToStr(i)+'-'+armure[i].nom+' - '+IntToStr(armure[i].cout)));
+    for i:=0 to length(armure)-1 do
+        ecrireEnPositionXY(x,y+i+length(arme),(IntToStr(i+length(arme))+'-'+armure[i].nom+' - '+IntToStr(armure[i].cout)));
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
@@ -381,6 +381,13 @@ procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de P
 begin
     dessinerCadreXY(55,16,95,18,simple,white,black);
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
+    readln;
+end;
+
+procedure affichePasAssezMateriaux(); // indique au joueur qu'il n'a pas assez de matériaux
+begin
+    dessinerCadreXY(55,16,95,18,simple,white,black);
+    ecrireEnPositionXY(57,17,'Vous n''avez pas assez de matériaux');
     readln;
 end;
 

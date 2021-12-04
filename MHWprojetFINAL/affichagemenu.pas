@@ -26,6 +26,7 @@ function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 function afficheCantine():Integer; // Affichage de la cantine
 
 function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
+procedure affichePasAssezMateriaux(); // indique au joueur qu'il n'a pas assez de matériaux
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 procedure afficheDormir(dormie:Boolean); // Petite sieste
@@ -381,6 +382,13 @@ procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de P
 begin
     dessinerCadreXY(55,16,95,18,simple,white,black);
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
+    readln;
+end;
+
+procedure affichePasAssezMateriaux(); // indique au joueur qu'il n'a pas assez de matériaux
+begin
+    dessinerCadreXY(55,16,95,18,simple,white,black);
+    ecrireEnPositionXY(57,17,'Vous n''avez pas assez de matériaux');
     readln;
 end;
 
