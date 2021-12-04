@@ -10,7 +10,7 @@ uses
   Classes, SysUtils, GestionEcran, affichageObjet,perso,inventaire,utilities;
 type
   arraystring=array[1..3] of string;
-function afficheMenuPrincipale():Boolean; // menu de la ville
+function afficheMenuPrincipale():Integer; // menu de la ville
 
 procedure regles(); // affiche les règles et le synopsis
 function afficheCreationPerso():arraystring; // menu de la création du personnage
@@ -320,9 +320,9 @@ begin
     x:=5;
     y:=6;
     for i:=0 to length(armure)-1 do
-        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '+armure[i].cout));
+        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '+IntToStr(armure[i].cout)));
     for i:=0 to length(arme)-1 do
-        ecrireEnPositionXY(x,y+i+length(armure),(arme[i].nom+' - '+arme[i].cout);
+        ecrireEnPositionXY(x,y+i+length(armure),(arme[i].nom+' - '+IntToStr(arme[i].cout)));
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
@@ -538,7 +538,7 @@ begin
     readln;
 end;
 
-function afficheMenuPrincipale():Boolean; // menu de la ville
+function afficheMenuPrincipale():Integer; // menu de la ville
 var
   choix:Integer; // contient le choix du menu
 begin
@@ -559,13 +559,7 @@ begin
     dessinerCadreXy(60,29,85,33,simple,white,black);
     ecrireEnPositionXY(62,31,'Votre Choix : ');
     readln(choix);
-    Case choix of
-      1:Result:=True;
-      2:Result:=False;
-      3:write('');
-      else
-        Result:=afficheMenuPrincipale();
-      end;
+    Result:=choix;
 end;
 
 end.

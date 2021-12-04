@@ -320,9 +320,9 @@ begin
     x:=5;
     y:=6;
     for i:=0 to length(armure)-1 do
-        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '));
+        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '+IntToStr(armure[i].cout)));
     for i:=0 to length(arme)-1 do
-        ecrireEnPositionXY(x,y+i+length(armure),arme[i].nom);
+        ecrireEnPositionXY(x,y+i+length(armure),(arme[i].nom+' - '+IntToStr(arme[i].cout)));
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
