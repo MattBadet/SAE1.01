@@ -8,11 +8,12 @@ unit affichagemenu;
 interface
 uses
   Classes, SysUtils, GestionEcran, affichageObjet,perso,inventaire,utilities;
-
+type
+  arraystring:array[1..3] of string;
 function afficheMenuPrincipale():Boolean; // menu de la ville
 
 procedure regles(); // affiche les règles et le synopsis
-function afficheCreationPerso():player; // menu de la création du personnage
+function afficheCreationPerso():arraystring; // menu de la création du personnage
 procedure afficheCredit(); // Affichage des crédits
 
 function afficheVille():Integer; // Affichage du menu d'une partie
@@ -24,11 +25,7 @@ function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 
 function afficheCantine():Integer; // Affichage de la cantine
 
-<<<<<<< HEAD
-function afficheForge(armure:array of armure;arme:array of arme; joueur:player):Integer; // afffichage de la forge
-=======
 function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
->>>>>>> debdc8688161ffa85e535668917374debada140e
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 procedure afficheDormir(dormie:Boolean); // Petite sieste
@@ -247,11 +244,7 @@ begin
     Result:=choix;
 end;
 
-<<<<<<< HEAD
-function afficheForge(armure:array of armure;arme:array of arme; joueur:player):Integer; // afffichage de la forge
-=======
 function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
->>>>>>> debdc8688161ffa85e535668917374debada140e
 var
   x,y,i,choix:Integer;
 begin
@@ -263,22 +256,15 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);     // objets disponibles
     dessinerCadreXY(42,3,146,30,simple,white,black);  // crafts
     dessinerCadreXY(2,31,146,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,'Ressources Disponilbes : ');
-    for i:=0 to length(joueur.materiaux) do
-        write(joueur.materiaux[i]);
+    ecrireEnPositionXY(5,32,'Ressources Disponilbes : X trucs  X machins ....');
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage forge
     x:=5;
     y:=6;
-    for i:=0 to length(armure) do
+    for i:=0 to length(armure)-1 do
         ecrireEnPositionXY(x,y+i,armure[i].nom);
-<<<<<<< HEAD
-    for i:=0 to length(arme) do
+    for i:=0 to length(arme)-1 do
         ecrireEnPositionXY(x,y+i+length(armure),arme[i].nom);
-=======
-    for i:=(length(armure)+2) to length(arme) do
-        ecrireEnPositionXY(x,y+i,arme[i].nom);
->>>>>>> debdc8688161ffa85e535668917374debada140e
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
@@ -443,9 +429,9 @@ begin
     readln;
 end;
 
-function afficheCreationPerso():player; // menu de la création du personnage
+function afficheCreationPerso():arraystring; // menu de la création du personnage
 var
-  joueur:player; // le personnage une fois créé
+  info:arraystring;
 begin
     changerTailleConsole(150,35);
     affichage(10,2,'decoCelt');
@@ -455,12 +441,12 @@ begin
     ecrireEnPositionXY(60,18,'Comment vous appelez-vous ? ');
     ecrireEnPositionXY(60,21,'Comment allez- vous ? ');
     deplacerCurseurXY(82,12);
-    readln(joueur.sexe);
+    readln(info[1]);
     deplacerCurseurXY(84,15);
-    readln(joueur.taille);
+    readln(info[2]);
     deplacerCurseurXY(88,18);
-    readln(joueur.nom);
-    Result:=joueur;
+    readln(info[3]);
+    Result:=info;
 end;
 
 procedure regles(); // affiche les règles et le synopsis
