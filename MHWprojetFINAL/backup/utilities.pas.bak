@@ -45,6 +45,7 @@ type
     nom:string;
     desc:string;
     partie:string;
+    cout:integer;
     def:integer;
     material:string;
     idmaterial: integer;
@@ -64,6 +65,7 @@ const
               nom:'null';
               desc:'null';
               partie:'null';
+              cout:0;
               def:0;
               material:'null';
               idmaterial: 0;
@@ -74,6 +76,7 @@ const
                nom:'casque en cuire';
                desc:'à mettre sur la tête';
                partie:'casque';
+               cout:2;
                def:25;
                material:'cuire';
                idmaterial: 1;
@@ -83,6 +86,7 @@ const
                nom:'plastron en cuire';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
+               cout:10;
                def:100;
                material:'cuire';
                idmaterial: 1;
@@ -92,6 +96,7 @@ const
                nom:'jambiere en cuire';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
+               cout:5;
                def:50;
                material:'cuire';
                idmaterial: 1;
@@ -101,6 +106,7 @@ const
                nom:'bottes en cuire';
                desc:'à mettre sur les pieds';
                partie:'bottes';
+               cout:3;
                def:25;
                material:'cuire';
                idmaterial: 1;
@@ -111,6 +117,7 @@ const
                nom:'casque en fer';
                desc:'à mettre sur la tête';
                partie:'casque';
+               cout:2;
                def:100;
                material:'fer';
                idmaterial: 2;
@@ -120,6 +127,7 @@ const
                nom:'plastron en fer';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
+               cout:10;
                def:300;
                material:'fer';
                idmaterial: 2;
@@ -129,6 +137,7 @@ const
                nom:'jambiere en fer';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
+               cout:5;
                def:200;
                material:'fer';
                idmaterial: 2;
@@ -138,6 +147,7 @@ const
                nom:'bottes en fer';
                desc:'à mettre sur les pieds';
                partie:'bottes';
+               cout:3;
                def:100;
                material:'fer';
                idmaterial: 2;
@@ -147,6 +157,7 @@ const
                nom:'bouclier en fer';
                desc:'pour se protéger';
                partie:'bouclier';
+               cout:'null';
                def:150;
                material:'fer';
                idmaterial: 2;
@@ -157,6 +168,7 @@ casqueacier: armure = (
                nom:'casque en acier';
                desc:'à mettre sur la tête';
                partie:'casque';
+               cout:2;
                def:150;
                material:'acier';
                idmaterial: 3;
@@ -166,6 +178,7 @@ casqueacier: armure = (
                nom:'plastron en acier';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
+               cout:10;
                def:600;
                material:'acier';
                idmaterial: 3;
@@ -175,6 +188,7 @@ casqueacier: armure = (
                nom:'jambiere en acier';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
+               cout:5;
                def:300;
                material:'acier';
                idmaterial: 3;
@@ -184,6 +198,7 @@ casqueacier: armure = (
                nom:'bottes en acier';
                desc:'à mettre sur les pieds';
                partie:'bottes';
+               cout:3;
                def:150;
                material:'acier';
                idmaterial: 3;
@@ -193,6 +208,7 @@ casqueacier: armure = (
                nom:'bouclier en fer';
                desc:'pour se protéger';
                partie:'bouclier';
+               cout:'null';
                def:200;
                material:'acier';
                idmaterial: 3;
@@ -203,6 +219,7 @@ casquescale: armure = (
                nom:'casque en écaille de dragon';
                desc:'à mettre sur la tête';
                partie:'casque';
+               cout:2;
                def:250;
                material:'scale';
                idmaterial: 4;
@@ -212,6 +229,7 @@ casquescale: armure = (
                nom:'plastron en écaille de dragon';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
+               cout:10;
                def:1000;
                material:'scale';
                idmaterial: 4;
@@ -221,6 +239,7 @@ casquescale: armure = (
                nom:'jambiere en écaille de dragon';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
+               cout:5;
                def:500;
                material:'scale';
                idmaterial: 4;
@@ -230,6 +249,7 @@ casquescale: armure = (
                nom:'bottes en écaille de dragon';
                desc:'à mettre sur les pieds';
                partie:'bottes';
+               cout:3;
                def:250;
                material:'scale';
                idmaterial: 4;
@@ -239,6 +259,7 @@ casquescale: armure = (
                nom:'bouclier en écaille de dragon';
                desc:'pour se protéger';
                partie:'bouclier';
+               cout:'null';
                def:350;
                material:'scale';
                idmaterial: 4;
@@ -260,8 +281,8 @@ casquescale: armure = (
          id:1;
   );
   bombemoyenne: bombe = (
-                nom:'Grande Bombe';
-                desc:'une bombe qui explose plus fort';
+                nom:'Grosse Bombe';
+                desc:'une bombequi explose plus fort';
                 degat:300;
                 prix:7;
                 id:2;
@@ -300,6 +321,7 @@ casquescale: armure = (
         nom:'null';
         desc:'null';
         degat:0;
+        cout:0;
         material:'null';
         idmaterial:0;
         id: 0;
@@ -308,6 +330,7 @@ casquescale: armure = (
          nom:'epee en bois';
          desc:'pour le combat';
          degat:25;
+         cout:0;
          material: 'bois';
          idmaterial: 7;
          id: 20;
@@ -316,6 +339,7 @@ casquescale: armure = (
          nom:'epee en fer';
          desc:'pour le combat';
          degat:50;
+         cout:2;
          material: 'fer';
          idmaterial: 2;
          id: 21;
@@ -324,6 +348,7 @@ casquescale: armure = (
          nom:'epee en acier';
          desc:'pour le combat';
          degat:100;
+         cout:2;
          material: 'acier';
          idmaterial: 3;
          id: 22;
@@ -332,6 +357,7 @@ casquescale: armure = (
          nom:'epee en écaille de dragon';
          desc:'pour le combat';
          degat:200;
+         cout:2;
          material: 'scale';
          idmaterial: 4;
          id: 23;
@@ -340,6 +366,7 @@ casquescale: armure = (
          nom:'epee en reste démoniaque';
          desc:'pour le combat';
          degat:250;
+         cout:2;
          material: 'reste';
          idmaterial:5;
          id: 24;
