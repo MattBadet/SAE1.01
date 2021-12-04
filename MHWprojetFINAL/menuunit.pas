@@ -210,7 +210,7 @@ begin
   else //Le joueur veut vendre un objet
   begin
 
-    choixU = afficheVente(joueur.materiaux[6]); //renvoie l'id de l'objet a vendre
+    choixU := afficheVente(joueur.materiaux[6]); //renvoie l'id de l'objet a vendre
 
     if choixU = 1 then
       begin
