@@ -393,7 +393,7 @@ begin
   ecrireEnPositionXY(x+12,y+15,'\   \__, \_     `~''     _/ .__/   /');
   ecrireEnPositionXY(x+13,y+16,'`-._,-''   `-._______,-''   `-._,-''');
   couleurTexte(Red);
-  ecrireEnPositionXY(x+58,y,',-.');
+  ecrireEnPositionXY(x+28,y,',-.');
   ecrireEnPositionXY(x+11,y+1,'---.__          /''|`\          __,---');
   ecrireEnPositionXY(x+12,y+2,'`    `-.____,-''  |  `-.____,-''    /');
   ecrireEnPositionXY(x+24,y+3,'~''\     /`~ ');
@@ -501,6 +501,7 @@ begin
   'phoenix':phoenix(x,y);
   'dragon1':dragon1(x,y);
   'dragon2':dragon2(x,y);
+  'boos':boss(x,y);
   'armure':armure(x,y);
   'hero':hero(x,y);
   'decoCelt':decoCelt(x,y);
