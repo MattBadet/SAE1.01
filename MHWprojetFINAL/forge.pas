@@ -4,7 +4,7 @@ unit forge;
 
 interface
 uses
-  Classes, SysUtils, inventaire, utilities, perso;
+  Classes, SysUtils, inventaire, utilities, perso, affichagemenu;
 
 procedure forgeMenu(joueur:player);//ENTRE DANS LA FORGE
 procedure choixmenu(joueur:player;choix:integer);//APPELLER QUAND LE JOUEUR CHOISIE L'ITEM QU'IL VEUT FABRIQUER
@@ -44,7 +44,7 @@ begin
   forgearme[2]:=epeeacier;
   forgearme[3]:=epeescale;
   forgearme[4]:=epeedemo;
-  choixmenu(joueur,afficheforge(forgearmure,forgearme));
+  choixmenu(joueur,afficheForge(forgearmure,forgearme));
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
