@@ -223,18 +223,17 @@ begin
     x:=33;
     for i:=1 to length(invarmure) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarmure[i].nom);
-    // Arme Equipe
+    // Armure Equipe
     dessinerCadreXY(62,3,89,32,simple,white,black);
-    ecrireEnPositionXY(70,4,'Armes Equipée');
+    ecrireEnPositionXY(70,4,'Armures Equipées');
     x:=64 ;
     for i:=1 to length(joueur.eqarmure) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + joueur.eqarmure[i].nom);
-    // Armure Equipe
+    // Arme Equipe
     dessinerCadreXY(90,3,118,32,simple,white,black);
-    ecrireEnPositionXY(97,4,'Armure Equipée');
+    ecrireEnPositionXY(97,4,'Arme Equipée');
     x:=92;
-    for i:=1 to length(invarme) do
-        ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + invarme[i].nom);
+    ecrireEnPositionXY(x,y+i,IntToStr(i) + ' : ' + joueur.epee.nom);
     // Fiche personnage
     dessinerCadreXY(119,3,147,32,simple,white,black);
     ecrireEnPositionXY(121,4,'Fiche Personnage');
