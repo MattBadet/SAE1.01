@@ -15,8 +15,8 @@ function afficheCreationPerso():player; // menu de la création du personnage
 procedure afficheCredit(); // Affichage des crédits
 function afficheVille():Integer; // Affichage du menu d'une partie
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
-function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
-function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
+function afficheVente(PO:Integer):Integer; // afffichage des ventes du marchand
+function afficheAchat(PO:Integer):Integer; // afffichage des achats du marchand
 function afficheCantine():Integer; // Affichage de la cantine
 function afficheForge(forge:array of armure):Integer; // afffichage de la forge
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
@@ -285,7 +285,7 @@ begin
     Result:=choix;
 end;
 
-function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
+function afficheAchat(PO:Integer):Integer; // afffichage des achats du marchand
 var
   x,y,i,choix:Integer;
 begin
@@ -322,7 +322,7 @@ begin
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
 end;
 
-function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
+function afficheVente(PO:Integer):Integer; // afffichage des ventes du marchand
 var
   x,y,i,choix:Integer;
 begin

@@ -14,7 +14,7 @@ procedure affichage(x,y:Integer;objet:string); // lance l'affichage de l'objet/m
 
 implementation
 
-procedure epee(x,y:Integer); // Affichage du symbole "épée" ligne par ligne
+procedure epee(x,y:Integer); // Affichage du symbole "épée" ligne par ligne pour la Ville
 begin
     ecrireEnPositionXY(x+29,y,'___');
     ecrireEnPositionXY(x+28,y+1,'( ((');
@@ -28,7 +28,7 @@ begin
     ecrireEnPositionXY(x+28,y+9,'(_((');
 end;
 
-procedure croix(x,y:Integer); // Affichage du symbole "croix" ligne par ligne
+procedure croix(x,y:Integer); // Affichage du symbole "croix" ligne par ligne pour quitter le jeux
 begin
     ecrireEnPositionXY(x,y,'___        ___');
     ecrireEnPositionXY(x,y+1,'\  \      /  /');
@@ -42,7 +42,7 @@ begin
     ecrireEnPositionXY(x,y+9,'/__/      \__\');
 end;
 
-procedure lit(x,y:Integer); // Affichage du symbole "lit" ligne par ligne
+procedure lit(x,y:Integer); // Affichage du symbole "lit" symbolisant la Chambre dans la Ville
 begin
     ecrireEnPositionXY(x+12,y,'___');
     ecrireEnPositionXY(x+8,y+1,',-""___""-.');
@@ -95,7 +95,7 @@ begin
     ecrireEnPositionXY(x+2,y+7,'\|_________|');
 end;
 
-procedure grCoffre(x,y:Integer); // Affichage du coffre pour la chambre
+procedure grCoffre(x,y:Integer); // Affichage du coffre de la chambre
 begin
   ecrireEnPositionXY(x+4,y,'___________________');
   ecrireEnPositionXY(x,y+1,' /\                  \');
@@ -111,7 +111,7 @@ begin
   ecrireEnPositionXY(x+3,y+11,'\|__________________|');
 end;
 
-procedure enclume(x,y:Integer); // Affichage du symbole "enclume" ligne par ligne
+procedure enclume(x,y:Integer); // Affichage du symbole "enclume" symobisant la Forge pour la Ville
 begin
     ecrireEnPositionXY(x+1,y,'.-------..___');
     ecrireEnPositionXY(x+1,y+1,'''-._     :_.-''');
@@ -119,7 +119,7 @@ begin
     ecrireEnPositionXY(x+4,y+3,'/_____\');
 end;
 
-procedure marchand(x,y:Integer); //affiche le bust du marchand
+procedure marchand(x,y:Integer); //affiche le bust du marchand pour le menu de la Ville
 begin
     ecrireEnPositionXY(x,y,'            ,#####,');
     ecrireEnPositionXY(x,y+1,'            #_   _#');
@@ -133,7 +133,7 @@ begin
 
 end;
 
-procedure decoCelt(x,y:Integer); // affiche un symbol celt pour déco le menu principal
+procedure decoCelt(x,y:Integer); // affiche un symbol celt pour décorer les différents menus
 begin
     ecrireEnPositionXY(x,y,'    /\    /\');
     ecrireEnPositionXY(x,y+1,'   /  \  /  \');
@@ -167,7 +167,7 @@ begin
     ecrireEnPositionXY(x,y+29,'    \/    \/');
 end;
 
-procedure hero(x,y:Integer); // affiche le héro
+procedure hero(x,y:Integer); // affiche le héro que le joueur incarne
 begin
     couleurTexte(LightGray);
     ecrireEnPositionXY(x+5,y,'_,.');
@@ -198,7 +198,7 @@ begin
     ecrireEnPositionXY(x+2,y+4,'\_');
 end;
 
-procedure armure(x,y:Integer); // affiche une armure à l'endroit souhaité
+procedure armure(x,y:Integer); // affiche une armure à l'endroit souhaité qui fait office de porte-armure dans la chambre
 begin
   ecrireEnPositionXY(x+8,y,'{}');
   ecrireEnPositionXY(x+7,y+1,'.--.');
@@ -371,6 +371,45 @@ begin
   ecrireEnPositionXY(x+6,y+12,'@ )@@@(@@@@@@@');
   ecrireEnPositionXY(x+7,y+13,'(@ (@@@@(@@');
   ecrireEnPositionXY(x+11,y+14,'@   @');
+end;
+procedure boss(x,y:Integer);   // affiche le boss
+begin
+  couleurTexte(DarkGray);
+  ecrireEnPositionXY(x,y,'                            ,-.');
+  ecrireEnPositionXY(x,y+1,'       ___,---.__          /''|`\          __,---,___');
+  ecrireEnPositionXY(x,y+2,'    ,-''    \`    `-.____,-''  |  `-.____,-''    //    `-.');
+  ecrireEnPositionXY(x,y+3,'  ,''        |           ~''\     /`~           |        `.');
+  ecrireEnPositionXY(x,y+4,' /      ___//              `. ,''          ,  , \___      \');
+  ecrireEnPositionXY(x,y+5,'|    ,-''   `-.__   _         |        ,    __,-''   `-.    |');
+  ecrireEnPositionXY(x,y+6,'|   /          /\_  `   .    |    ,      _/\          \   |');
+  ecrireEnPositionXY(x,y+7,'\  |           \ \`-.___ \   |   / ___,-''/ /           |  /');
+  ecrireEnPositionXY(x,y+8,' \  \           | `._   `\\  |  //''   _,'' |           /  /');
+  ecrireEnPositionXY(x,y+9,'  `-.\         /''  _ `---'''' , . ``---'' _  `\         /,-''');
+  ecrireEnPositionXY(x,y+10,'     ``       /     \    ,=''/ \`=.    /     \       ''');
+  ecrireEnPositionXY(x,y+11,'             |__   /|\_,--.,-.--,--._/|\   __|');
+  ecrireEnPositionXY(x,y+12,'             /  `./  \\`\ |  |  | /,//'' \,''  \');
+  ecrireEnPositionXY(x,y+13,'            /   /     ||--+--|--+-/-|     \   \');
+  ecrireEnPositionXY(x,y+14,'           |   |     /''\_\_\ | /_/_/`\     |   |');
+  ecrireEnPositionXY(x,y+15,'            \   \__, \_     `~''     _/ .__/   /');
+  ecrireEnPositionXY(x,y+16,'             `-._,-''   `-._______,-''   `-._,-''');
+  couleurTexte(Red);
+    ecrireEnPositionXY(x,y,'');
+  ecrireEnPositionXY(x,y+1,'');
+  ecrireEnPositionXY(x,y+2,'');
+  ecrireEnPositionXY(x,y+3,'');
+  ecrireEnPositionXY(x,y+4,'');
+  ecrireEnPositionXY(x,y+5,'');
+  ecrireEnPositionXY(x,y+6,'|   /          /\_  `   .    |    ,      _/\          \   |');
+  ecrireEnPositionXY(x,y+7,'\  |           \ \`-.___ \   |   / ___,-''/ /           |  /');
+  ecrireEnPositionXY(x,y+8,' \  \           | `._   `\\  |  //''   _,'' |           /  /');
+  ecrireEnPositionXY(x,y+9,'  `-.\         /''  _ `---'''' , . ``---'' _  `\         /,-''');
+  ecrireEnPositionXY(x,y+10,'     ``       /     \    ,=''/ \`=.    /     \       ''');
+  ecrireEnPositionXY(x,y+11,'             |__   /|\_,--.,-.--,--._/|\   __|');
+  ecrireEnPositionXY(x,y+12,'             /  `./  \\`\ |  |  | /,//'' \,''  \');
+  ecrireEnPositionXY(x,y+13,'            /   /     ||--+--|--+-/-|     \   \');
+  ecrireEnPositionXY(x,y+14,'           |   |     /''\_\_\ | /_/_/`\     |   |');
+  ecrireEnPositionXY(x,y+15,'            \   \__, \_     `~''     _/ .__/   /');
+  ecrireEnPositionXY(x,y+16,'             `-._,-''   `-._______,-''   `-._,-''');
 end;
 
 procedure plancher();  // affiche l'arrière plan de la chambre
