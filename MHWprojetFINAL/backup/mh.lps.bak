@@ -15,7 +15,6 @@
       <Unit1>
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="344"/>
         <CursorPos X="30" Y="358"/>
@@ -64,8 +63,10 @@
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="37" Y="11"/>
+        <TopLine Value="13"/>
+        <CursorPos X="19" Y="24"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -108,7 +109,7 @@
         <UsageCount Value="6"/>
       </Unit12>
     </Units>
-    <JumpHistory Count="28" HistoryIndex="27">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="menuunit.pas"/>
         <Caret Line="161" Column="13" TopLine="150"/>
@@ -221,6 +222,10 @@
         <Filename Value="forge.pas"/>
         <Caret Line="7" Column="61"/>
       </Position28>
+      <Position29>
+        <Filename Value="forge.pas"/>
+        <Caret Line="11" Column="37"/>
+      </Position29>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
