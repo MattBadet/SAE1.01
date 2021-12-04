@@ -24,7 +24,7 @@ function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 
 function afficheCantine():Integer; // Affichage de la cantine
 
-function afficheForge(armure:array of armure;arme:array of arme):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 procedure afficheDormir(dormie:Boolean); // Petite sieste
@@ -243,7 +243,7 @@ begin
     Result:=choix;
 end;
 
-function afficheForge(armure:array of armure;arme:array of arme):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
 var
   x,y,i,choix:Integer;
 begin
