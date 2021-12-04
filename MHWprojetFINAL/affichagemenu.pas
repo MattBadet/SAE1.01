@@ -9,10 +9,13 @@ interface
 uses
   Classes, SysUtils, GestionEcran, affichageObjet,perso,inventaire,utilities;
 
+type
+  arraystring=array[1..3] of string;
+
 function afficheMenuPrincipale():Boolean; // menu de la ville
 
 procedure regles(); // affiche les règles et le synopsis
-function afficheCreationPerso():player; // menu de la création du personnage
+function afficheCreationPerso():arraystring; // menu de la création du personnage
 procedure afficheCredit(); // Affichage des crédits
 
 function afficheVille():Integer; // Affichage du menu d'une partie
@@ -428,9 +431,9 @@ begin
     readln;
 end;
 
-function afficheCreationPerso():player; // menu de la création du personnage
+function afficheCreationPerso():arraystring; // menu de la création du personnage
 var
-  joueur:player; // le personnage une fois créé
+  info:arraystring;
 begin
     changerTailleConsole(150,35);
     affichage(10,2,'decoCelt');
@@ -440,12 +443,12 @@ begin
     ecrireEnPositionXY(60,18,'Comment vous appelez-vous ? ');
     ecrireEnPositionXY(60,21,'Comment allez- vous ? ');
     deplacerCurseurXY(82,12);
-    readln(joueur.sexe);
+    readln(info[1]);
     deplacerCurseurXY(84,15);
-    readln(joueur.taille);
+    readln(info[2]);
     deplacerCurseurXY(88,18);
-    readln(joueur.nom);
-    Result:=joueur;
+    readln(info[3]);
+    Result:=info;
 end;
 
 procedure regles(); // affiche les règles et le synopsis

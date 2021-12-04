@@ -15,18 +15,18 @@
       <Unit1>
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="366"/>
-        <CursorPos X="21" Y="378"/>
+        <CursorPos X="27" Y="379"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="235"/>
-        <CursorPos X="10" Y="246"/>
+        <TopLine Value="428"/>
+        <CursorPos X="19" Y="447"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -112,63 +112,63 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="affichagemenu.pas"/>
-        <Caret Line="101" TopLine="87"/>
+        <Caret Line="103" Column="26" TopLine="93"/>
       </Position1>
       <Position2>
         <Filename Value="affichagemenu.pas"/>
-        <Caret Line="37" Column="24" TopLine="22"/>
+        <Caret Line="101" Column="26" TopLine="93"/>
       </Position2>
       <Position3>
         <Filename Value="affichagemenu.pas"/>
-        <Caret Line="103" Column="26" TopLine="93"/>
+        <Caret Line="108" Column="55" TopLine="97"/>
       </Position3>
       <Position4>
         <Filename Value="affichagemenu.pas"/>
-        <Caret Line="101" Column="26" TopLine="93"/>
+        <Caret Line="37" Column="11" TopLine="26"/>
       </Position4>
       <Position5>
-        <Filename Value="affichagemenu.pas"/>
-        <Caret Line="108" Column="55" TopLine="97"/>
+        <Filename Value="forge.pas"/>
+        <Caret Line="240" Column="45" TopLine="231"/>
       </Position5>
       <Position6>
-        <Filename Value="affichagemenu.pas"/>
-        <Caret Line="37" Column="11" TopLine="26"/>
+        <Filename Value="forge.pas"/>
+        <Caret Line="24" Column="19" TopLine="13"/>
       </Position6>
       <Position7>
         <Filename Value="forge.pas"/>
-        <Caret Line="240" Column="45" TopLine="231"/>
+        <Caret Line="47" Column="32" TopLine="36"/>
       </Position7>
       <Position8>
         <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="13"/>
+        <Caret Line="24" Column="19" TopLine="14"/>
       </Position8>
       <Position9>
         <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="32" TopLine="36"/>
+        <Caret Line="7" Column="61"/>
       </Position9>
       <Position10>
         <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="14"/>
+        <Caret Line="11" Column="37"/>
       </Position10>
       <Position11>
         <Filename Value="forge.pas"/>
-        <Caret Line="7" Column="61"/>
+        <Caret Line="24" Column="19" TopLine="13"/>
       </Position11>
       <Position12>
-        <Filename Value="forge.pas"/>
-        <Caret Line="11" Column="37"/>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="308" Column="42" TopLine="295"/>
       </Position12>
       <Position13>
         <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="13"/>
+        <Caret Line="25" Column="38" TopLine="13"/>
       </Position13>
       <Position14>
-        <Filename Value="affichagemenu.pas"/>
-        <Caret Line="308" Column="42" TopLine="295"/>
+        <Filename Value="forge.pas"/>
+        <Caret Line="24" Column="19" TopLine="13"/>
       </Position14>
       <Position15>
         <Filename Value="forge.pas"/>
-        <Caret Line="25" Column="38" TopLine="13"/>
+        <Caret Line="47" Column="20" TopLine="36"/>
       </Position15>
       <Position16>
         <Filename Value="forge.pas"/>
@@ -176,27 +176,27 @@
       </Position16>
       <Position17>
         <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="36"/>
+        <Caret Line="27" Column="30" TopLine="13"/>
       </Position17>
       <Position18>
         <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="13"/>
+        <Caret Line="53" TopLine="35"/>
       </Position18>
       <Position19>
-        <Filename Value="forge.pas"/>
-        <Caret Line="27" Column="30" TopLine="13"/>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="16" Column="38"/>
       </Position19>
       <Position20>
         <Filename Value="forge.pas"/>
-        <Caret Line="53" TopLine="35"/>
+        <Caret Line="47" Column="20" TopLine="36"/>
       </Position20>
       <Position21>
         <Filename Value="affichagemenu.pas"/>
-        <Caret Line="16" Column="38"/>
+        <Caret Line="246" Column="10" TopLine="235"/>
       </Position21>
       <Position22>
         <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="36"/>
+        <Caret Line="47" Column="20" TopLine="37"/>
       </Position22>
       <Position23>
         <Filename Value="affichagemenu.pas"/>
@@ -207,28 +207,28 @@
         <Caret Line="47" Column="20" TopLine="37"/>
       </Position24>
       <Position25>
-        <Filename Value="affichagemenu.pas"/>
-        <Caret Line="246" Column="10" TopLine="235"/>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="133" Column="21" TopLine="128"/>
       </Position25>
       <Position26>
-        <Filename Value="forge.pas"/>
-        <Caret Line="47" Column="20" TopLine="37"/>
+        <Filename Value="menuunit.pas"/>
+        <Caret Line="377" Column="10" TopLine="367"/>
       </Position26>
       <Position27>
         <Filename Value="menuunit.pas"/>
-        <Caret Line="133" Column="21" TopLine="128"/>
+        <Caret Line="378" Column="23" TopLine="366"/>
       </Position27>
       <Position28>
         <Filename Value="menuunit.pas"/>
-        <Caret Line="377" Column="10" TopLine="367"/>
+        <Caret Line="377" Column="10" TopLine="366"/>
       </Position28>
       <Position29>
         <Filename Value="menuunit.pas"/>
-        <Caret Line="378" Column="23" TopLine="366"/>
+        <Caret Line="381" Column="23" TopLine="366"/>
       </Position29>
       <Position30>
-        <Filename Value="menuunit.pas"/>
-        <Caret Line="377" Column="10" TopLine="366"/>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="246" Column="10" TopLine="235"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
