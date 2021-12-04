@@ -36,6 +36,7 @@ type
     nom:string;
     desc:string;
     degat:integer;
+    cout:integer;
     material:string;
     idmaterial: integer;
     id: integer;

@@ -157,7 +157,7 @@ const
                nom:'bouclier en fer';
                desc:'pour se protéger';
                partie:'bouclier';
-               cout:'null';
+               cout:5;
                def:150;
                material:'fer';
                idmaterial: 2;
@@ -208,7 +208,7 @@ casqueacier: armure = (
                nom:'bouclier en fer';
                desc:'pour se protéger';
                partie:'bouclier';
-               cout:'null';
+               cout:5;
                def:200;
                material:'acier';
                idmaterial: 3;
@@ -259,7 +259,7 @@ casquescale: armure = (
                nom:'bouclier en écaille de dragon';
                desc:'pour se protéger';
                partie:'bouclier';
-               cout:'null';
+               cout:5;
                def:350;
                material:'scale';
                idmaterial: 4;
