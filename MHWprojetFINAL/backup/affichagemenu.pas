@@ -320,7 +320,7 @@ begin
     x:=5;
     y:=6;
     for i:=0 to length(armure)-1 do
-        ecrireEnPositionXY(x,y+i,armure[i].nom);
+        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '));
     for i:=0 to length(arme)-1 do
         ecrireEnPositionXY(x,y+i+length(armure),arme[i].nom);
     // statistique objet
@@ -416,7 +416,8 @@ begin
        // Armure
        dessinerCadreXY(31,3,60,30,simple,white,black);
        ecrireEnPositionXY(35,4,'Armures Inventaire');
-       x:=33;
+       x:=4;
+       y:=6;
        for i:=1 to length(invarmure) do
              ecrireEnPositionXY(x,y+i,'Armure '+IntToStr(i) + ' : ' + invarmure[i].nom);
        ecrireEnPositionXY(80,12,' Quel item voulez-vous vendre ? : ');
