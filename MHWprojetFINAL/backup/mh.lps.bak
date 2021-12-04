@@ -17,16 +17,17 @@
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="1"/>
         <TopLine Value="354"/>
-        <CursorPos X="9" Y="362"/>
-        <UsageCount Value="38"/>
+        <CursorPos X="36" Y="363"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="190"/>
-        <CursorPos X="43" Y="201"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="214"/>
+        <CursorPos X="67" Y="232"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -35,25 +36,23 @@
         <EditorIndex Value="8"/>
         <TopLine Value="443"/>
         <CursorPos X="60" Y="341"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="cantine.pas"/>
         <EditorIndex Value="4"/>
         <CursorPos X="32"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="251"/>
+        <TopLine Value="319"/>
         <CursorPos X="27" Y="266"/>
-        <FoldState Value=" T3oW0Z$"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -68,7 +67,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="6"/>
         <CursorPos X="62" Y="52"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -77,7 +76,7 @@
         <EditorIndex Value="10"/>
         <TopLine Value="13"/>
         <CursorPos X="16" Y="30"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -85,7 +84,7 @@
         <EditorIndex Value="6"/>
         <TopLine Value="22"/>
         <CursorPos X="71" Y="36"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -93,7 +92,7 @@
         <EditorIndex Value="7"/>
         <TopLine Value="18"/>
         <CursorPos X="48" Y="29"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
@@ -101,7 +100,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="40"/>
         <CursorPos X="20" Y="57"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>

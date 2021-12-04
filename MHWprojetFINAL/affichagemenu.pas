@@ -66,6 +66,31 @@ begin
     ecrireEnPositionXY(x,y+15,'(_.-.__.__./  /                                                `\ /''                                              \  \.__.__.-._)');
 end;
 
+function calculLvl(joueur: player): integer;
+
+begin
+  if (joueur.xp < 100) then
+  result := 1;
+  if (joueur.xp >= 100) AND (joueur.xp < 300) then
+  result := 2;
+  if (joueur.xp >= 300) AND (joueur.xp < 500) then
+  result := 3;
+  if (joueur.xp >= 500) AND (joueur.xp < 800) then
+  result := 4;
+  if (joueur.xp >= 800) AND (joueur.xp < 1200) then
+  result := 5;
+  if (joueur.xp >= 1200) AND (joueur.xp < 1700) then
+  result := 6;
+  if (joueur.xp >= 1700) AND (joueur.xp < 2300) then
+  result := 7;
+  if (joueur.xp >= 2300) AND (joueur.xp < 3000) then
+  result := 8;
+  if (joueur.xp >= 3000) AND (joueur.xp < 4000) then
+  result := 9;
+  if (joueur.xp > 4000) then
+  result := 10;
+end;
+
 procedure afficheVictoire();
 var
   x,y:Integer;
@@ -223,15 +248,14 @@ begin
     ecrireEnPositionXY(x,16,('Ecaille : '+IntToStr(joueur.materiaux[4])));
     ecrireEnPositionXY(x,17,('Demon : '+IntToStr(joueur.materiaux[5])));
     ecrireEnPositionXY(x,18,('Or : '+IntToStr(joueur.materiaux[6])));
-    ecrireEnPositionXY(x,19,(''+joueur.eqarmure[1].nom));
-    ecrireEnPositionXY(x,20,(''+joueur.eqarmure[2].nom));
-    ecrireEnPositionXY(x,21,(''+joueur.eqarmure[3].nom));
-    ecrireEnPositionXY(x,22,(''+joueur.eqarmure[4].nom));
-    ecrireEnPositionXY(x,23,(''+joueur.eqarmure[5].nom));
-    ecrireEnPositionXY(x,24,(''+IntToStr(joueur.xp)));
-    ecrireEnPositionXY(x,25,(''+joueur.epee.nom));
-    ecrireEnPositionXY(x,26,(''+IntToStr(joueur.def)));
-    ecrireEnPositionXY(x,27,(''+IntToStr(joueur.atk)));
+    ecrireEnPositionXY(x,19,('casque: '+joueur.eqarmure[1].nom));
+    ecrireEnPositionXY(x,20,('plastron :'+joueur.eqarmure[2].nom));
+    ecrireEnPositionXY(x,21,('jambiere :'+joueur.eqarmure[3].nom));
+    ecrireEnPositionXY(x,22,('botte :'+joueur.eqarmure[4].nom));
+    ecrireEnPositionXY(x,23,('bouclier :'+joueur.eqarmure[5].nom));
+    ecrireEnPositionXY(x,24,('xp :'+IntToStr(joueur.xp)));
+    ecrireEnPositionXY(x,25,('lvl :'+IntToStr(calculLvl(joueur))));
+    ecrireEnPositionXY(x,26,('epee :'+joueur.epee.nom));
     readln(choix);
     Result:=choix;
 end;
