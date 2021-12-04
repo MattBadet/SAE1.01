@@ -108,7 +108,7 @@ end;
 procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero:Integer); // renouvelle les pv à chaque tour
 begin
     vie(pvHero,pvMaxHero,19,27);
-    vie(pvMonstre,pvMaxMonstre,99,27);
+    vie(pvMonstre,pvMaxMonstre,120,27);
 end;
 
 function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire

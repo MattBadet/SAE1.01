@@ -25,8 +25,8 @@
         <Filename Value="affichagemenu.pas"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="80"/>
-        <CursorPos X="35" Y="111"/>
+        <TopLine Value="27"/>
+        <CursorPos X="44" Y="27"/>
         <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -110,7 +110,7 @@
         <UsageCount Value="6"/>
       </Unit12>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="menuunit.pas"/>
         <Caret Line="213" Column="26" TopLine="203"/>
@@ -227,6 +227,10 @@
         <Filename Value="menuunit.pas"/>
         <Caret Line="369" Column="39" TopLine="352"/>
       </Position29>
+      <Position30>
+        <Filename Value="affichagemenu.pas"/>
+        <Caret Line="245" Column="23" TopLine="232"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
