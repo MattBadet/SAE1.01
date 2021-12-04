@@ -253,15 +253,15 @@ casquescale: armure = (
              id:0;
   );
   bombepetite: bombe = (
-         nom:'Petite Bombe';
+         nom:'bombe petite';
          desc:'une bombe qui explose';
          degat:100;
          prix:3;
          id:1;
   );
   bombemoyenne: bombe = (
-                nom:'Grande Bombe';
-                desc:'une bombe qui explose plus fort';
+                nom:'bombe grande';
+                desc:'une bombequi explose plus fort';
                 degat:300;
                 prix:7;
                 id:2;
@@ -275,21 +275,21 @@ casquescale: armure = (
               id:0;
   );
   petitepotion: potion = (
-                nom:'Petite Potion';
+                nom:'petite';
                 desc:'petite potion';
                 effet:10;
                 prix:5;
                 id:3;
   );
   moyennepotion: potion = (
-                nom:'Moyenne Potion';
+                nom:'moyenne';
                 desc:'moyenne potion';
                 effet:20;
                 prix:10;
                 id:4;
   );
   grandepotion: potion = (
-                nom:'Grande Potion';
+                nom:'grande';
                 desc:'grande potion';
                 effet:30;
                 prix:15;

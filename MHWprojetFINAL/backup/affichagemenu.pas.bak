@@ -254,8 +254,8 @@ begin
     ecrireEnPositionXY(x,22,('botte :'+joueur.eqarmure[4].nom));
     ecrireEnPositionXY(x,23,('bouclier :'+joueur.eqarmure[5].nom));
     ecrireEnPositionXY(x,24,('xp :'+IntToStr(joueur.xp)));
-    ecrireEnPositionXY(x,24,('lvl :'+IntToStr(calculLvl(joueur))));
-    ecrireEnPositionXY(x,25,('epee :'+joueur.epee.nom));
+    ecrireEnPositionXY(x,25,('lvl :'+IntToStr(calculLvl(joueur))));
+    ecrireEnPositionXY(x,26,('epee :'+joueur.epee.nom));
     readln(choix);
     Result:=choix;
 end;
