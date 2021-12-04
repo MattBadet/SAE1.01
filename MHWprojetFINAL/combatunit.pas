@@ -146,6 +146,8 @@ begin
 
   //génération or
   joueur.materiaux[6] := joueur.materiaux[6] + (vieMi div 10);
+
+  result := joueur;
 end;
 
 //le joueur gagne le combat
@@ -385,7 +387,7 @@ begin
     else
     joueur := combatMonstre(joueur);
   end;
-
+  result := joueur;
 end;
 
 end.

@@ -354,9 +354,9 @@ begin
 
     case choixU of
     1 : chambre(dormi);
-    //2 : marchand();
-    //3 : cantineMenu();
-    //4 : forgeMenu();
+    2 : marchand();
+    3 : cantineMenu();
+    4 : forgeMenu();
     5 : combat();
     else rep := FALSE;
     end;
@@ -375,7 +375,7 @@ begin
   regles;
   info := afficheCreationPerso;
   createjoueur(info[3],info[1],info[2]);
-  ville(joueur, dormi);
+  ville(dormi);
 end;
 
 //Menu principal du jeu

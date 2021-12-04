@@ -15,7 +15,7 @@ type
     spe: race;
   end;
 
-function combat(joueur : player): player;
+function combat(): player;
 function calculLvl(joueur: player): integer;
 
 implementation
@@ -146,6 +146,8 @@ begin
 
   //génération or
   joueur.materiaux[6] := joueur.materiaux[6] + (vieMi div 10);
+
+  result := joueur;
 end;
 
 //le joueur gagne le combat
@@ -294,6 +296,10 @@ var
   monstreActu : monstre;
 
 begin
+  writeln('début combat salut ', joueur.vieActu, ' / ');
+    writeln(joueur.def, 'salut');
+    readln;
+
   vieU := joueur.vieActu;
   monstreActu := choixMonstre((random(4)+1)); //choix aléatoire du monstre
   vieMi := ((monstreActu.vieBase * calculLvl(joueur))div 2);
@@ -319,6 +325,10 @@ begin
   end; //while (vieU > 0) AND (vieM > 0) do
 
   joueur.vieActu := vieU;
+
+  writeln(' fincombat salut ', joueur.vieActu, ' / ');
+    writeln(joueur.def, 'salut');
+    readln;
 
   if (vieU > 0) then
   joueur := win(joueur, monstreActu, vieMi)
@@ -385,7 +395,7 @@ begin
     else
     joueur := combatMonstre(joueur);
   end;
-
+  result := joueur;
 end;
 
 end.

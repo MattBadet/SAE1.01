@@ -354,9 +354,9 @@ begin
 
     case choixU of
     1 : chambre(dormi);
-    //2 : marchand();
-    //3 : cantineMenu();
-    //4 : forgeMenu();
+    2 : marchand(joueur);
+    3 : cantineMenu(joueur);
+    4 : forgeMenu(joueur);
     5 : combat();
     else rep := FALSE;
     end;
