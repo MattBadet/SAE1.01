@@ -1,6 +1,6 @@
 //Unité des menus de bases (lancement du jeu, menu général, ville)
 unit menuUnit;
-
+{$codepage UTF8}
 {$mode objfpc}{$H+}
 
 interface
@@ -387,7 +387,7 @@ var
 
 begin
   rep := TRUE;
-  while rep then
+  while rep do
     begin
     choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
 

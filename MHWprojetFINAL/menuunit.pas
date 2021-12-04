@@ -27,7 +27,7 @@ begin
     choixU := afficheChambre(); //Récupération du choix de l'utilisateur
 
 
-    if (choixU = 1) then //Le joueur ouvre l'inventaire
+    if (choixU = 2) then //Le joueur ouvre l'inventaire
     begin
       choixU := afficheInventaireChambre(joueur); //le joueur choisis l'objet qu'il veut équiper
 
@@ -130,7 +130,7 @@ begin
     end
     else
     begin
-      if (choixU = 2) then//le joueur va dormir
+      if (choixU = 1) then//le joueur va dormir
       begin
         afficheDormir(dormi);
 
