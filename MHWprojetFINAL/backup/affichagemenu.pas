@@ -317,12 +317,12 @@ begin
     ecrireEnPositionXY(5,32,'Ressources Disponilbes : X trucs  X machins ....');
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage forge
-    x:=5;
+    x:=4;
     y:=6;
-    for i:=0 to length(armure)-1 do
-        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '+IntToStr(armure[i].cout)));
     for i:=0 to length(arme)-1 do
-        ecrireEnPositionXY(x,y+i+length(armure),(arme[i].nom+' - '+IntToStr(arme[i].cout)));
+        ecrireEnPositionXY(x,y+i,(IntToStr(i)+'-'+arme[i].nom+' - '+IntToStr(arme[i].cout)));
+    for i:=length(arme) to length(armure)-1 do
+        ecrireEnPositionXY(x,y+i+length(arme),(IntToStr(i)+'-'+armure[i].nom+' - '+IntToStr(armure[i].cout)));
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
@@ -497,9 +497,9 @@ begin
     ecrireEnPositionXY(69,14,'Hideo KOJIMA');
     ecrireEnPositionXY(59,16,'Jeu commandé par Matthieu SIMONET');
     ecrireEnPositionXY(45,18,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
-    ecrireEnPositionXY(63,20,'Inspiré par Hideo KOJIMA');
-    ecrireEnPositionXY(49,22,'N''hésitez d''aller voir notre vidéo de présentation');
-    ecrireEnPositionXY(54,23,'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    ecrireEnPositionXY(63,24,'Inspiré par Hideo KOJIMA');
+    ecrireEnPositionXY(49,20,'N''hésitez d''aller voir notre vidéo de présentation');
+    ecrireEnPositionXY(54,21,'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
     readln;
 end;
 

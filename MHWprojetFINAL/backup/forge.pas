@@ -21,10 +21,10 @@ procedure forgeMenu(joueur:player);
 var forgearmure:array[1..19] of armure;
   forgearme:array[1..4] of arme;
 begin
-  forgearmure[1]:=casquecuir;
-  forgearmure[2]:=plastroncuir;
-  forgearmure[3]:=jambierecuir;
-  forgearmure[4]:=bottescuir;
+  forgearmure[1]:=casquecuire;
+  forgearmure[2]:=plastroncuire;
+  forgearmure[3]:=jambierecuire;
+  forgearmure[4]:=bottescuire;
   forgearmure[5]:=casquefer;
   forgearmure[6]:=plastronfer;
   forgearmure[7]:=jambierefer;
@@ -44,15 +44,15 @@ begin
   forgearme[2]:=epeeacier;
   forgearme[3]:=epeescale;
   forgearme[4]:=epeedemo;
-  choixmenu(joueur,afficheForge(forgearmure,forgearme,joueur));
+  choixmenu(joueur,afficheForge(forgearmure,forgearme, joueur));
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
   case choix of //AGIT SELON LE CHOIX DE L'UTILISATEUR
-       1:createepee(joueur,epeefer);
-       2:createepee(joueur,epeeacier);
-       3:createepee(joueur,epeescale);
-       4:createepee(joueur,epeedemo);
+       0:createepee(joueur,epeefer);
+       1:createepee(joueur,epeeacier);
+       2:createepee(joueur,epeescale);
+       3:createepee(joueur,epeedemo);
        5:createcasque(joueur,casquecuire);
        6:createcasque(joueur,casquefer);
        7:createcasque(joueur,casqueacier);

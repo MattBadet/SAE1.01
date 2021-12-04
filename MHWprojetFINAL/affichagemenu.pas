@@ -317,12 +317,12 @@ begin
     ecrireEnPositionXY(5,32,'Ressources Disponilbes : X trucs  X machins ....');
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage forge
-    x:=5;
+    x:=4;
     y:=6;
-    for i:=0 to length(armure)-1 do
-        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '+IntToStr(armure[i].cout)));
     for i:=0 to length(arme)-1 do
-        ecrireEnPositionXY(x,y+i+length(armure),(arme[i].nom+' - '+IntToStr(arme[i].cout)));
+        ecrireEnPositionXY(x,y+i,(IntToStr(i)+'-'+arme[i].nom+' - '+IntToStr(arme[i].cout)));
+    for i:=0 to length(armure)-1 do
+        ecrireEnPositionXY(x,y+i+length(arme),(IntToStr(i+length(arme))+'-'+armure[i].nom+' - '+IntToStr(armure[i].cout)));
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
