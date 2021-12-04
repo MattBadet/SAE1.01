@@ -38,6 +38,7 @@ function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inve
 procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero:Integer); // renouvelle les pv à chaque tour
 procedure afficheVictoire(); // affiche l'écran de victoire
 procedure afficheDeadMenu(); // affiche l'écran de défaite
+function calculLvl(joueur: player): integer; //calcul du lvl du joueur en fonction de son xp
 
 implementation
 
@@ -67,8 +68,7 @@ begin
     readln;
 end;
 
-function calculLvl(joueur: player): integer; //
-
+function calculLvl(joueur: player): integer; //calcul du lvl du joueur en fonction de son xp
 begin
   if (joueur.xp < 100) then
   result := 1;

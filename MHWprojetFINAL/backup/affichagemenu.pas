@@ -444,27 +444,27 @@ var
 begin
     effacerEcran();
     // Module Marchand
-    dessinerCadreXY(3,0,37,16,simple,white,black);
+    dessinerCadreXY(3,0,37,16,simple,LightGray,black);
     affichage(5,3,'marchand');
     ecrireEnPositionXY(15,15,'1 - Marchand');
     // Module Cantine
-    dessinerCadreXY(41,0,75,16,simple,white,black);
+    dessinerCadreXY(41,0,75,16,simple,LightGray,black);
     affichage(48,4,'burger');
     ecrireEnPositionXY(53,15,'2 - Cantine');
     // Module Forge
-    dessinerCadreXY(79,0,113,16,simple,white,black);
+    dessinerCadreXY(79,0,113,16,simple,LightGray,black);
     affichage(89,7,'enclume');
     ecrireEnPositionXY(93,15,'3 - Forge');
     // Module Chambre
-    dessinerCadreXY(116,0,147,16,simple,white,black);
+    dessinerCadreXY(116,0,147,16,simple,LightGray,black);
     affichage(122,1,'lit');
     ecrireEnPositionXY(128,15,'4 - Chambre');
     // Module Combat
-    dessinerCadreXY(5,20,90,33,simple,white,black);
+    dessinerCadreXY(5,20,90,33,simple,LightGray,black);
     affichage(8,21,'epee');
     ecrireEnPositionXY(43,32,'5 - Partir en Chasse');
     // Module Exit
-    dessinerCadreXY(110,20,144,33,simple,white,black);
+    dessinerCadreXY(110,20,144,33,simple,LightGray,black);
     affichage(120,21,'croix');
     ecrireEnPositionXY(121,32,'6 - Quitter');
     // Réponse (choix du menu)
