@@ -18,7 +18,7 @@ function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Inte
 function afficheCantine():Integer; // Affichage de la cantine
 function afficheForge(forge:array of armure):Integer; // afffichage de la forge
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
-procedure afficheDormir(); // Petite sieste
+procedure afficheDormir(dormie:Boolean); // Petite sieste
 function afficheInventaireChambre(joueur:player):Integer; // afffichage de l'inventaire depuis la chambre
 function afficheInventaireCombat(joueur:player):Integer; // afffichage de l'inventaire depuis un combat
 procedure precombat(); // ecran de liaison entre la ville et le combat
@@ -200,21 +200,29 @@ begin
     Result:=choix;
 end;
 
-procedure afficheDormir(); // Petite sieste
+procedure afficheDormir(dormie:Boolean); // Petite sieste
 begin
-    ecrireEnPositionXY(54,11,' ______');
-    ecrireEnPositionXY(54,12,'|___  /    ______');
-    ecrireEnPositionXY(54,13,'   / /    |___  /');
-    ecrireEnPositionXY(54,14,'  / /        / /');
-    ecrireEnPositionXY(54,15,' / /__      / /');
-    ecrireEnPositionXY(54,16,'/_____|    / /__     ____');
-    ecrireEnPositionXY(54,17,'          /_____|   |_  /');
-    ecrireEnPositionXY(54,18,'                     / /     ____');
-    ecrireEnPositionXY(54,19,'                    /___|   |_  /');
-    ecrireEnPositionXY(54,20,'                             / /     ____');
-    ecrireEnPositionXY(54,21,'                            /___|   |_  /');
-    ecrireEnPositionXY(54,22,'                                     / /');
-    ecrireEnPositionXY(54,23,'                                    /___|');
+    effacerEcran();
+    affichage(10,2,'decoCelt');
+    affichage(124,2,'decoCelt');
+    if dromie=False then
+    begin
+      ecrireEnPositionXY(54,11,' ______');
+      ecrireEnPositionXY(54,12,'|___  /    ______');
+      ecrireEnPositionXY(54,13,'   / /    |___  /');
+      ecrireEnPositionXY(54,14,'  / /        / /');
+      ecrireEnPositionXY(54,15,' / /__      / /');
+      ecrireEnPositionXY(54,16,'/_____|    / /__     ____');
+      ecrireEnPositionXY(54,17,'          /_____|   |_  /');
+      ecrireEnPositionXY(54,18,'                     / /     ____');
+      ecrireEnPositionXY(54,19,'                    /___|   |_  /');
+      ecrireEnPositionXY(54,20,'                             / /     ____');
+      ecrireEnPositionXY(54,21,'                            /___|   |_  /');
+      ecrireEnPositionXY(54,22,'                                     / /');
+      ecrireEnPositionXY(54,23,'                                    /___|');
+    end
+    else
+      ecrireEnPositionXY(45,17,'Vous n''êtes pas assez fatigué, vous devriez aller combattre.');
 end;
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
@@ -277,7 +285,7 @@ end;
 
 function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Integer):Integer; // afffichage des achats du marchand
 var
-  x,y,i:Integer;
+  x,y,i,choix:Integer;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
@@ -286,7 +294,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : ',IntToStr(PO)));
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(PO)));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand potion
     x:=5;
@@ -301,6 +309,9 @@ begin
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
+    ecrireEnPositionXY(45,39,'Veuillez indiquer la ligne de l''objet à acheter ou 0 pour quitter : ');
+    readln(choix);
+    Result:=choix;
 end;
 
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
@@ -311,7 +322,7 @@ end;
 
 function afficheVente(invPotion:array of potion;PO:Integer):Integer; // afffichage des ventes du marchand
 var
-  x,y,i:Integer;
+  x,y,i,choix:Integer;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
@@ -330,6 +341,9 @@ begin
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
+        ecrireEnPositionXY(45,39,'Veuillez indiquer la ligne de l''objet à vendre ou 0 pour quitter : ');
+    readln(choix);
+    Result:=choix;
 end;
 
 function afficheVille():Integer; // Affichage du menu d'une partie
