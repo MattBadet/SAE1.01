@@ -428,6 +428,7 @@ begin
     ecrireEnPositionXY(59,14,'Jeu commandé par Matthieu SIMONET');
     ecrireEnPositionXY(45,16,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
     ecrireEnPositionXY(63,18,'Inspiré par Hideo KOJIMA');
+    readln;
 end;
 
 function afficheCreationPerso():player; // menu de la création du personnage
@@ -485,7 +486,7 @@ begin
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
     dessinerCadreXy(60,29,85,33,simple,white,black);
-    ecrireEnPositionXY(88,22,'Votre Choix : ');
+    ecrireEnPositionXY(62,31,'Votre Choix : ');
     readln(choix);
     Case choix of
       1:Result:=True;

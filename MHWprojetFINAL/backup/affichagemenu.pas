@@ -19,8 +19,8 @@ function afficheVille():Integer; // Affichage du menu d'une partie
 
 function afficheMarchand():Integer; // affiche le marchand pour savoir s'il on veut vendre ou acheter
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
-function afficheVente(joueur:player):Integer; // afffichage des ventes du marchand
-function afficheAchat(joueur:player):Integer; // afffichage des achats du marchand
+function afficheVente(po:Integer):Integer; // afffichage des ventes du marchand
+function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 
 function afficheCantine():Integer; // Affichage de la cantine
 
@@ -293,7 +293,7 @@ begin
     Result:=choix;
 end;
 
-function afficheAchat(joueur:player):Integer; // afffichage des achats du marchand
+function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 var
   x,y,i,choix:Integer;
 begin
@@ -304,7 +304,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(joueur.materiaux[6])));
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand potion
     x:=5;
@@ -330,7 +330,7 @@ begin
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
 end;
 
-function afficheVente(joueur:player):Integer; // afffichage des ventes du marchand
+function afficheVente(po:Integer):Integer; // afffichage des ventes du marchand
 var
   x,y,i,choix:Integer;
 begin
@@ -341,7 +341,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(joueur.materiaux[6])));
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand
     x:=5;
@@ -428,6 +428,7 @@ begin
     ecrireEnPositionXY(59,14,'Jeu commandé par Matthieu SIMONET');
     ecrireEnPositionXY(45,16,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
     ecrireEnPositionXY(63,18,'Inspiré par Hideo KOJIMA');
+    readln;
 end;
 
 function afficheCreationPerso():player; // menu de la création du personnage
