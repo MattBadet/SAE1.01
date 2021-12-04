@@ -25,8 +25,8 @@
         <Filename Value="affichagemenu.pas"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="400"/>
-        <CursorPos X="12" Y="431"/>
+        <TopLine Value="378"/>
+        <CursorPos X="26" Y="403"/>
         <FoldState Value=" T3mM0B25"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
@@ -93,7 +93,6 @@
       <Unit10>
         <Filename Value="perso.pas"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="29"/>
         <CursorPos X="34" Y="50"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
