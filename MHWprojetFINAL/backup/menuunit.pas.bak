@@ -354,9 +354,9 @@ begin
 
     case choixU of
     1 : chambre(dormi);
-    2 : marchand();
-    3 : cantineMenu();
-    4 : forgeMenu();
+    2 : marchand(joueur);
+    3 : cantineMenu(joueur);
+    4 : forgeMenu(joueur);
     5 : combat();
     else rep := FALSE;
     end;
@@ -385,18 +385,20 @@ var
   choixU : boolean;
   rep : boolean;
 
-begin
-  rep := TRUE;
-  while rep do
-    begin
-    choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
+  begin
+    rep := TRUE;
+    while rep do
+      begin
+      choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
 
-    if choixU then
-    nouvellePartie
-    else
-    rep := FALSE;
+      if choixU = 1 then
+      nouvellePartie
+      else if choixU = 2 then
+      credit
+      else
+      rep := FALSE;
+    end;
+
   end;
-
-end;
 
 end.

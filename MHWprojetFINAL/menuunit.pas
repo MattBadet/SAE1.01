@@ -391,8 +391,10 @@ begin
     begin
     choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
 
-    if choixU then
+    if choixU = 1 then
     nouvellePartie
+    else if choixU = 2 then
+    credit
     else
     rep := FALSE;
   end;
