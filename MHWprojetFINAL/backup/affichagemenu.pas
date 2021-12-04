@@ -121,6 +121,7 @@ begin
     dessinerCadreXY(46,13,64,15,simple,white,black);
     ecrireEnPositionXY(48,14,'Votre choix : ');
     readln(choix);
+    dessinerCadreXY(46,5,64,15,simple,black,black);
     case choix of
       1:Result:=False;
       2:Result:=True;
