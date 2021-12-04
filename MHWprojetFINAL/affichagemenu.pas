@@ -10,18 +10,26 @@ uses
   Classes, SysUtils, GestionEcran, affichageObjet,perso,inventaire,utilities;
 
 function afficheMenuPrincipale():Boolean; // menu de la ville
+
 procedure regles(); // affiche les règles et le synopsis
 function afficheCreationPerso():player; // menu de la création du personnage
 procedure afficheCredit(); // Affichage des crédits
+
 function afficheVille():Integer; // Affichage du menu d'une partie
+
+function afficheMarchand():Integer; // affiche le marchand pour savoir s'il on veut vendre ou acheter
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
-function afficheVente(PO:Integer):Integer; // afffichage des ventes du marchand
-function afficheAchat(PO:Integer):Integer; // afffichage des achats du marchand
+function afficheVente(joueur:player):Integer; // afffichage des ventes du marchand
+function afficheAchat(joueur:player):Integer; // afffichage des achats du marchand
+
 function afficheCantine():Integer; // Affichage de la cantine
+
 function afficheForge(forge:array of armure):Integer; // afffichage de la forge
+
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 procedure afficheDormir(dormie:Boolean); // Petite sieste
 function afficheInventaireChambre(joueur:player):Integer; // afffichage de l'inventaire depuis la chambre
+
 function afficheInventaireCombat(joueur:player):Integer; // afffichage de l'inventaire depuis un combat
 procedure precombat(); // ecran de liaison entre la ville et le combat
 procedure afficheCombat(monstre:Integer); // fenêtre de combat
@@ -285,7 +293,7 @@ begin
     Result:=choix;
 end;
 
-function afficheAchat(PO:Integer):Integer; // afffichage des achats du marchand
+function afficheAchat(joueur:player):Integer; // afffichage des achats du marchand
 var
   x,y,i,choix:Integer;
 begin
@@ -296,7 +304,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(PO)));
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(joueur.materiaux[6])));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand potion
     x:=5;
@@ -322,7 +330,7 @@ begin
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
 end;
 
-function afficheVente(PO:Integer):Integer; // afffichage des ventes du marchand
+function afficheVente(joueur:player):Integer; // afffichage des ventes du marchand
 var
   x,y,i,choix:Integer;
 begin
@@ -333,7 +341,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(PO)));
+    ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(joueur.materiaux[6])));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand
     x:=5;
@@ -344,6 +352,20 @@ begin
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
         ecrireEnPositionXY(45,39,'Veuillez indiquer la ligne de l''objet à vendre ou 0 pour quitter : ');
+    readln(choix);
+    Result:=choix;
+end;
+function afficheMarchand():Integer; // affiche le marchand pour savoir s'il on veut vendre ou acheter
+var choix:Integer;
+begin
+    effacerEcran();
+    dessinerCadreXY(1,1,148,34,simple,white,black);
+    dessinerCadreXY(69,0,81,2,simple,white,black);
+    ecrireEnPositionXY(71,1,'Marchand');
+    dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
+    dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
+    dessinerCadreXY(2,31,40,33,simple,white,black); // resources
+    ecrireEnPositionXY(40,10,'Voulez-vous 1-Acheter ou 2-Vendre ? ');
     readln(choix);
     Result:=choix;
 end;
