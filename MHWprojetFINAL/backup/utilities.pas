@@ -2,7 +2,7 @@ unit utilities;
 //Le role de cette unité est d'initialiser tous les objets du jeu.
 //J'ai fais cela car celui ci prend beaucoup de place dans une autre unité.
 {$mode objfpc}{$H+}
-
+{$codepage UTF8}
 interface
 
 uses
