@@ -1,5 +1,5 @@
 unit cantine;
-
+//le role de cette unité est de simulé une cantine (nous avons le choix entre 3 plats)
 {$mode objfpc}{$H+}
 
 interface

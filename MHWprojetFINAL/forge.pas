@@ -18,8 +18,33 @@ procedure createbouclier(joueur:player;epe:armure);//CREER UN BOUCLIER
 implementation
 
 procedure forgeMenu(joueur:player);
+var forgearmure:array[1..19] of armure;
+  forgearme:array[1..4] of arme;
 begin
-  choixmenu(joueur,1);
+  forgearmure[1]:=casquecuir;
+  forgearmure[2]:=plastroncuir;
+  forgearmure[3]:=jambierecuir;
+  forgearmure[4]:=bottescuir;
+  forgearmure[5]:=casquefer;
+  forgearmure[6]:=plastronfer;
+  forgearmure[7]:=jambierefer;
+  forgearmure[8]:=bottesfer;
+  forgearmure[9]:=bouclierfer;
+  forgearmure[10]:=casqueacier;
+  forgearmure[11]:=plastronacier;
+  forgearmure[12]:=jambiereacier;
+  forgearmure[13]:=bottesacier;
+  forgearmure[14]:=bouclieracier;
+  forgearmure[15]:=casquescale;
+  forgearmure[16]:=plastronscale;
+  forgearmure[17]:=jambierescale;
+  forgearmure[18]:=bottesscale;
+  forgearmure[19]:=bouclierscale;
+  forgearme[1]:=epeefer;
+  forgearme[2]:=epeeacier;
+  forgearme[3]:=epeescale;
+  forgearme[4]:=epeedemo;
+  choixmenu(joueur,afficheforge(forgearmure,forgearme));
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
