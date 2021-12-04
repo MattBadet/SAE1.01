@@ -15,18 +15,18 @@
       <Unit1>
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="157"/>
-        <CursorPos X="47" Y="166"/>
+        <TopLine Value="143"/>
+        <CursorPos X="22" Y="148"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="322"/>
-        <CursorPos X="42" Y="339"/>
+        <TopLine Value="57"/>
+        <CursorPos X="53" Y="364"/>
         <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit2>

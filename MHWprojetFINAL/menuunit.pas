@@ -8,6 +8,7 @@ interface
 uses combatUnit, utilities, inventaire, cantine, forge, perso, affichagemenu;
 
 procedure menuGeneral();
+procedure ville(joueur : player; dormi : boolean);
 
 implementation
 
@@ -145,7 +146,6 @@ begin
       else
       begin // Le joueur veut quitter
         rep := FALSE;
-        ville(joueur; dormi);
       end;
     end; //if (choixU = 1) then
   end; //while rep do
@@ -341,20 +341,25 @@ procedure ville(joueur : player; dormi : boolean);
 
 var
   choixU : integer; //Le choix de l'utilisateur (qu'es-ce qu'il veut faire)
+  rep : boolean;
 
 begin
-  choixU := afficheVille();
+  rep := TRUE;
+  while rep do
+  begin
+    choixU := afficheVille();
 
-  if choixU = 5 then
-  dormi := FALSE;
+    if choixU = 5 then
+    dormi := FALSE;
 
-  case choixU of
-  1 : chambre(joueur, dormi);
-  2 : marchand(joueur);
-  3 : cantineMenu(joueur);
-  4 : forgeMenu(joueur);
-  5 : combat(joueur);
-  else menuGeneral();
+    case choixU of
+    1 : chambre(joueur, dormi);
+    2 : marchand(joueur);
+    3 : cantineMenu(joueur);
+    4 : forgeMenu(joueur);
+    5 : combat(joueur);
+    else menuGeneral();
+    end;
   end;
 
 end;
