@@ -16,16 +16,15 @@
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="355"/>
-        <CursorPos X="105" Y="378"/>
+        <CursorPos X="17" Y="3"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="237"/>
-        <CursorPos X="22" Y="246"/>
+        <CursorPos X="56" Y="19"/>
         <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -41,8 +40,7 @@
       <Unit4>
         <Filename Value="cantine.pas"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="37"/>
-        <CursorPos X="73" Y="47"/>
+        <CursorPos X="17" Y="4"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -50,8 +48,7 @@
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="225"/>
-        <CursorPos X="30" Y="238"/>
+        <CursorPos X="17" Y="3"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -64,9 +61,8 @@
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="65" Y="7"/>
+        <CursorPos X="17" Y="4"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -82,24 +78,21 @@
       <Unit9>
         <Filename Value="inventaire.pas"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="22"/>
-        <CursorPos X="11" Y="166"/>
+        <CursorPos Y="4"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="perso.pas"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="29"/>
-        <CursorPos X="34" Y="50"/>
+        <CursorPos X="17" Y="4"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="utilities.pas"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="329"/>
-        <CursorPos X="21" Y="337"/>
+        <CursorPos X="17" Y="5"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit11>

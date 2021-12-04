@@ -1,5 +1,6 @@
 unit utilities;
-
+//Le role de cette unité est d'initialiser tous les objets du jeu.
+//J'ai fais cela car celui ci prend beaucoup de place dans une autre unité.
 {$mode objfpc}{$H+}
 
 interface
@@ -73,7 +74,7 @@ const
                nom:'casque en cuire';
                desc:'à mettre sur la tête';
                partie:'casque';
-               def:150;
+               def:25;
                material:'cuire';
                idmaterial: 1;
                id: 1;
@@ -82,7 +83,7 @@ const
                nom:'plastron en cuire';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
-               def:5;
+               def:100;
                material:'cuire';
                idmaterial: 1;
                id: 2;
@@ -91,7 +92,7 @@ const
                nom:'jambiere en cuire';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
-               def:150;
+               def:50;
                material:'cuire';
                idmaterial: 1;
                id: 3;
@@ -100,7 +101,7 @@ const
                nom:'bottes en cuire';
                desc:'à mettre sur les pieds';
                partie:'bottes';
-               def:150;
+               def:25;
                material:'cuire';
                idmaterial: 1;
                id: 4;
@@ -110,7 +111,7 @@ const
                nom:'casque en fer';
                desc:'à mettre sur la tête';
                partie:'casque';
-               def:250;
+               def:100;
                material:'fer';
                idmaterial: 2;
                id: 5;
@@ -119,7 +120,7 @@ const
                nom:'plastron en fer';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
-               def:250;
+               def:300;
                material:'fer';
                idmaterial: 2;
                id: 6;
@@ -128,7 +129,7 @@ const
                nom:'jambiere en fer';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
-               def:250;
+               def:200;
                material:'fer';
                idmaterial: 2;
                id: 7;
@@ -137,7 +138,7 @@ const
                nom:'bottes en fer';
                desc:'à mettre sur les pieds';
                partie:'bottes';
-               def:250;
+               def:100;
                material:'fer';
                idmaterial: 2;
                id: 8;
@@ -146,7 +147,7 @@ const
                nom:'bouclier en fer';
                desc:'pour se protéger';
                partie:'bouclier';
-               def:250;
+               def:150;
                material:'fer';
                idmaterial: 2;
                id: 9;
@@ -156,7 +157,7 @@ casqueacier: armure = (
                nom:'casque en acier';
                desc:'à mettre sur la tête';
                partie:'casque';
-               def:15;
+               def:150;
                material:'acier';
                idmaterial: 3;
                id: 10;
@@ -165,7 +166,7 @@ casqueacier: armure = (
                nom:'plastron en acier';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
-               def:15;
+               def:600;
                material:'acier';
                idmaterial: 3;
                id: 11;
@@ -174,7 +175,7 @@ casqueacier: armure = (
                nom:'jambiere en acier';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
-               def:15;
+               def:300;
                material:'acier';
                idmaterial: 3;
                id: 12;
@@ -183,7 +184,7 @@ casqueacier: armure = (
                nom:'bottes en acier';
                desc:'à mettre sur les pieds';
                partie:'bottes';
-               def:15;
+               def:150;
                material:'acier';
                idmaterial: 3;
                id: 13;
@@ -192,7 +193,7 @@ casqueacier: armure = (
                nom:'bouclier en fer';
                desc:'pour se protéger';
                partie:'bouclier';
-               def:15;
+               def:200;
                material:'acier';
                idmaterial: 3;
                id: 14;
@@ -202,7 +203,7 @@ casquescale: armure = (
                nom:'casque en écaille de dragon';
                desc:'à mettre sur la tête';
                partie:'casque';
-               def:10;
+               def:250;
                material:'scale';
                idmaterial: 4;
                id: 15;
@@ -211,7 +212,7 @@ casquescale: armure = (
                nom:'plastron en écaille de dragon';
                desc:'à mettre sur le haut du corps';
                partie:'plastron';
-               def:10;
+               def:1000;
                material:'scale';
                idmaterial: 4;
                id: 16;
@@ -220,7 +221,7 @@ casquescale: armure = (
                nom:'jambiere en écaille de dragon';
                desc:'à mettre sur le bas du corps';
                partie:'jambiere';
-               def:10;
+               def:500;
                material:'scale';
                idmaterial: 4;
                id: 17;
@@ -229,7 +230,7 @@ casquescale: armure = (
                nom:'bottes en écaille de dragon';
                desc:'à mettre sur les pieds';
                partie:'bottes';
-               def:10;
+               def:250;
                material:'scale';
                idmaterial: 4;
                id: 18;
@@ -238,7 +239,7 @@ casquescale: armure = (
                nom:'bouclier en écaille de dragon';
                desc:'pour se protéger';
                partie:'bouclier';
-               def:10;
+               def:350;
                material:'scale';
                idmaterial: 4;
                id: 19;

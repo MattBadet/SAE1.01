@@ -1,6 +1,6 @@
 //Unité des menus de bases (lancement du jeu, menu général, ville)
 unit menuUnit;
-
+{$codepage UTF8}
 {$mode objfpc}{$H+}
 
 interface
