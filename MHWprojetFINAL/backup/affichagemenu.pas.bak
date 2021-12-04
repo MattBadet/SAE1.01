@@ -8,7 +8,8 @@ unit affichagemenu;
 interface
 uses
   Classes, SysUtils, GestionEcran, affichageObjet,perso,inventaire,utilities;
-
+type
+  arraystring=array[1..3] of string;
 function afficheMenuPrincipale():Boolean; // menu de la ville
 
 procedure regles(); // affiche les règles et le synopsis
@@ -24,7 +25,7 @@ function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 
 function afficheCantine():Integer; // Affichage de la cantine
 
-function afficheForge(armure:array of armure;arme:array of arme):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 procedure afficheDormir(dormie:Boolean); // Petite sieste
@@ -98,7 +99,7 @@ begin
     deplacerCurseurXY(x+1,y+1);
     couleurTexte(Green);
     for i:=1 to (pv div(pvMax div 10)) do  // en fonction du pourcentage de vie remplie une barre de vie
-        write('█');                       // par tranche de 10%
+        write('█');                       // par tranche de 10%   //
     deplacerCurseurXY(x+2,y+3);
     couleurTexte(white);
     write(pv,'/',pvMax);
@@ -191,14 +192,14 @@ begin
         ecrireEnPositionXY(x,y+2*i,IntToStr(i) + ':' + invarme[i].nom);
     // Armure
     for i:=1 to length(invarmure) do
-        writeln(IntToStr(i) + ':' + invarmure[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarmure[i].nom);
     // Arme Equipe
     for i:=1 to length(joueur.eqarmure) do
-        writeln(IntToStr(i) + ':' + joueur.eqarmure[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + joueur.eqarmure[i].nom);
     // Armure Equipe
     writeln(IntToStr(i) + ':' + joueur.epee.nom);
     for i:=1 to length(invarme) do
-        writeln(IntToStr(i) + ':' + invarme[i].nom);
+        ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
     dessinerCadreXY(44,24,144,31,simple,white,black);
     readln(choix);
     Result:=choix;
@@ -243,7 +244,7 @@ begin
     Result:=choix;
 end;
 
-function afficheForge(armure:array of armure;arme:array of arme):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
 var
   x,y,i,choix:Integer;
 begin
@@ -260,10 +261,10 @@ begin
     // remplissage forge
     x:=5;
     y:=6;
-    for i:=0 to length(armure) do
+    for i:=0 to length(armure)-1 do
         ecrireEnPositionXY(x,y+i,armure[i].nom);
-    for i:=(length(armure)+2) to length(arme) do
-        ecrireEnPositionXY(x,y+i,arme[i].nom);
+    for i:=0 to length(arme)-1 do
+        ecrireEnPositionXY(x,y+i+length(armure),arme[i].nom);
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);

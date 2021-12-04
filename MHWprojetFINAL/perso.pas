@@ -24,10 +24,21 @@ type
   end;
 
 function createjoueur(nom,sexe,taille:string):player;//INITIALISATION DU JOUEUR
-procedure initdef(joueur:player);//INITIALISATION DE LA DEFENSE
-procedure initatk(joueur:player);//INITIALISATION DE L'ATTAQUE
+function initdef(joueur:player): integer;//INITIALISATION DE LA DEFENSE
+function initatk(joueur:player): integer;//INITIALISATION DE L'ATTAQUE
 
 implementation
+
+function initdef(joueur:player): integer;
+begin
+  joueur.def:=joueur.eqarmure[1].def + joueur.eqarmure[2].def + joueur.eqarmure[3].def + joueur.eqarmure[4].def + joueur.eqarmure[5].def + 300;
+  result := joueur.def;
+end;
+function initatk(joueur:player): integer;
+begin
+  joueur.atk:=joueur.epee.degat;
+  result := joueur.atk;
+end;
 
 function createjoueur(nom,sexe,taille:string):player;
 var joueur:player;
@@ -37,8 +48,8 @@ begin
   joueur.taille:=taille;
   joueur.vieActu:=300;
   joueur.vieNue:=300;
-  joueur.def:=0;
-  joueur.atk:=0;
+  joueur.def:=initdef(joueur);
+  joueur.atk:=initatk(joueur);
   joueur.materiaux[1]:=0;
   joueur.materiaux[2]:=0;
   joueur.materiaux[3]:=0;
@@ -54,14 +65,5 @@ begin
   joueur.epee:=nullarm;
 
   result := joueur;
-end;
-
-procedure initdef(joueur:player);
-begin
-  joueur.def:=joueur.eqarmure[1].def + joueur.eqarmure[2].def + joueur.eqarmure[3].def + joueur.eqarmure[4].def + joueur.eqarmure[5].def;
-end;
-procedure initatk(joueur:player);
-begin
-  joueur.atk:=joueur.epee.degat;
 end;
 end.

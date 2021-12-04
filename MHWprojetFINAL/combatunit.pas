@@ -196,7 +196,7 @@ begin
 end;
 
 //Tour du joueur
-function tourJ(vieMd, arme, vieU : integer;joueur : player): integer;
+function tourJ(vieMd, arme, vieU, vieMi : integer;joueur : player;monstreActu : monstre): integer;
 
 var
   dU, reussite, idObjet : integer; //dU = dégats du joueur ; reussite = echec ou critique
@@ -237,6 +237,8 @@ begin
   begin
     inventaireCombat(joueur, vieU, joueur.def, vieMd);
   end; //if (choixA = TRUE) then
+  afficheCombat(monstreActu.id);
+  afficheMajVie(vieMd, vieMi, vieU, joueur.def);
   result := vieMd;
 end;
 
@@ -302,7 +304,7 @@ begin
   afficheCombat(monstreActu.id);
 
   if (vieU > vieMd) then //si le joueur a plus de vie que le monstre il commence
-  vieMd := tourJ(vieMd, arme, vieU, joueur);
+  vieMd := tourJ(vieMd, arme, vieU, vieMi, joueur, monstreActu);
   afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
@@ -311,7 +313,7 @@ begin
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme, vieU, joueur); //Tour du joueur
+    vieMd := tourJ(vieMd, arme, vieU, vieMi, joueur, monstreActu);  //Tour du joueur
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
@@ -349,7 +351,7 @@ begin
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme, vieU, joueur); //Tour du joueur
+    vieMd := tourJ(vieMd, arme, vieU, vieMi, joueur, boss);  //Tour du joueur
     afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
