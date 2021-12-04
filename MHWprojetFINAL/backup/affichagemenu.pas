@@ -41,7 +41,7 @@ procedure afficheDeadMenu(); // affiche l'écran de défaite
 
 implementation
 
-procedure afficheDeadMenu();
+procedure afficheDeadMenu(); // affiche l'écran de Mort
 var
   x,y:Integer;
 begin
@@ -64,9 +64,10 @@ begin
     ecrireEnPositionXY(x,y+13,'  .''      |   |                              l /   V           \ \       V   \ l                  (@)             |   |      ''.');
     ecrireEnPositionXY(x,y+14,' /         \  |                              l/                _) )_          \I                                  |  /         \');
     ecrireEnPositionXY(x,y+15,'(_.-.__.__./  /                                                `\ /''                                              \  \.__.__.-._)');
+    readln;
 end;
 
-function calculLvl(joueur: player): integer;
+function calculLvl(joueur: player): integer; //
 
 begin
   if (joueur.xp < 100) then
@@ -91,13 +92,13 @@ begin
   result := 10;
 end;
 
-procedure afficheVictoire();
+procedure afficheVictoire(); // affiche l'écran de victoire
 var
   x,y:Integer;
 begin
-    x:= 34;
+    effacerEcran();
+    x:= 39;
     y:=8;
-    dessinerCadreXY(x-5,y-2,x+77,y+17,simple,white,black);
     ecrireEnPositionXY(x+34,y,'/   \');
     ecrireEnPositionXY(x+26,y+1,')      ((   ))     (');
     ecrireEnPositionXY(x,y+2,'(@)                      /|\      ))_((     /|\ ');
@@ -114,6 +115,7 @@ begin
     ecrireEnPositionXY(x+17,y+13,'l /   V           \ \       V   \ l                  (@)');
     ecrireEnPositionXY(x+17,y+14,'l/                _) )_          \I');
     ecrireEnPositionXY(x+35,y+15,'`\ /''');
+    readln;
 end;
 
 procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
@@ -250,13 +252,13 @@ begin
     ecrireEnPositionXY(x,17,('Demon : '+IntToStr(joueur.materiaux[5])));
     ecrireEnPositionXY(x,18,('Or : '+IntToStr(joueur.materiaux[6])));
     ecrireEnPositionXY(x,19,('casque: '+joueur.eqarmure[1].nom));
-    ecrireEnPositionXY(x,20,('plastron :'+joueur.eqarmure[2].nom));
-    ecrireEnPositionXY(x,21,('jambiere :'+joueur.eqarmure[3].nom));
-    ecrireEnPositionXY(x,22,('botte :'+joueur.eqarmure[4].nom));
-    ecrireEnPositionXY(x,23,('bouclier :'+joueur.eqarmure[5].nom));
-    ecrireEnPositionXY(x,24,('xp :'+IntToStr(joueur.xp)));
-    ecrireEnPositionXY(x,25,('lvl :'+IntToStr(calculLvl(joueur))));
-    ecrireEnPositionXY(x,26,('epee :'+joueur.epee.nom));
+    ecrireEnPositionXY(x,20,('plastron : '+joueur.eqarmure[2].nom));
+    ecrireEnPositionXY(x,21,('jambiere : '+joueur.eqarmure[3].nom));
+    ecrireEnPositionXY(x,22,('botte : '+joueur.eqarmure[4].nom));
+    ecrireEnPositionXY(x,23,('bouclier : '+joueur.eqarmure[5].nom));
+    ecrireEnPositionXY(x,24,('xp : '+IntToStr(joueur.xp)));
+    ecrireEnPositionXY(x,25,('lvl : '+IntToStr(calculLvl(joueur))));
+    ecrireEnPositionXY(x,26,('epee : '+joueur.epee.nom));
     readln(choix);
     Result:=choix;
 end;
@@ -360,20 +362,17 @@ begin
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
-    // remplissage marchand potion
-    x:=5;
-    y:=6;
-    for i:=1 to 2 do
-        ecrireEnPositionXY(x,y+2*i,invPotion[i].nom);
-    // remplissage marchand bombe
-    x:=5;
-    y:=10;
-    for i:=1 to 2 do
-        ecrireEnPositionXY(x,y+2*i,invBombe[i].nom);
+    // potion
+    ecrireEnPositionXY(5,6,petitepotion.nom);
+    ecrireEnPositionXY(5,7,moyennepotion.nom);
+    ecrireEnPositionXY(5,8,grandepotion.nom);
+    // bombe
+    ecrireEnPositionXY(5,10,bombepetite.nom);
+    ecrireEnPositionXY(5,11,bombemoyenne.nom);
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
-    ecrireEnPositionXY(45,39,'Veuillez indiquer la ligne de l''objet à acheter ou 0 pour quitter : ');
+    ecrireEnPositionXY(45,34,'Veuillez indiquer la ligne de l''objet à acheter ou 0 pour quitter : ');
     readln(choix);
     Result:=choix;
 end;
@@ -386,28 +385,43 @@ end;
 
 function afficheVente(po:Integer):Integer; // afffichage des ventes du marchand
 var
-  x,y,i,choix:Integer;
+  x,y,i,choix1,choix2:Integer;
+  //arme:arme;
+  //armure:armure;
 begin
     effacerEcran();
     dessinerCadreXY(1,1,148,34,simple,white,black);
     dessinerCadreXY(69,0,81,2,simple,white,black);
     ecrireEnPositionXY(71,1,'Marchand');
-    dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
-    dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage marchand
-    x:=5;
+    // Arme
+    dessinerCadreXY(2,3,30,33,simple,white,black);
+    ecrireEnPositionXY(6,4,'Armes Inventaire');
+    x:=4;
     y:=6;
-    for i:=0 to length(invPotion) do
-        ecrireEnPositionXY(x,y+2*i,invPotion[i].nom);
-    // test statistique objet
-    affichage(50,8,'epee');
-    dessinerCadreXY(44,25,144,32,simple,white,black);
-        ecrireEnPositionXY(45,39,'Veuillez indiquer la ligne de l''objet à vendre ou 0 pour quitter : ');
-    readln(choix);
-    Result:=choix;
+    for i:=1 to length(invarme) do
+        ecrireEnPositionXY(x,y+i,'Armre '+IntToStr(i) + ' : ' + invarme[i].nom);
+    // Armure
+    dessinerCadreXY(31,3,60,33,simple,white,black);
+    ecrireEnPositionXY(35,4,'Armures Inventaire');
+    x:=33;
+    for i:=1 to length(invarmure) do
+        ecrireEnPositionXY(x,y+i,'Armure '+IntToStr(i) + ' : ' + invarmure[i].nom);
+    // statistique objet
+    ecrireEnPositionXY(80,10,' Voulez-vous vendre 1-une arme 2-une armure ? : ');
+    readln(choix1);
+    ecrireEnPositionXY(80,12,' Quel item voulez-vous vendre ? : ');
+    readln(choix2);
+    if choix=1 then
+    begin
+       //arme.id:=choix2;
+       //Result:=arme.id;
+    end
+    else
+        //Result:=armure.id[choix2];
 end;
 function afficheMarchand():Integer; // affiche le marchand pour savoir s'il on veut vendre ou acheter
 var choix:Integer;
@@ -419,7 +433,7 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);    // objets disponibles
     dessinerCadreXY(42,3,146,33,simple,white,black); // crafts
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
-    ecrireEnPositionXY(40,10,'Voulez-vous 1-Acheter ou 2-Vendre ? ');
+    ecrireEnPositionXY(60,10,'Voulez-vous 1-Acheter ou 2-Vendre ? ');
     readln(choix);
     Result:=choix;
 end;
