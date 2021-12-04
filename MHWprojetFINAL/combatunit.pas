@@ -1,6 +1,6 @@
 //unité contenant tout le code logique demandé pour le combat
 unit combatUnit;
-
+{$codepage UTF8}
 {$mode objfpc}{$H+}
 
 interface

@@ -8,6 +8,7 @@ interface
 uses combatUnit, utilities, inventaire, cantine, forge, perso, affichagemenu;
 
 procedure menuGeneral();
+procedure ville(joueur : player; dormi : boolean);
 
 implementation
 
@@ -210,7 +211,7 @@ begin
   else //Le joueur veut vendre un objet
   begin
 
-    choixU = afficheVente(joueur.materiaux[6]); //renvoie l'id de l'objet a vendre
+    choixU := afficheVente(joueur.materiaux[6]); //renvoie l'id de l'objet a vendre
 
     if choixU = 1 then
       begin
@@ -340,20 +341,25 @@ procedure ville(joueur : player; dormi : boolean);
 
 var
   choixU : integer; //Le choix de l'utilisateur (qu'es-ce qu'il veut faire)
+  rep : boolean;
 
 begin
-  choixU := afficheVille();
+  rep := TRUE;
+  while rep do
+  begin
+    choixU := afficheVille();
 
-  if choixU = 5 then
-  dormi := FALSE;
+    if choixU = 5 then
+    dormi := FALSE;
 
-  case choixU of
-  1 : chambre(joueur, dormi);
-  2 : marchand(joueur);
-  3 : cantineMenu(joueur);
-  4 : forgeMenu(joueur);
-  5 : combat(joueur);
-  else menuGeneral();
+    case choixU of
+    1 : chambre(joueur, dormi);
+    2 : marchand(joueur);
+    3 : cantineMenu(joueur);
+    4 : forgeMenu(joueur);
+    5 : combat(joueur);
+    else rep := FALSE;
+    end;
   end;
 
 end;
@@ -377,12 +383,20 @@ procedure menuGeneral();
 
 var
   choixU : boolean;
+  rep : boolean;
 
 begin
-  choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
+  rep := TRUE;
+  while rep do
+    begin
+    choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
 
-  if choixU then
-  nouvellePartie;
+    if choixU then
+    nouvellePartie
+    else
+    rep := FALSE;
+  end;
+
 end;
 
 end.
