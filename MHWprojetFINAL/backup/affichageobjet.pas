@@ -374,23 +374,42 @@ begin
 end;
 procedure boss(x,y:Integer);   // affiche le boss
 begin
-  ecrireEnPositionXY(x,y,'                            ,-.');
-  ecrireEnPositionXY(x,y+1,'       ___,---.__          /''|`\          __,---,___');
-  ecrireEnPositionXY(x,y+2,'    ,-''    \`    `-.____,-''  |  `-.____,-''    //    `-.');
-  ecrireEnPositionXY(x,y+3,'  ,''        |           ~''\     /`~           |        `.');
-  ecrireEnPositionXY(x,y+4,' /      ___//              `. ,''          ,  , \___      \');
+  couleurTexte(DarkGray);
+  ecrireEnPositionXY(x+28,y,',-.');
+  ecrireEnPositionXY(x+7,y+1,'___,---.__          /''|`\          __,---,___');
+  ecrireEnPositionXY(x+4,y+2,',-''    \`    `-.____,-''  |  `-.____,-''    //    `-.');
+  ecrireEnPositionXY(x+2,y+3,',''        |           ~''\     /`~           |        `.');
+  ecrireEnPositionXY(x+1,y+4,'/      ___//              `. ,''          ,  , \___      \');
   ecrireEnPositionXY(x,y+5,'|    ,-''   `-.__   _         |        ,    __,-''   `-.    |');
   ecrireEnPositionXY(x,y+6,'|   /          /\_  `   .    |    ,      _/\          \   |');
   ecrireEnPositionXY(x,y+7,'\  |           \ \`-.___ \   |   / ___,-''/ /           |  /');
-  ecrireEnPositionXY(x,y+8,' \  \           | `._   `\\  |  //''   _,'' |           /  /');
-  ecrireEnPositionXY(x,y+9,'  `-.\         /''  _ `---'''' , . ``---'' _  `\         /,-''');
-  ecrireEnPositionXY(x,y+10,'     ``       /     \    ,=''/ \`=.    /     \       ''');
-  ecrireEnPositionXY(x,y+11,'             |__   /|\_,--.,-.--,--._/|\   __|');
-  ecrireEnPositionXY(x,y+12,'             /  `./  \\`\ |  |  | /,//'' \,''  \');
-  ecrireEnPositionXY(x,y+13,'            /   /     ||--+--|--+-/-|     \   \');
-  ecrireEnPositionXY(x,y+14,'           |   |     /''\_\_\ | /_/_/`\     |   |');
-  ecrireEnPositionXY(x,y+15,'            \   \__, \_     `~''     _/ .__/   /');
-  ecrireEnPositionXY(x,y+16,'             `-._,-''   `-._______,-''   `-._,-'');
+  ecrireEnPositionXY(x+1,y+8,'\  \           | `._   `\\  |  //''   _,'' |           /  /');
+  ecrireEnPositionXY(x+2,y+9,'`-.\         /''  _ `---'''' , . ``---'' _  `\         /,-''');
+  ecrireEnPositionXY(x+5,y+10,'``       /     \    ,=''/ \`=.    /     \       ''');
+  ecrireEnPositionXY(x+13,y+11,'|__   /|\_,--.,-.--,--._/|\   __|');
+  ecrireEnPositionXY(x+13,y+12,'/  `./  \\`\ |  |  | /,//'' \,''  \');
+  ecrireEnPositionXY(x+12,y+13,'/   /     ||--+--|--+-/-|     \   \');
+  ecrireEnPositionXY(x+11,y+14,'|   |     /''\_\_\ | /_/_/`\     |   |');
+  ecrireEnPositionXY(x+12,y+15,'\   \__, \_     `~''     _/ .__/   /');
+  ecrireEnPositionXY(x+13,y+16,'`-._,-''   `-._______,-''   `-._,-''');
+  couleurTexte(Red);
+  ecrireEnPositionXY(x+58,y,',-.');
+  ecrireEnPositionXY(x+11,y+1,'---.__          /''|`\          __,---');
+  ecrireEnPositionXY(x+12,y+2,'`    `-.____,-''  |  `-.____,-''    /');
+  ecrireEnPositionXY(x+24,y+3,'~''\     /`~ ');
+  ecrireEnPositionXY(x+27,y+4,'`. ,''          ,  , ');
+  ecrireEnPositionXY(x+11,y+5,'`-.__   _         |        ,    __,-''');
+  ecrireEnPositionXY(x+15,y+6,'/\_  `   .    |    ,      _/\');
+  ecrireEnPositionXY(x+15,y+7,'\ \`-.___ \   |   / ___,-''/ /');
+  ecrireEnPositionXY(x+16,y+8,'| `._   `\\  |  //''   _,'' |');
+  ecrireEnPositionXY(x+15,y+9,'/''  _ `---'''' , . ``---'' _  `\');
+  ecrireEnPositionXY(x+14,y+10,'/     \    ,=''/ \`=.    /     \');
+  ecrireEnPositionXY(x+13,y+11,'|__   /|\_,--.,-.--,--._/|\   __|');
+  ecrireEnPositionXY(x+20,y+12,'\\`\ |  |  | /,//'');
+  ecrireEnPositionXY(x+22,y+13,'||--+--|--+-/-|');
+  ecrireEnPositionXY(x+21,y+14,'/''\_\_\ | /_/_/`\');
+  ecrireEnPositionXY(x+21,y+15,'\_     `~''     _/');
+  ecrireEnPositionXY(x+23,y+16,'`-._______,-'');
 end;
 
 procedure plancher();  // affiche l'arrière plan de la chambre
