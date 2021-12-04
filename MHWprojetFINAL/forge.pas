@@ -44,7 +44,7 @@ begin
   forgearme[2]:=epeeacier;
   forgearme[3]:=epeescale;
   forgearme[4]:=epeedemo;
-  choixmenu(joueur,afficheForge(forgearmure,forgearme,joueur));
+  choixmenu(joueur,afficheForge(forgearmure,forgearme));
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
