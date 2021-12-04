@@ -152,7 +152,7 @@ begin
 end;
 
 //marchand : achat d'objets
-procedure marchand();
+procedure marchand(joueur : player);
 
 var
   choixU : integer;
@@ -163,7 +163,7 @@ begin
   if choixU = 1 then //Le joueur veut acheter quequechose chez le marchand
   begin
 
-    choixU := afficheAchat; //renvoie l'id de l'objet a acheter
+    choixU := afficheAchat(); //renvoie l'id de l'objet a acheter
 
     if (choixU = 1) AND (joueur.materiaux[6] >= 50) then
     begin
@@ -200,7 +200,7 @@ begin
             end
             else
             begin
-              AffichagePasArgent;
+              affichePasAssezArgent;
             end;
           end;
         end;
@@ -214,122 +214,122 @@ begin
 
     if choixU = 1 then
       begin
-        deletecasque(joueur, casquecuire);
+        deletecasque(casquecuire);
         joueur.materiaux[6] := joueur.materiaux[6] + 12;
       end
       else if choixU = 2 then
       begin
-        deleteplastron(joueur, plastroncuire);
+        deleteplastron(plastroncuire);
         joueur.materiaux[6] := joueur.materiaux[6] + 50;
       end;
       if choixU = 3 then
       begin
-        deletejambiere(joueur, jambierecuire);
+        deletejambiere(jambierecuire);
         joueur.materiaux[6] := joueur.materiaux[6] + 25;
       end;
       if choixU = 4 then
       begin
-        deletebottes(joueur, bottescuire);
+        deletebottes(bottescuire);
         joueur.materiaux[6] := joueur.materiaux[6] + 12;
       end;
       if choixU = 5 then
       begin
-        deletecasque(joueur, casquefer);
+        deletecasque(casquefer);
         joueur.materiaux[6] := joueur.materiaux[6] + 50;
       end;
       if choixU = 6 then
       begin
-        deleteplastron(joueur, plastronfer);
+        deleteplastron(plastronfer);
         joueur.materiaux[6] := joueur.materiaux[6] + 150;
       end;
       if choixU = 7 then
       begin
-        deletejambiere(joueur, jambierefer);
+        deletejambiere(jambierefer);
         joueur.materiaux[6] := joueur.materiaux[6] + 100;
       end;
       if choixU = 8 then
       begin
-        deletebottes(joueur, bottesfer);
+        deletebottes(bottesfer);
         joueur.materiaux[6] := joueur.materiaux[6] + 50;
       end;
       if choixU = 9 then
       begin
-        deletebouclier(joueur, bouclierfer);
+        deletebouclier(bouclierfer);
         joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 10 then
       begin
-        deletecasque(joueur, casqueacier);
+        deletecasque(casqueacier);
         joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 11 then
       begin
-        deleteplastron(joueur, plastronacier);
+        deleteplastron(plastronacier);
         joueur.materiaux[6] := joueur.materiaux[6] + 300;
       end;
       if choixU = 12 then
       begin
-        deletejambiere(joueur, jambiereacier);
+        deletejambiere(jambiereacier);
         joueur.materiaux[6] := joueur.materiaux[6] + 150;
       end;
       if choixU = 13 then
       begin
-        deletebottes(joueur, bottesacier);
+        deletebottes(bottesacier);
         joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 14 then
       begin
-        deletebouclier(joueur, bouclieracier);
+        deletebouclier(bouclieracier);
         joueur.materiaux[6] := joueur.materiaux[6] + 100;
       end;
       if choixU = 15 then
       begin
-        deletecasque(joueur, casquescale);
+        deletecasque(casquescale);
         joueur.materiaux[6] := joueur.materiaux[6] + 125;
       end;
       if choixU = 16 then
       begin
-        deleteplastron(joueur, plastronscale);
+        deleteplastron(plastronscale);
         joueur.materiaux[6] := joueur.materiaux[6] + 500;
       end;
       if choixU = 17 then
       begin
-        deletejambiere(joueur, jambierescale);
+        deletejambiere(jambierescale);
         joueur.materiaux[6] := joueur.materiaux[6] + 250;
       end;
       if choixU = 18 then
       begin
-        deletebottes(joueur, bottesscale);
+        deletebottes(bottesscale);
         joueur.materiaux[6] := joueur.materiaux[6] + 125;
       end;
       if choixU = 19 then
       begin
-        deletebouclier(joueur, bouclierscale);
+        deletebouclier(bouclierscale);
         joueur.materiaux[6] := joueur.materiaux[6] + 175;
       end;
       if choixU = 20 then
       begin
-        deleteepee(joueur, epeebois);
+        deleteepee(epeebois);
         joueur.materiaux[6] := joueur.materiaux[6] + 5;
       end;
       if choixU = 21 then
       begin
-        deleteepee(joueur, epeefer);
+        deleteepee(epeefer);
         joueur.materiaux[6] := joueur.materiaux[6] + 75;
       end;
       if choixU = 22 then
       begin
-        deleteepee(joueur, epeeacier);
+        deleteepee(epeeacier);
         joueur.materiaux[6] := joueur.materiaux[6] + 150;
       end;
       if choixU = 23 then
       begin
-        deleteepee(joueur, epeescale);
+        deleteepee(epeescale);
         joueur.materiaux[6] := joueur.materiaux[6] + 250;
       end;
       if choixU = 24 then
       begin
-        deleteepee(joueur, epeedemo);
+        deleteepee(epeedemo);
         joueur.materiaux[6] := joueur.materiaux[6] + 500;
       end;
   end;
@@ -349,7 +349,7 @@ begin
 
   case choixU of
   1 : chambre(joueur, dormi);
-  2 : marchand();
+  2 : marchand(joueur);
   3 : cantineMenu(joueur);
   4 : forgeMenu(joueur);
   5 : combat(joueur);
@@ -379,7 +379,7 @@ var
   choixU : boolean;
 
 begin
-  choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
+  choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
 
   if choixU then
   nouvellePartie;
