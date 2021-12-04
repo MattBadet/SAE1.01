@@ -24,8 +24,8 @@
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
         <EditorIndex Value="10"/>
-        <TopLine Value="372"/>
-        <CursorPos X="44" Y="385"/>
+        <TopLine Value="366"/>
+        <CursorPos X="51" Y="381"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -119,7 +119,8 @@
         <Filename Value="mh.lps"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="33" Y="15"/>
+        <TopLine Value="7"/>
+        <CursorPos X="63" Y="25"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="XML"/>
