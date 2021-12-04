@@ -362,14 +362,14 @@ begin
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
-    // bombe
-    ecrireEnPositionXY(5,14,('4-'+bombepetite.nom));
-    ecrireEnPositionXY(5,16,('5-'+bombemoyenne.nom));
     // potion
     ecrireEnPositionXY(5,6,('1-'+petitepotion.nom));
     ecrireEnPositionXY(5,8,('2-'+moyennepotion.nom));
     ecrireEnPositionXY(5,10,('3-'+grandepotion.nom));
     // test statistique objet
+    // bombe
+    ecrireEnPositionXY(5,14,('4-'+bombepetite.nom));
+    ecrireEnPositionXY(5,16,('5-'+bombemoyenne.nom));
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
     ecrireEnPositionXY(60,20,'Veuillez indiquer la ligne de l''objet à acheter ou 0 pour quitter : ');
