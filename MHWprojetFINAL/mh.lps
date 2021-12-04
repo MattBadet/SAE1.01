@@ -15,10 +15,9 @@
       <Unit1>
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="128"/>
-        <CursorPos X="29" Y="144"/>
+        <CursorPos X="59" Y="142"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -50,9 +49,10 @@
       <Unit5>
         <Filename Value="combatunit.pas"/>
         <UnitName Value="combatUnit"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="225"/>
-        <CursorPos X="30" Y="238"/>
+        <CursorPos X="26" Y="236"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit5>
