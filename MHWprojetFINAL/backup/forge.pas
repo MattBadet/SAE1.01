@@ -21,10 +21,10 @@ procedure forgeMenu(joueur:player);
 var forgearmure:array[1..19] of armure;
   forgearme:array[1..4] of arme;
 begin
-  forgearmure[1]:=casquecuir;
-  forgearmure[2]:=plastroncuir;
-  forgearmure[3]:=jambierecuir;
-  forgearmure[4]:=bottescuir;
+  forgearmure[1]:=casquecuire;
+  forgearmure[2]:=plastroncuire;
+  forgearmure[3]:=jambierecuire;
+  forgearmure[4]:=bottescuire;
   forgearmure[5]:=casquefer;
   forgearmure[6]:=plastronfer;
   forgearmure[7]:=jambierefer;
@@ -44,7 +44,7 @@ begin
   forgearme[2]:=epeeacier;
   forgearme[3]:=epeescale;
   forgearme[4]:=epeedemo;
-  choixmenu(joueur,afficheforge(forgearmure,forgearme);
+  choixmenu(joueur,afficheForge(forgearmure,forgearme));
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
