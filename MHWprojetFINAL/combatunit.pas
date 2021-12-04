@@ -52,22 +52,22 @@ function choixMonstre(nb : integer): monstre;
 const
   griffon: monstre = (
     id:1;
-    vieBase:100;
+    vieBase:50;
     spe:normal;
   );
   dragonDesMontagnes: monstre = (
     id:2;
-    vieBase:150;
+    vieBase:100;
     spe:dragon;
   );
   dragonElectrique : monstre = (
     id:3;
-    vieBase:200;
+    vieBase:150;
     spe:dragon;
   );
   phoenix: monstre = (
     id:4;
-    vieBase:250;
+    vieBase:200;
     spe:demon;
   );
 

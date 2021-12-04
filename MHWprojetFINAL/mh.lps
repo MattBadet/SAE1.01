@@ -9,7 +9,7 @@
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="20" Y="7"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="80"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -17,7 +17,7 @@
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="2"/>
         <TopLine Value="365"/>
-        <CursorPos X="29" Y="368"/>
+        <CursorPos X="2" Y="382"/>
         <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -97,9 +97,10 @@
       </Unit10>
       <Unit11>
         <Filename Value="utilities.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="323"/>
-        <CursorPos X="16" Y="309"/>
+        <TopLine Value="308"/>
+        <CursorPos X="52" Y="325"/>
         <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit11>
@@ -117,7 +118,6 @@
       </Unit13>
       <Unit14>
         <Filename Value="mh.lps"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="7"/>
         <CursorPos X="63" Y="25"/>
