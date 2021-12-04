@@ -428,6 +428,7 @@ begin
     ecrireEnPositionXY(59,14,'Jeu commandé par Matthieu SIMONET');
     ecrireEnPositionXY(45,16,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
     ecrireEnPositionXY(63,18,'Inspiré par Hideo KOJIMA');
+    readln;
 end;
 
 function afficheCreationPerso():player; // menu de la création du personnage
