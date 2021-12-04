@@ -494,10 +494,12 @@ begin
     ecrireEnPositionXY(40,4,' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
     ecrireEnPositionXY(40,5,'/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
     ecrireEnPositionXY(40,6,'\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
-    ecrireEnPositionXY(69,10,'Hideo KOJIMA');
-    ecrireEnPositionXY(59,14,'Jeu commandé par Matthieu SIMONET');
-    ecrireEnPositionXY(45,16,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
-    ecrireEnPositionXY(63,18,'Inspiré par Hideo KOJIMA');
+    ecrireEnPositionXY(69,14,'Hideo KOJIMA');
+    ecrireEnPositionXY(59,16,'Jeu commandé par Matthieu SIMONET');
+    ecrireEnPositionXY(45,18,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
+    ecrireEnPositionXY(63,24,'Inspiré par Hideo KOJIMA');
+    ecrireEnPositionXY(49,20,'N''hésitez d''aller voir notre vidéo de présentation');
+    ecrireEnPositionXY(54,21,'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
     readln;
 end;
 
@@ -563,5 +565,3 @@ begin
 end;
 
 end.
-
-

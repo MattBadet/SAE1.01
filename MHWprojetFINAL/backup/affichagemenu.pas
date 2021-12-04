@@ -10,7 +10,7 @@ uses
   Classes, SysUtils, GestionEcran, affichageObjet,perso,inventaire,utilities;
 type
   arraystring=array[1..3] of string;
-function afficheMenuPrincipale():Boolean; // menu de la ville
+function afficheMenuPrincipale():Integer; // menu de la ville
 
 procedure regles(); // affiche les règles et le synopsis
 function afficheCreationPerso():arraystring; // menu de la création du personnage
@@ -494,10 +494,12 @@ begin
     ecrireEnPositionXY(40,4,' /    \ / _ \| ''_ \/ __| __/ _ \ ''__|  / /_/ / | | | ''_ \| __/ _ \ ''__|');
     ecrireEnPositionXY(40,5,'/ /\/\ \ (_) | | | \__ \ ||  __/ |    / __  /| |_| | | | | ||  __/ |');
     ecrireEnPositionXY(40,6,'\/    \/\___/|_| |_|___/\__\___|_|    \/ /_/  \__,_|_| |_|\__\___|_|');
-    ecrireEnPositionXY(69,10,'Hideo KOJIMA');
-    ecrireEnPositionXY(59,14,'Jeu commandé par Matthieu SIMONET');
-    ecrireEnPositionXY(45,16,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
-    ecrireEnPositionXY(63,18,'Inspiré par Hideo KOJIMA');
+    ecrireEnPositionXY(69,14,'Hideo KOJIMA');
+    ecrireEnPositionXY(59,16,'Jeu commandé par Matthieu SIMONET');
+    ecrireEnPositionXY(45,18,'Jeu réalisé par : Mattéo BADET, Aimeric ROURA, Loïc BOUCHER');
+    ecrireEnPositionXY(63,20,'Inspiré par Hideo KOJIMA');
+    ecrireEnPositionXY(49,22,'N''hésitez d''aller voir notre vidéo de présentation');
+    ecrireEnPositionXY(54,23,'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
     readln;
 end;
 
@@ -538,7 +540,7 @@ begin
     readln;
 end;
 
-function afficheMenuPrincipale():Boolean; // menu de la ville
+function afficheMenuPrincipale():Integer; // menu de la ville
 var
   choix:Integer; // contient le choix du menu
 begin
@@ -559,15 +561,7 @@ begin
     dessinerCadreXy(60,29,85,33,simple,white,black);
     ecrireEnPositionXY(62,31,'Votre Choix : ');
     readln(choix);
-    Case choix of
-      1:Result:=True;
-      2:Result:=False;
-      3:write('');
-      else
-        Result:=afficheMenuPrincipale();
-      end;
+    Result:=choix;
 end;
 
 end.
-
-
