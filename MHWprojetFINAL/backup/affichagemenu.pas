@@ -19,8 +19,8 @@ function afficheVille():Integer; // Affichage du menu d'une partie
 
 function afficheMarchand():Integer; // affiche le marchand pour savoir s'il on veut vendre ou acheter
 procedure affichePasAssezArgent(); // indique au joueur qu'il n'a pas assez de PO
-function afficheVente():Integer; // afffichage des ventes du marchand
-function afficheAchat():Integer; // afffichage des achats du marchand
+function afficheVente(joueur:player):Integer; // afffichage des ventes du marchand
+function afficheAchat(joueur:player):Integer; // afffichage des achats du marchand
 
 function afficheCantine():Integer; // Affichage de la cantine
 
@@ -293,7 +293,7 @@ begin
     Result:=choix;
 end;
 
-function afficheAchat():Integer; // afffichage des achats du marchand
+function afficheAchat(joueur:player):Integer; // afffichage des achats du marchand
 var
   x,y,i,choix:Integer;
 begin
@@ -330,7 +330,7 @@ begin
     ecrireEnPositionXY(57,17,'Vous n''avez pas assez de pièces d''or');
 end;
 
-function afficheVente():Integer; // afffichage des ventes du marchand
+function afficheVente(joueur:player):Integer; // afffichage des ventes du marchand
 var
   x,y,i,choix:Integer;
 begin
