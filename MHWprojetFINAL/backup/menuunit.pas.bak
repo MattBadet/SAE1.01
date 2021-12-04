@@ -1,3 +1,4 @@
+//Unité des menus de bases (lancement du jeu, menu général, ville)
 unit menuUnit;
 
 {$mode objfpc}{$H+}
@@ -27,7 +28,7 @@ begin
 
     if (choixU = 1) then //Le joueur ouvre l'inventaire
     begin
-      choixU := afficheInventaireChambre(); //le joueur choisis l'objet qu'il veut équiper
+      choixU := afficheInventaireChambre(joueur); //le joueur choisis l'objet qu'il veut équiper
 
       if choixU = 1 then
       begin

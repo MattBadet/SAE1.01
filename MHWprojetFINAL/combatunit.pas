@@ -160,13 +160,13 @@ begin
 end;
 
 //Utilisation d'objet pendant le combat
-procedure inventaireCombat(vieJ, vieMaxJ, vieM : integer);
+procedure inventaireCombat(joueur : player;vieJ, vieMaxJ, vieM : integer);
 
 var
   id : integer;
 
 begin
-  id := afficheInventaire;
+  id := afficheInventaireCombat(joueur);
 
   if id = 1 then
   begin
@@ -235,7 +235,7 @@ begin
   end
   else //le joueur ouvre son inventaire
   begin
-    inventaireCombat(vieU, joueur.def, vieMd);
+    inventaireCombat(joueur, vieU, joueur.def, vieMd);
   end; //if (choixA = TRUE) then
   result := vieMd;
 end;
