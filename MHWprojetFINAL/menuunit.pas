@@ -8,12 +8,12 @@ interface
 uses combatUnit, utilities, inventaire, cantine, forge, perso, affichagemenu;
 
 procedure menuGeneral();
-procedure ville(joueur : player; dormi : boolean);
+procedure ville( dormi : boolean);
 
 implementation
 
 //chambre : inventaire de perso et repos
-procedure chambre(joueur : player; dormi : boolean);
+procedure chambre( dormi : boolean);
 
 var
   choixU : integer; //Choix du joueur dans le menu
@@ -337,7 +337,7 @@ begin
 end;
 
 //Ville : choix entre les batiments et le combat
-procedure ville(joueur : player; dormi : boolean);
+procedure ville( dormi : boolean);
 
 var
   choixU : integer; //Le choix de l'utilisateur (qu'es-ce qu'il veut faire)
@@ -353,11 +353,11 @@ begin
     dormi := FALSE;
 
     case choixU of
-    1 : chambre(joueur, dormi);
-    2 : marchand(joueur);
-    3 : cantineMenu(joueur);
-    4 : forgeMenu(joueur);
-    5 : combat(joueur);
+    1 : chambre(dormi);
+    //2 : marchand();
+    //3 : cantineMenu();
+    //4 : forgeMenu();
+    5 : combat();
     else rep := FALSE;
     end;
   end;
@@ -368,14 +368,13 @@ end;
 procedure nouvellePartie();
 
 var
-  joueur : player; //record du joueur
   dormi : boolean; //boolean indiquant si le joueur a fait une chasse depuis sa
   info:array[1..3] of string;
 begin
   dormi := FALSE;
   regles;
   info := afficheCreationPerso;
-  joueur := createjoueur(info[3],info[1],info[2]);
+  createjoueur(info[3],info[1],info[2]);
   ville(joueur, dormi);
 end;
 

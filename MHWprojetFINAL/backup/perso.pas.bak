@@ -24,18 +24,7 @@ type
   end;
 
 var
-  joueur : player = (
-  nom:string;
-  sexe:string;
-  taille:string;
-  vieActu:integer;
-  vieNue:integer;
-  def:integer;
-  atk:integer;
-  materiaux:array[1..6] of integer;
-  eqarmure:array[1..5] of armure;
-  xp:integer;
-  epee:arme; );
+  joueur : player;
 
 function createjoueur(nom,sexe,taille:string):player;//INITIALISATION DU JOUEUR
 function initdef(joueur:player): integer;//INITIALISATION DE LA DEFENSE
@@ -54,7 +43,7 @@ begin
   result := joueur.atk;
 end;
 
-function createjoueur(nom,sexe,taille:string):player;
+procedure createjoueur(nom,sexe,taille:string):player;
 
 begin
   joueur.nom:=nom;
@@ -79,7 +68,5 @@ begin
   joueur.epee:=epeebois;
   joueur.def:=initdef(joueur);
   joueur.atk:=initatk(joueur);
-
-  result := joueur;
 end;
 end.
