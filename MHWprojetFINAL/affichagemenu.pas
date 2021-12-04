@@ -486,7 +486,7 @@ begin
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
     dessinerCadreXy(60,29,85,33,simple,white,black);
-    ecrireEnPositionXY(88,22,'Votre Choix : ');
+    ecrireEnPositionXY(62,31,'Votre Choix : ');
     readln(choix);
     Case choix of
       1:Result:=True;
