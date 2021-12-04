@@ -23,10 +23,9 @@
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="404"/>
-        <CursorPos X="9" Y="424"/>
+        <TopLine Value="348"/>
+        <CursorPos X="33" Y="371"/>
         <FoldState Value=" T3i00O5 picjV0A0323124 pj4pY0Sc"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
@@ -34,9 +33,9 @@
       <Unit3>
         <Filename Value="affichageobjet.pas"/>
         <UnitName Value="affichageObjet"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="375"/>
-        <CursorPos X="60" Y="341"/>
+        <CursorPos X="110" Y="25"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit3>

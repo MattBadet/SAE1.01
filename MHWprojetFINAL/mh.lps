@@ -25,9 +25,9 @@
         <Filename Value="affichagemenu.pas"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="348"/>
-        <CursorPos X="33" Y="371"/>
-        <FoldState Value=" T3i00O5 picjV0A0323124 pj4pY0Sc"/>
+        <TopLine Value="430"/>
+        <CursorPos X="51" Y="467"/>
+        <FoldState Value=" T3i00O5 picjV0A0323134B"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -35,8 +35,7 @@
         <Filename Value="affichageobjet.pas"/>
         <UnitName Value="affichageObjet"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="375"/>
-        <CursorPos X="60" Y="341"/>
+        <CursorPos X="110" Y="25"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -75,8 +74,8 @@
         <Filename Value="gestionecran.pas"/>
         <UnitName Value="GestionEcran"/>
         <EditorIndex Value="10"/>
-        <TopLine Value="13"/>
-        <CursorPos X="16" Y="30"/>
+        <TopLine Value="61"/>
+        <CursorPos X="16" Y="79"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit8>
