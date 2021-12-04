@@ -23,7 +23,6 @@
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <CursorPos X="38" Y="16"/>
         <UsageCount Value="36"/>
@@ -63,9 +62,10 @@
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <TopLine Value="13"/>
-        <CursorPos X="19" Y="24"/>
+        <CursorPos X="30" Y="27"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -97,7 +97,7 @@
       <Unit11>
         <Filename Value="utilities.pas"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="329"/>
+        <TopLine Value="65"/>
         <CursorPos X="43" Y="345"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
@@ -227,7 +227,7 @@
       </Position29>
       <Position30>
         <Filename Value="forge.pas"/>
-        <Caret Line="24" Column="19" TopLine="14"/>
+        <Caret Line="24" Column="19" TopLine="13"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
