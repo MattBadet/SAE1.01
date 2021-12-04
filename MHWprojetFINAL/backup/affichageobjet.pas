@@ -97,7 +97,7 @@ end;
 
 procedure grCoffre(x,y:Integer); // Affichage du coffre de la chambre
 begin
-  ecrireEnPositionXY(x+4,y,'___________________');
+  ecrireEnPositionXY(x+3,y,'___________________');
   ecrireEnPositionXY(x,y+1,' /\                  \');
   ecrireEnPositionXY(x,y+2,'/  \_________;;_______\');
   ecrireEnPositionXY(x,y+3,'|  /                  /');
@@ -393,7 +393,7 @@ begin
   ecrireEnPositionXY(x+12,y+15,'\   \__, \_     `~''     _/ .__/   /');
   ecrireEnPositionXY(x+13,y+16,'`-._,-''   `-._______,-''   `-._,-''');
   couleurTexte(Red);
-  ecrireEnPositionXY(x+58,y,',-.');
+  ecrireEnPositionXY(x+28,y,',-.');
   ecrireEnPositionXY(x+11,y+1,'---.__          /''|`\          __,---');
   ecrireEnPositionXY(x+12,y+2,'`    `-.____,-''  |  `-.____,-''    /');
   ecrireEnPositionXY(x+24,y+3,'~''\     /`~ ');
