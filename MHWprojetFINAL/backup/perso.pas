@@ -12,6 +12,7 @@ type
   player = packed record
     nom:string;
     sexe:string;
+    taille:string;
     vieActu:integer;
     vieNue:integer;
     def:integer;

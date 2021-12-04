@@ -1,5 +1,5 @@
 unit inventaire;
-
+//Le role de cette unité est de gérer l'inventaire donc tous ce qui est ajouter a un inventaire ou alors supprimer un objet.
 {$mode objfpc}{$H+}
 
 interface

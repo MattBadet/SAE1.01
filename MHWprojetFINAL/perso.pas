@@ -1,7 +1,7 @@
 unit perso;
 //le role de cette unité est de définir le personnage créer par le joueur
 {$mode objfpc}{$H+}
-
+{$codepage UTF8}
 interface
 
 uses

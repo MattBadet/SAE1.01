@@ -1,10 +1,11 @@
+//unité contenant tout le code logique demandé pour le combat
 unit combatUnit;
 
 {$mode objfpc}{$H+}
 
 interface
 
-uses utilities, inventaire, cantine, forge, perso, affichagemenu;
+uses utilities, inventaire, perso, affichagemenu;
 
 type
   race = (normal,dragon,demon);
@@ -158,59 +159,85 @@ begin
   result := generDrop(joueur, monstreActu, vieMi);
 end;
 
+//Utilisation d'objet pendant le combat
+procedure inventaireCombat(joueur : player;vieJ, vieMaxJ, vieM : integer);
+
+var
+  id : integer;
+
+begin
+  id := afficheInventaireCombat(joueur);
+
+  if id = 1 then
+  begin
+  deletebombe(bombepetite);
+  vieM := vieM - bombepetite.degat;
+  end;
+  if id = 2 then
+  begin
+  deletebombe(bombemoyenne);
+  vieM := vieM - bombemoyenne.degat;
+  end;
+  if id = 3 then
+  begin
+  deletepotion(petitepotion);
+  vieJ := vieJ + round(vieMaxJ div 10);
+  end;
+  if id = 4 then
+  begin
+  deletepotion(moyennepotion);
+  vieJ := vieJ + round(vieMaxJ div 5);
+  end;
+  if id = 5 then
+  begin
+  deletepotion(grandepotion);
+  vieJ := vieJ + round(vieMaxJ div 3);
+  end;
+end;
+
 //Tour du joueur
-function tourJ(vieMd, arme : integer;joueur : player): integer;
+function tourJ(vieMd, arme, vieU : integer;joueur : player): integer;
 
 var
   dU, reussite, idObjet : integer; //dU = dégats du joueur ; reussite = echec ou critique
-  choixA, rep : boolean; //choixA = choix de l'utilisateur lors de son tour entre attaquer et aller dans son inventaire
+  choixA : boolean; //choixA = choix de l'utilisateur lors de son tour entre attaquer et aller dans son inventaire
 
 begin
-  rep := TRUE;
+  choixA := afficheMenuCombat; //le joueur attaque ou va dans son inventaire
 
-  while rep do
+  if (choixA = TRUE) then //si le joueur décide d'attaquer
   begin
-    rep := FALSE;
-    choixA := TRUE;//menuCombat; //le joueur attaque ou va dans son inventaire
+    dU := (random(arme div 2) + (arme div 2)); //calcul des dégats que le joueur inflige au monstre
+    reussite := random(100);
 
-    if (choixA = TRUE) then //si le joueur décide d'attaquer
+    if joueur.epee.material = 'reste' then //si l'épée est démoniaque, plus de chance de critique
     begin
-      dU := (random(arme div 2) + (arme div 2)); //calcul des dégats que le joueur inflige au monstre
-      reussite := random(100);
-
-      if joueur.demoepee then //si l'épée est démoniaque, plus de chance de critique
+      if ((reussite >= 20) AND (reussite <= 75)) then //Coup normal
       begin
-        if ((reussite >= 20) AND (reussite <= 75)) then //Coup normal
-        begin
-          vieMd := vieMd - dU; //le monstre perd des pv
-        end
-        else if (reussite > 75) then //critique
-        begin
-          vieMd := vieMd - (dU * 2); //le monstre perd des pv
-        end
+        vieMd := vieMd - dU; //le monstre perd des pv
       end
-      else
+      else if (reussite > 75) then //critique
       begin
-        if ((reussite >= 20) AND (reussite <= 90)) then //Coup normal
-        begin
-          vieMd := vieMd - dU; //le monstre perd des pv
-        end
-        else if (reussite > 90) then //critique
-        begin
-          vieMd := vieMd - (dU * 2); //le monstre perd des pv
-        end
-      end;
+        vieMd := vieMd - (dU * 2); //le monstre perd des pv
+      end
     end
-    else //le joueur ouvre son inventaire
+    else
     begin
-      idObjet := 0;//afficheInventaire();
-      if (idObjet = 0) then
-      rep := TRUE
-      else
-      //UtiliserObjet(idObjet);
-    end; //if (choixA = TRUE) then
-    result := vieMd;
-  end; //rep si joueur décide de simplement regarder son inventaire
+      if ((reussite >= 20) AND (reussite <= 90)) then //Coup normal
+      begin
+        vieMd := vieMd - dU; //le monstre perd des pv
+      end
+      else if (reussite > 90) then //critique
+      begin
+        vieMd := vieMd - (dU * 2); //le monstre perd des pv
+      end
+    end;
+  end
+  else //le joueur ouvre son inventaire
+  begin
+    inventaireCombat(joueur, vieU, joueur.def, vieMd);
+  end; //if (choixA = TRUE) then
+  result := vieMd;
 end;
 
 //Tour du monstre
@@ -257,7 +284,7 @@ begin
   result := vieU;
 end;
 
-//Logique du combat. Retourne le record du joueur
+//Logique du combat de base. Retourne le record du joueur
 function combatMonstre(joueur: player): player;
 
 var
@@ -272,20 +299,20 @@ begin
   arme := joueur.atk;
 
 
-  //afficheCombat(monstreActu);
+  afficheCombat(monstreActu.id);
 
-  if (vieU > vieMd) then //si le joeur a plus de vie que le monstre il commence
-  vieMd := tourJ(vieMd, arme, joueur);
-  //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+  if (vieU > vieMd) then //si le joueur a plus de vie que le monstre il commence
+  vieMd := tourJ(vieMd, arme, vieU, joueur);
+  afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
   begin
     vieU := tourM(vieMi, vieMd, vieU); //Tour du monstre
-    //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme, joueur); //Tour du joueur
-    //attaqueU(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    vieMd := tourJ(vieMd, arme, vieU, joueur); //Tour du joueur
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
 
@@ -297,6 +324,7 @@ begin
   result := joueur;
 end;
 
+//Logique du combat de boss. Retourne le record du joueur si perdu ou active les credits et fini le jeu
 function combatBoss(joueur : player): player;
 
 var
@@ -313,27 +341,28 @@ begin
   vieMd := vieMi;
   arme := joueur.atk;
 
-  //afficheCombat(boss);
+  afficheCombat(boss.id);
 
   while (vieU > 0) AND (vieMd > 0) do // tant qu'aucun des deux n'est mort, le combat continue
   begin
     vieU := tourBoss(vieMi, vieMd, vieU); //Tour du boss
-    //attaqueBoss(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
     if (vieU > 0) then //si le joueur n'a pas encore perdu
-    vieMd := tourJ(vieMd, arme,joueur); //Tour du joueur
-    //attaqueBoss(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
+    vieMd := tourJ(vieMd, arme, vieU, joueur); //Tour du joueur
+    afficheMajVie(vieMd, vieMi, vieU, joueur.def); //affichage de l'attaque
 
   end; //while (vieU > 0) AND (vieM > 0) do
 
   if (vieU > 0) then
-  //credit
+  afficheCredit
   else
   joueur := loose(joueur);
 
   result := joueur;
 end;
 
+//Logique central du combat
 function combat(joueur : player): player;
 
 var
