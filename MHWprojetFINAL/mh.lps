@@ -16,15 +16,16 @@
         <Filename Value="menuunit.pas"/>
         <UnitName Value="menuUnit"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="344"/>
-        <CursorPos X="30" Y="358"/>
+        <TopLine Value="128"/>
+        <CursorPos X="21" Y="133"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <CursorPos X="38" Y="102"/>
+        <CursorPos X="38" Y="16"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -62,7 +63,6 @@
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <TopLine Value="13"/>
         <CursorPos X="19" Y="24"/>

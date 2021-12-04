@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Compiler Value="C:\lazarus\fpc\3.0.4\bin\x86_64-win64\fpc.exe" Date="1351327143"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FiC:\Users\matte\OneDrive\Documents\GitHub\SAE1.01\MHWprojetFINAL\lib\x86_64-win64 -FuC:\Users\matte\OneDrive\Documents\GitHub\SAE1.01\MHWprojetFINAL\ -FUC:\Users\matte\OneDrive\Documents\GitHub\SAE1.01\MHWprojetFINAL\lib\x86_64-win64\ -FEC:\Users\matte\OneDrive\Documents\GitHub\SAE1.01\MHWprojetFINAL\ -oC:\Users\matte\OneDrive\Documents\GitHub\SAE1.01\MHWprojetFINAL\mh.exe mh.lpr"/>
+  <Compiler Value="C:\lazarus\fpc\3.0.2\bin\x86_64-win64\fpc.exe" Date="1247516907"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FiC:\Users\aimer\Documents\GitHub\SAE1.01\MHWprojetFINAL\lib\x86_64-win64 -FuC:\Users\aimer\Documents\GitHub\SAE1.01\MHWprojetFINAL\ -FUC:\Users\aimer\Documents\GitHub\SAE1.01\MHWprojetFINAL\lib\x86_64-win64\ mh.lpr"/>
+  <Complete Value="False"/>
 </CONFIG>
