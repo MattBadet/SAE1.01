@@ -95,32 +95,32 @@ procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de 
 var
   i:Integer;
 begin
-    dessinerCadreXY(x,y,x+10,y+2,simple,white,black);
+    dessinerCadreXY(x,y,x+12,y+2,simple,white,black);
     deplacerCurseurXY(x+1,y+1);
     couleurTexte(Green);
     for i:=1 to (pv div(pvMax div 10)) do  // en fonction du pourcentage de vie remplie une barre de vie
         write('█');                       // par tranche de 10%
     deplacerCurseurXY(x+2,y+3);
     couleurTexte(white);
-    write(pv:4,'/',pvMax:4);
+    write(pv,'/',pvMax);
 end;
 
 procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero:Integer); // renouvelle les pv à chaque tour
 begin
     vie(pvHero,pvMaxHero,19,27);
-    vie(pvMonstre,pvMaxMonstre,19,27);
+    vie(pvMonstre,pvMaxMonstre,99,27);
 end;
 
 function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
 var
   choix:Integer; // choix du menu
 begin
-    dessinerCadreXY(68,5,82,7,simple,white,black);
-    ecrireEnPositionXY(70,6,'1 - Inventaire');
-    dessinerCadreXY(68,9,82,11,simple,white,black);
-    ecrireEnPositionXY(70,10,'2 - Combattre');
-    dessinerCadreXY(68,13,82,15,simple,white,black);
-    ecrireEnPositionXY(70,17,'Votre choix : ');
+    dessinerCadreXY(46,5,64,7,simple,white,black);
+    ecrireEnPositionXY(48,6,'1 - Inventaire');
+    dessinerCadreXY(46,9,64,11,simple,white,black);
+    ecrireEnPositionXY(48,10,'2 - Combattre');
+    dessinerCadreXY(46,13,64,15,simple,white,black);
+    ecrireEnPositionXY(48,14,'Votre choix : ');
     readln(choix);
     case choix of
       1:Result:=False;
@@ -134,18 +134,12 @@ procedure afficheCombat(monstre:Integer); // fenêtre de combat
 begin
     effacerEcran();
     affichage(15,5,'hero');
-    vie(150,200,19,27);
     case monstre of
       1:affichage(90,2,'griffon');
       3:affichage(70,13,'dragon1');
       2:affichage(95,3,'dragon2');
       4:affichage(80,2,'phoenix');
     end;
-    dessinerCadreXY(70,5,80,7,simple,white,black);
-    ecrireEnPositionXY(72,6,'Inventaire');
-    dessinerCadreXY(70,9,80,11,simple,white,black);
-    ecrireEnPositionXY(72,10,'Combattre');
-    vie(210,250,105,28);
 end;
 
 procedure precombat(); // ecran de liaison entre la ville et le combat
@@ -392,15 +386,15 @@ begin
     affichage(122,1,'lit');
     ecrireEnPositionXY(128,15,'4 - Chambre');
     // Module Combat
-    dessinerCadreXY(5,19,90,32,simple,white,black);
-    affichage(8,20,'epee');
-    ecrireEnPositionXY(43,31,'5 - Partir en Chasse');
+    dessinerCadreXY(5,20,90,33,simple,white,black);
+    affichage(8,21,'epee');
+    ecrireEnPositionXY(43,32,'5 - Partir en Chasse');
     // Module Exit
-    dessinerCadreXY(110,19,144,32,simple,white,black);
-    affichage(120,20,'croix');
-    ecrireEnPositionXY(121,31,'6 - Quitter');
+    dessinerCadreXY(110,20,144,33,simple,white,black);
+    affichage(120,21,'croix');
+    ecrireEnPositionXY(121,32,'6 - Quitter');
     // Réponse (choix du menu)
-    ecrireEnPositionXY(70,17,'Votre Choix : ');
+    ecrireEnPositionXY(70,18,'Votre Choix : ');
     readln(choix);
     case choix of
       1:Result:=2;
@@ -464,7 +458,7 @@ begin
     ecrireEnPositionXY(35,18,'le cycle de migration des grands monstres. Après de nombreuses recherches, la');
     ecrireEnPositionXY(35,19,'commission a mis la main sur un artéfact magique ressemblant à une boussole,');
     ecrireEnPositionXY(35,20,'censé permettre d’accéder à l’île. Vous faites partie de la sixième grande');
-    ecrireEnPositionXY(35,21,' expédition de chasseurs dont l’objectif est de découvrir les secret d’Aeternum.');
+    ecrireEnPositionXY(35,21,'expédition de chasseurs dont l’objectif est de découvrir les secret d’Aeternum.');
     readln;
 end;
 
