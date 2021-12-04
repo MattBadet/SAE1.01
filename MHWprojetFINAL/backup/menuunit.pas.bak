@@ -379,7 +379,7 @@ var
   choixU : boolean;
 
 begin
-  choixU := afficheMenuPrincipal; //TRUE pour jouer / FALSE pour quitter
+  choixU := afficheMenuPrincipale; //TRUE pour jouer / FALSE pour quitter
 
   if choixU then
   nouvellePartie;
