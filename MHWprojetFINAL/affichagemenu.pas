@@ -320,9 +320,9 @@ begin
     x:=5;
     y:=6;
     for i:=0 to length(armure)-1 do
-        ecrireEnPositionXY(x,y+i,armure[i].nom);
+        ecrireEnPositionXY(x,y+i,(armure[i].nom+' - '+armure[i].cout));
     for i:=0 to length(arme)-1 do
-        ecrireEnPositionXY(x,y+i+length(armure),arme[i].nom);
+        ecrireEnPositionXY(x,y+i+length(armure),(arme[i].nom+' - '+arme[i].cout);
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
@@ -362,14 +362,14 @@ begin
     dessinerCadreXY(2,31,40,33,simple,white,black); // resources
     ecrireEnPositionXY(5,32,('Pièces d''Or Disponilbes : '+IntToStr(po)));
     ecrireEnPositionXY(18,4,'Objet');
-    // bombe
-    ecrireEnPositionXY(5,6,('1-'+bombepetite.nom));
-    ecrireEnPositionXY(5,8,('2-'+bombemoyenne.nom));
     // potion
-    ecrireEnPositionXY(5,12,('3-'+petitepotion.nom));
-    ecrireEnPositionXY(5,14,('4-'+moyennepotion.nom));
-    ecrireEnPositionXY(5,16,('5-'+grandepotion.nom));
+    ecrireEnPositionXY(5,6,('1-'+petitepotion.nom));
+    ecrireEnPositionXY(5,8,('2-'+moyennepotion.nom));
+    ecrireEnPositionXY(5,10,('3-'+grandepotion.nom));
     // test statistique objet
+    // bombe
+    ecrireEnPositionXY(5,14,('4-'+bombepetite.nom));
+    ecrireEnPositionXY(5,16,('5-'+bombemoyenne.nom));
     affichage(50,8,'epee');
     dessinerCadreXY(44,25,144,32,simple,white,black);
     ecrireEnPositionXY(60,20,'Veuillez indiquer la ligne de l''objet à acheter ou 0 pour quitter : ');
@@ -416,7 +416,8 @@ begin
        // Armure
        dessinerCadreXY(31,3,60,30,simple,white,black);
        ecrireEnPositionXY(35,4,'Armures Inventaire');
-       x:=33;
+       x:=4;
+       y:=6;
        for i:=1 to length(invarmure) do
              ecrireEnPositionXY(x,y+i,'Armure '+IntToStr(i) + ' : ' + invarmure[i].nom);
        ecrireEnPositionXY(80,12,' Quel item voulez-vous vendre ? : ');
