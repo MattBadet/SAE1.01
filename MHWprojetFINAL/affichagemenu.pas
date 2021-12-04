@@ -35,7 +35,6 @@ procedure precombat(); // ecran de liaison entre la ville et le combat
 procedure afficheCombat(monstre:Integer); // fenêtre de combat
 function afficheMenuCombat():Boolean; // choix de combattre ou aller dans l'inventaire
 procedure afficheMajVie(pvMonstre,PvMaxMonstre,pvHero,pvMaxHero:Integer); // renouvelle les pv à chaque tour
-procedure vie(pv,pvMax,x,y:Integer); // affiche la barre de vie et le nombre de pv sur les pv max
 procedure afficheVictoire(); // affiche l'écran de victoire
 procedure afficheDeadMenu(); // affiche l'écran de défaite
 
@@ -224,6 +223,7 @@ begin
       ecrireEnPositionXY(54,21,'                            /___|   |_  /');
       ecrireEnPositionXY(54,22,'                                     / /');
       ecrireEnPositionXY(54,23,'                                    /___|');
+      readln;
     end
     else
       ecrireEnPositionXY(45,17,'Vous n''êtes pas assez fatigué, vous devriez aller combattre.');

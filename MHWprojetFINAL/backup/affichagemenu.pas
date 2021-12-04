@@ -24,7 +24,7 @@ function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 
 function afficheCantine():Integer; // Affichage de la cantine
 
-function afficheForge(forge:array of armure):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme):Integer; // afffichage de la forge
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 procedure afficheDormir(dormie:Boolean); // Petite sieste
@@ -237,12 +237,12 @@ begin
     affichage(22,10,'grCoffre');
     affichage(49,3,'armure');
     affichage(90,9,'grLit');
-    ecrireEnPositionXY(20,2,'Voulez-vous : 1-Dormir, 2-Voir votre Inventaire et votre fiche Personange ou 3-Quitter : ');
+    ecrireEnPositionXY(30,2,'Voulez-vous : 1-Dormir, 2-Voir votre Inventaire et votre fiche Personange ou 3-Quitter : ');
     readln(choix);
     Result:=choix;
 end;
 
-function afficheForge(forge:array of armure):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme):Integer; // afffichage de la forge
 var
   x,y,i,choix:Integer;
 begin
