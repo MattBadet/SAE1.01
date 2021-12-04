@@ -400,32 +400,28 @@ begin
     if choix1=1 then
     begin
       // Arme
-      dessinerCadreXY(2,3,30,33,simple,white,black);
+      dessinerCadreXY(2,3,30,30,simple,white,black);
       ecrireEnPositionXY(6,4,'Armes Inventaire');
       x:=4;
       y:=6;
       for i:=1 to length(invarme) do
             ecrireEnPositionXY(x,y+i,'Armre '+IntToStr(i) + ' : ' + invarme[i].nom);
+      ecrireEnPositionXY(80,12,' Quel item voulez-vous vendre ? : ');
+      readln(choix2);
+      Result:=invarme[choix2].id;
     end
     else
     begin
        // Armure
-       dessinerCadreXY(31,3,60,33,simple,white,black);
+       dessinerCadreXY(31,3,60,30,simple,white,black);
        ecrireEnPositionXY(35,4,'Armures Inventaire');
        x:=33;
        for i:=1 to length(invarmure) do
              ecrireEnPositionXY(x,y+i,'Armure '+IntToStr(i) + ' : ' + invarmure[i].nom);
+       ecrireEnPositionXY(80,12,' Quel item voulez-vous vendre ? : ');
+       readln(choix2);
+       Result:=invarmure[choix2].id;
     end;
-    // statistique objet
-    ecrireEnPositionXY(80,12,' Quel item voulez-vous vendre ? : ');
-    readln(choix2);
-    if choix=1 then
-    begin
-       //arme.id:=choix2;
-       //Result:=arme.id;
-    end
-    else
-        //Result:=armure.id[choix2];
 end;
 function afficheMarchand():Integer; // affiche le marchand pour savoir s'il on veut vendre ou acheter
 var choix:Integer;
