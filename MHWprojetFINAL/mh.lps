@@ -9,7 +9,7 @@
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="15" Y="6"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,9 +23,10 @@
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <TopLine Value="237"/>
-        <CursorPos X="22" Y="246"/>
+        <CursorPos X="36" Y="278"/>
         <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -64,9 +65,9 @@
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="65" Y="7"/>
+        <TopLine Value="14"/>
+        <CursorPos X="27" Y="45"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -90,7 +91,7 @@
       <Unit10>
         <Filename Value="perso.pas"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="29"/>
+        <TopLine Value="23"/>
         <CursorPos X="34" Y="50"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
@@ -98,7 +99,7 @@
       <Unit11>
         <Filename Value="utilities.pas"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="329"/>
+        <TopLine Value="306"/>
         <CursorPos X="21" Y="337"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>

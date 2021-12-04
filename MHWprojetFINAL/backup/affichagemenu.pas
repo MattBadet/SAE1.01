@@ -261,9 +261,9 @@ begin
     x:=5;
     y:=6;
     for i:=0 to length(armure) do
-        ecrireEnPositionXY(x,y+2*i,armure[i].nom);
-    for i:=(length(armure)+2) to length(arme) do
-        ecrireEnPositionXY(x,y+2*i,arme[i].nom);
+        ecrireEnPositionXY(x,y+i,armure[i].nom);
+    //for i:=(length(armure)+2) to length(arme) do
+        //ecrireEnPositionXY(x,y+i,arme[i].nom);
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
