@@ -227,21 +227,22 @@ begin
     for i:=1 to length(joueur.eqarmure) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + joueur.eqarmure[i].nom);
     // Armure Equipe
-    dessinerCadreXY(90,3,119,32,simple,white,black);
-    ecrireEnPositionXY(100,4,'Armure Equipée');
+    dessinerCadreXY(90,3,118,32,simple,white,black);
+    ecrireEnPositionXY(97,4,'Armure Equipée');
     x:=92;
     for i:=1 to length(invarme) do
         ecrireEnPositionXY(x,y+i,IntToStr(i) + ':' + invarme[i].nom);
     // Fiche personnage
-    dessinerCadreXY(120,3,149,32,simple,white,black);
+    dessinerCadreXY(119,3,147,32,simple,white,black);
+    ecrireEnPositionXY(121,4,'Fiche Personnage');
     x:=121;
     ecrireEnPositionXY(x,6,('Nom : '+joueur.nom));
     ecrireEnPositionXY(x,7,('Sexe : '+joueur.sexe));
     ecrireEnPositionXY(x,8,('Taille : '+joueur.taille));
-    ecrireEnPositionXY(x,9,('Vie Actu'+IntToStr(joueur.vieActu)));
-    ecrireEnPositionXY(x,10,('Vie Nue'+IntToStr(joueur.vieNue)));
-    ecrireEnPositionXY(x,11,('Def'+IntToStr(joueur.def)));
-    ecrireEnPositionXY(x,12,('Atk'+IntToStr(joueur.atk)));
+    ecrireEnPositionXY(x,9,('Vie Actu : '+IntToStr(joueur.vieActu)));
+    ecrireEnPositionXY(x,10,('Vie Nue : '+IntToStr(joueur.vieNue)));
+    ecrireEnPositionXY(x,11,('Def : '+IntToStr(joueur.def)));
+    ecrireEnPositionXY(x,12,('Atk : '+IntToStr(joueur.atk)));
     ecrireEnPositionXY(x,13,('Cuir : '+IntToStr(joueur.materiaux[1])));
     ecrireEnPositionXY(x,14,('Fer : '+IntToStr(joueur.materiaux[2])));
     ecrireEnPositionXY(x,15,('Acier : '+IntToStr(joueur.materiaux[3])));
@@ -249,13 +250,13 @@ begin
     ecrireEnPositionXY(x,17,('Demon : '+IntToStr(joueur.materiaux[5])));
     ecrireEnPositionXY(x,18,('Or : '+IntToStr(joueur.materiaux[6])));
     ecrireEnPositionXY(x,19,('casque: '+joueur.eqarmure[1].nom));
-    ecrireEnPositionXY(x,20,('plastron :'+joueur.eqarmure[2].nom));
-    ecrireEnPositionXY(x,21,('jambiere :'+joueur.eqarmure[3].nom));
-    ecrireEnPositionXY(x,22,('botte :'+joueur.eqarmure[4].nom));
-    ecrireEnPositionXY(x,23,('bouclier :'+joueur.eqarmure[5].nom));
-    ecrireEnPositionXY(x,24,('xp :'+IntToStr(joueur.xp)));
-    ecrireEnPositionXY(x,25,('lvl :'+IntToStr(calculLvl(joueur))));
-    ecrireEnPositionXY(x,26,('epee :'+joueur.epee.nom));
+    ecrireEnPositionXY(x,20,('plastron : '+joueur.eqarmure[2].nom));
+    ecrireEnPositionXY(x,21,('jambiere : '+joueur.eqarmure[3].nom));
+    ecrireEnPositionXY(x,22,('botte : '+joueur.eqarmure[4].nom));
+    ecrireEnPositionXY(x,23,('bouclier : '+joueur.eqarmure[5].nom));
+    ecrireEnPositionXY(x,24,('xp : '+IntToStr(joueur.xp)));
+    ecrireEnPositionXY(x,25,('lvl : '+IntToStr(calculLvl(joueur))));
+    ecrireEnPositionXY(x,26,('epee : '+joueur.epee.nom));
     readln(choix);
     Result:=choix;
 end;

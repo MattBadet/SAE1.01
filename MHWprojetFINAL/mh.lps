@@ -2,7 +2,7 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <BuildModes Active="Default"/>
     <Units Count="14">
       <Unit0>
@@ -25,8 +25,8 @@
         <Filename Value="affichagemenu.pas"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="72"/>
-        <CursorPos X="5" Y="92"/>
+        <TopLine Value="219"/>
+        <CursorPos X="26" Y="231"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -52,7 +52,6 @@
         <EditorIndex Value="2"/>
         <TopLine Value="29"/>
         <CursorPos X="5" Y="47"/>
-        <FoldState Value=" T3oW0Z$"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -239,5 +238,9 @@
         <Caret Line="232" Column="67" TopLine="214"/>
       </Position30>
     </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
 </CONFIG>
