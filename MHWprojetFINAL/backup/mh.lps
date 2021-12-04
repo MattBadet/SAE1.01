@@ -8,7 +8,7 @@
       <Unit0>
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="15" Y="6"/>
+        <CursorPos X="62" Y="8"/>
         <UsageCount Value="71"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -23,8 +23,10 @@
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <CursorPos X="19" Y="37"/>
+        <TopLine Value="241"/>
+        <CursorPos X="42" Y="266"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -61,9 +63,9 @@
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="77" Y="22"/>
+        <TopLine Value="5"/>
+        <CursorPos X="30" Y="27"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit7>
@@ -86,6 +88,7 @@
       <Unit10>
         <Filename Value="perso.pas"/>
         <EditorIndex Value="7"/>
+        <TopLine Value="25"/>
         <CursorPos X="34" Y="50"/>
         <UsageCount Value="36"/>
         <Loaded Value="True"/>
@@ -103,7 +106,7 @@
         <UsageCount Value="6"/>
       </Unit12>
     </Units>
-    <JumpHistory Count="28" HistoryIndex="27">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="menuunit.pas"/>
         <Caret Line="161" Column="13" TopLine="150"/>
@@ -216,6 +219,14 @@
         <Filename Value="forge.pas"/>
         <Caret Line="7" Column="61"/>
       </Position28>
+      <Position29>
+        <Filename Value="forge.pas"/>
+        <Caret Line="22" Column="77"/>
+      </Position29>
+      <Position30>
+        <Filename Value="forge.pas"/>
+        <Caret Line="27" Column="30" TopLine="5"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
