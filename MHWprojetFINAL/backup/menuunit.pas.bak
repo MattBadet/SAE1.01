@@ -374,7 +374,7 @@ var
 begin
   dormi := FALSE;
   regles;
-  info :=afficheCreationPerso;
+  info := afficheCreationPerso;
   joueur := createjoueur(info[3],info[1],info[2]);
   ville(joueur, dormi);
 end;

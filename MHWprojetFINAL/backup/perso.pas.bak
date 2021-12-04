@@ -31,7 +31,7 @@ implementation
 
 function initdef(joueur:player): integer;
 begin
-  joueur.def:=joueur.eqarmure[1].def + joueur.eqarmure[2].def + joueur.eqarmure[3].def + joueur.eqarmure[4].def + joueur.eqarmure[5].def;
+  joueur.def:=joueur.eqarmure[1].def + joueur.eqarmure[2].def + joueur.eqarmure[3].def + joueur.eqarmure[4].def + joueur.eqarmure[5].def + 300;
   result := joueur.def;
 end;
 function initatk(joueur:player): integer;
@@ -48,8 +48,8 @@ begin
   joueur.taille:=taille;
   joueur.vieActu:=300;
   joueur.vieNue:=300;
-  joueur.def:=initdef(joueur);
-  joueur.atk:=initatk(joueur);
+  joueur.def:=0;
+  joueur.atk:=0;
   joueur.materiaux[1]:=0;
   joueur.materiaux[2]:=0;
   joueur.materiaux[3]:=0;
@@ -63,6 +63,8 @@ begin
   joueur.eqarmure[5]:=nullarmure;
   joueur.xp:=0;
   joueur.epee:=nullarm;
+  joueur.def:=initdef(joueur);
+  joueur.atk:=initatk(joueur);
 
   result := joueur;
 end;

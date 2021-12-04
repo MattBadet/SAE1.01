@@ -225,10 +225,10 @@ begin
       ecrireEnPositionXY(54,21,'                            /___|   |_  /');
       ecrireEnPositionXY(54,22,'                                     / /');
       ecrireEnPositionXY(54,23,'                                    /___|');
-      readln;
     end
     else
       ecrireEnPositionXY(45,17,'Vous n''êtes pas assez fatigué, vous devriez aller combattre.');
+    readln;
 end;
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos

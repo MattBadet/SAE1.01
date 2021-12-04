@@ -48,8 +48,8 @@ begin
   joueur.taille:=taille;
   joueur.vieActu:=300;
   joueur.vieNue:=300;
-  joueur.def:=initdef(joueur);
-  joueur.atk:=initatk(joueur);
+  joueur.def:=0;
+  joueur.atk:=0;
   joueur.materiaux[1]:=0;
   joueur.materiaux[2]:=0;
   joueur.materiaux[3]:=0;
@@ -62,7 +62,9 @@ begin
   joueur.eqarmure[4]:=nullarmure;
   joueur.eqarmure[5]:=nullarmure;
   joueur.xp:=0;
-  joueur.epee:=nullarm;
+  joueur.epee:=epeebois;
+  joueur.def:=initdef(joueur);
+  joueur.atk:=initatk(joueur);
 
   result := joueur;
 end;
