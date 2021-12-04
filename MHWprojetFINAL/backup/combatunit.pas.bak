@@ -84,7 +84,7 @@ end;
 function loose(joueur : player): player;
 
 begin
-  joueur.vieActu := 5;//(joueur.def div 5);
+  joueur.vieActu := (joueur.def div 5);
   result := joueur;
   afficheDeadMenu;
 end;
@@ -367,7 +367,7 @@ begin
 end;
 
 //Logique central du combat
-function combat(joueur : player): player;
+function combat(): player;
 
 var
   choixU : boolean;

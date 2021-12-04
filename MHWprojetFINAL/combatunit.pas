@@ -15,7 +15,7 @@ type
     spe: race;
   end;
 
-function combat(joueur : player): player;
+function combat(): player;
 function calculLvl(joueur: player): integer;
 
 implementation
@@ -367,7 +367,7 @@ begin
 end;
 
 //Logique central du combat
-function combat(joueur : player): player;
+function combat(): player;
 
 var
   choixU : boolean;

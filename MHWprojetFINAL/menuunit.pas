@@ -375,7 +375,7 @@ begin
   regles;
   info := afficheCreationPerso;
   createjoueur(info[3],info[1],info[2]);
-  ville(joueur, dormi);
+  ville(dormi);
 end;
 
 //Menu principal du jeu
