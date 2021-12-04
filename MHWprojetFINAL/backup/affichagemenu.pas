@@ -205,7 +205,7 @@ begin
     effacerEcran();
     affichage(10,2,'decoCelt');
     affichage(124,2,'decoCelt');
-    if dromie=False then
+    if dormie=False then
     begin
       ecrireEnPositionXY(54,11,' ______');
       ecrireEnPositionXY(54,12,'|___  /    ______');

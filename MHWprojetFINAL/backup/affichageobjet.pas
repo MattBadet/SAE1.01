@@ -1,5 +1,8 @@
-{Cette unité a pour but de gérer l'affichage des différents objets
- Nous avons une procédure qui appelle les autres procédure en fonction du string en paramètre}
+{ Dans cette Unité, nous pouvons trouver les différentes procédures qui
+  permettent de procéder à l’affichage des objets et monstres utilisés par
+  l’unité précédente. La dernière procédure appelle les autres procédures en
+  fonction du string placé en paramètre, ceci permet de n'avoir qu'une procédure
+  en interface. }
 unit affichageObjet;
 {$codepage UTF8}
 {$mode objfpc}{$H+}
@@ -7,7 +10,7 @@ unit affichageObjet;
 interface
 uses
   Classes, SysUtils, GestionEcran;
-procedure affichage(x,y:Integer;objet:string);
+procedure affichage(x,y:Integer;objet:string); // la procédure qui appelle les autres
 
 implementation
 
@@ -345,7 +348,7 @@ begin
   ecrireEnPositionXY(x+7,y+13,'(@ (@@@@(@@      `''  (( ~  .` .');
   ecrireEnPositionXY(x+11,y+14,'@@@@@             (((` ~ .-~');
   ecrireEnPositionXY(x+10,y+15,'/                 /~((((` . ~');
-  ecrireEnPositionXY(x+9,y+16),'/                 /~-((((((`.\');
+  ecrireEnPositionXY(x+9,y+16,'/                 /~-((((((`.\');
   ecrireEnPositionXY(x+8,y+17,'/                 /-~-/(((((((`');
   ecrireEnPositionXY(x+7,y+18,'/                 /~-~/  `((((((');
   ecrireEnPositionXY(x+6,y+19,'/              ___/-~-/     `""""');
