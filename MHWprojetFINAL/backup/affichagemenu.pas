@@ -17,6 +17,7 @@ function afficheAchat(invPotion:array of potion;invBombre:array of bombe;PO:Inte
 function afficheCantine():Integer; // Affichage de la cantine
 procedure afficheForge(forge:array of armure); // afffichage de la forge
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
+procedure affciheDormir(); // Petite sieste
 function afficheInventaireChambre(inventaire:array of arme):Integer; // afffichage de l'inventaire depuis la chambre
 function afficheInventaireCombat(inventaire:array of arme):Integer; // afffichage de l'inventaire depuis un combat
 procedure precombat(); // ecran de liaison entre la ville et le combat
@@ -182,10 +183,10 @@ begin
     x:=5;
     y:=6;
     for i:=1 to length(invpotion) do
-        ecrireEnPositionXY(x,y+2*i,(i,':',invpotion[i].nom));
+        ecrireEnPositionXY(x,y+2*i,(IntToStr(i)+':'+invpotion[i].nom));
     x:=17;
     for i:=1 to length(invbombe) do
-        ecrireEnPositionXY(x,y,(i,':',invbombe[i].nom));
+        ecrireEnPositionXY(x,y,(IntToStr(i)+':'+invbombe[i].nom));
     // test statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,24,144,31,simple,white,black);
@@ -207,10 +208,19 @@ begin
     // remplissage inventaire
     x:=5;
     y:=6;
-    for i:=0 to length(inventaire) do
-        ecrireEnPositionXY(x,y+2*i,inventaire[i].nom);
-    // test statistique objet
-    affichage(50,8,'epee');
+    // Arme
+    for i:=1 to length(invarme) do
+        writeln(IntToStr(i) + ':' + invarme[i].nom);
+    // Armure
+    for i:=1 to length(invarmure) do
+        writeln(IntToStr(i) + ':' + invarmure[i].nom);
+    // Arme Equipe
+    for i:=1 to length(joueur.eqarmure) do
+        writeln(IntToStr(i) + ':' + joueur.eqarmure[i].nom);
+    // Armure Equipe
+    writeln(IntToStr(i) + ':' + joueur.epee.nom);
+    for i:=1 to length(invarme) do
+        writeln(IntToStr(i) + ':' + invarme[i].nom);
     dessinerCadreXY(44,24,144,31,simple,white,black);
     readln(choix);
     Result:=choix;
@@ -235,6 +245,23 @@ end;
         writeln(IntToStr(i) + ':' + joueur.eqarmure[i].nom);
      writeln('----------------------------------------- Armure Equipe');
      writeln(IntToStr(i) + ':' + joueur.epee.nom);}
+
+procedure affciheDormir(); // Petite sieste
+begin
+    ecrireEnPositionXY(58,11,' ______');
+    ecrireEnPositionXY(58,12,'|___  /  ______');
+    ecrireEnPositionXY(58,13,'   / /  |___  /');
+    ecrireEnPositionXY(58,14,'  / /      / /');
+    ecrireEnPositionXY(58,15,' / /__    / /');
+    ecrireEnPositionXY(58,16,'/_____|  / /__   ____');
+    ecrireEnPositionXY(58,17,'        /_____| |_  /');
+    ecrireEnPositionXY(58,18,'                 / /   ____');
+    ecrireEnPositionXY(58,19,'                /___| |_  /');
+    ecrireEnPositionXY(58,20,'                       / /   ____');
+    ecrireEnPositionXY(58,21,'                      /___| |_  /');
+    ecrireEnPositionXY(58,22,'                             / / ');
+    ecrireEnPositionXY(58,23,'                            /___|');
+end;
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 begin
