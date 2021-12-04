@@ -262,10 +262,10 @@ begin
     // remplissage forge
     x:=5;
     y:=6;
-    for i:=1 to length(armure) do
+    for i:=0 to length(armure)-1 do
         ecrireEnPositionXY(x,y+i,armure[i].nom);
-    for i:=1 to length(arme) do
-        ecrireEnPositionXY(x,y+length(armure)+i,arme[i].nom);
+    for i:=0 to length(arme)-1 do
+        ecrireEnPositionXY(x,y+i+length(armure),arme[i].nom);
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);
