@@ -145,6 +145,7 @@ begin
       else
       begin // Le joueur veut quitter
         rep := FALSE;
+        ville(joueur; dormi);
       end;
     end; //if (choixU = 1) then
   end; //while rep do
