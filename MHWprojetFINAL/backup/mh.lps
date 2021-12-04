@@ -9,7 +9,7 @@
         <Filename Value="mh.lpr"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="20" Y="7"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,10 +23,9 @@
       </Unit1>
       <Unit2>
         <Filename Value="affichagemenu.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <TopLine Value="304"/>
-        <CursorPos X="24" Y="324"/>
+        <CursorPos X="100" Y="326"/>
         <FoldState Value=" T3i10O01522S"/>
         <UsageCount Value="41"/>
         <Loaded Value="True"/>
@@ -65,9 +64,10 @@
       </Unit6>
       <Unit7>
         <Filename Value="forge.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="10"/>
-        <CursorPos X="12" Y="45"/>
+        <TopLine Value="40"/>
+        <CursorPos X="104" Y="61"/>
         <UsageCount Value="42"/>
         <Loaded Value="True"/>
       </Unit7>
