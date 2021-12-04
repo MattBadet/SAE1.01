@@ -24,7 +24,7 @@ function afficheAchat(po:Integer):Integer; // afffichage des achats du marchand
 
 function afficheCantine():Integer; // Affichage de la cantine
 
-function afficheForge(armure:array of armure;arme:array of arme; joueur:player):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
 
 function afficheChambre():Integer; // Menu de la chambre qui donne accès à l'inventaire et au repos
 procedure afficheDormir(dormie:Boolean); // Petite sieste
@@ -243,7 +243,7 @@ begin
     Result:=choix;
 end;
 
-function afficheForge(armure:array of armure;arme:array of arme; joueur:player):Integer; // afffichage de la forge
+function afficheForge(armure:array of armure;arme:array of arme;joueur:player):Integer; // afffichage de la forge
 var
   x,y,i,choix:Integer;
 begin
@@ -255,17 +255,21 @@ begin
     dessinerCadreXY(2,3,40,30,simple,white,black);     // objets disponibles
     dessinerCadreXY(42,3,146,30,simple,white,black);  // crafts
     dessinerCadreXY(2,31,146,33,simple,white,black); // resources
-    ecrireEnPositionXY(5,32,'Ressources Disponilbes : ');
-    for i:=0 to length(joueur.materiaux) do
-        write(joueur.materiaux[i]);
+    ecrireEnPositionXY(5,32,'Ressources Disponilbes : X trucs  X machins ....');
     ecrireEnPositionXY(18,4,'Objet');
     // remplissage forge
     x:=5;
     y:=6;
     for i:=0 to length(armure)-1 do
         ecrireEnPositionXY(x,y+i,armure[i].nom);
+<<<<<<< HEAD
     for i:=0 to length(arme)-1 do
         ecrireEnPositionXY(x,y+i+length(armure),arme[i].nom);
+=======
+    x:=length(armure)+2;
+    for i:=0 to length(arme) do
+        ecrireEnPositionXY(x,y+i,arme[i].nom);
+>>>>>>> debdc8688161ffa85e535668917374debada140e
     // statistique objet
     affichage(50,8,'epee');
     dessinerCadreXY(44,22,144,29,simple,white,black);

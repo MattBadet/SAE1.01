@@ -1,7 +1,7 @@
 unit forge;
 //le role de cette unité est de simulé la fabrication d'élément d'armure ou d'armes.
 {$mode objfpc}{$H+}
-{$codepage UTF8}
+
 interface
 uses
   Classes, SysUtils, inventaire, utilities, perso, affichagemenu;
@@ -44,7 +44,7 @@ begin
   forgearme[2]:=epeeacier;
   forgearme[3]:=epeescale;
   forgearme[4]:=epeedemo;
-  choixmenu(joueur,afficheForge(forgearmure,forgearme));
+  choixmenu(joueur,afficheForge(forgearmure,forgearme,joueur));
 end;
 procedure choixmenu(joueur:player;choix:integer);
 begin
