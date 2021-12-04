@@ -298,6 +298,9 @@ var
 begin
   vieU := joueur.vieActu;
   monstreActu := choixMonstre((random(4)+1)); //choix aléatoire du monstre
+  if calculLvl(joueur) = 1 then
+  vieMi := monstreActu.vieBase
+  else
   vieMi := ((monstreActu.vieBase * calculLvl(joueur))div 2);
   vieMd := vieMi;
   arme := joueur.atk;
@@ -326,6 +329,7 @@ begin
   joueur := win(joueur, monstreActu, vieMi)
   else
   joueur := loose(joueur);
+  readln;
 
   result := joueur;
 end;
